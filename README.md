@@ -1,6 +1,6 @@
 # Perfect Partner Probability
 
-Welcome to the **[Perfect Partner Probability](https://perfectpartner.netlify.app/)** project! This web application assesses the chances of individuals meeting your criteria while searching for a partner. It leverages **Annual Social and Economic Supplements (ASEC) by Current Population Survey (CPS)** and **National Health and Nutrition Examination Survey (NHANES)** survey data.
+Welcome to the **[Perfect Partner Probability](https://perfectpartner.netlify.app/)** full-stack project! This web application assesses the chances of individuals meeting your criteria while searching for a partner. It leverages **Annual Social and Economic Supplements (ASEC) by Current Population Survey (CPS)** and **National Health and Nutrition Examination Survey (NHANES)** survey data.
 
 ## Folders
 
