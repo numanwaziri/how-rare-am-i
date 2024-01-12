@@ -12,7 +12,7 @@
 }
 
 .checkbox:after {
-    content: attr(data-name)"+";
+    content: attr(data-name);
     top: 50%;
     position: absolute;
     left: 50%;
