@@ -8,6 +8,7 @@ const CheckboxGrid = memo(({ items, sex, value, setValue }) => {
   };
 
   const areAllChecked = Object.values(value).every(Boolean);
+  const areNoneChecked = Object.values(value).every((option) => !option);
   // Calculate the number of columns based on the number of items
   return (
     <div className="flex flex-1 items-center justify-center gap-3 transition-all">
@@ -29,7 +30,7 @@ const CheckboxGrid = memo(({ items, sex, value, setValue }) => {
 
       <span
         className={`texte -ml-1 rounded text-left text-xs font-bold text-slate-100 transition-all  ${
-          areAllChecked
+          areAllChecked || (areNoneChecked && items.length !== 2)
             ? "scale-100 max-sm:-ml-1"
             : "-ml-7 scale-0 max-sm:-ml-10"
         }`}
