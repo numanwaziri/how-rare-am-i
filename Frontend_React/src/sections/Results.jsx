@@ -2,6 +2,7 @@ import { Pictogram } from "../components/Pictogram.jsx";
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 export const Results = ({
   data,
   setData,
@@ -317,41 +318,54 @@ export const Results = ({
           </span>
         </div>
         <div className=" mx-auto -mt-6 h-full w-full sm:-mt-3">
-          {MemoizedPictogram}
+          {formatValue(sexAgeTuple?.[1]) == 0 ||
+          formatValue(sexTuple?.[1]) == 0 ? (
+            <SentimentVeryDissatisfiedIcon
+              className={`mt-4  ${
+                sex === "Male" ? "text-rose-500" : "text-amber-400"
+              } drop-shadow-[0_1px_1px_rgba(0,0,0,1)]`}
+              sx={{ fontSize: "12rem" }}
+            />
+          ) : (
+            MemoizedPictogram
+          )}
         </div>
         <div>
-          <div className="relative flex items-center py-3">
-            <div className="flex-grow border-t border-gray-400"></div>
-            <span className="mx-4 flex-shrink text-xl text-slate-100 max-sm:text-lg">
-              Which is
-            </span>
-            <div className="flex-grow border-t border-gray-400"></div>
-          </div>
-          <div className="  flex justify-center gap-4 rounded-xl  bg-opacity-70 p-2 max-md:flex-col max-sm:p-1">
-            {/*<span className="text-xl font-bold text-slate-100 max-sm:text-base">*/}
-            {/*  That is...*/}
-            {/*</span>*/}
-
-            {myMessages.map((msg) => {
-              return (
-                <h2
-                  className={`flex-1 rounded-xl bg-slate-400 bg-opacity-5 p-4 text-center text-lg tracking-wide text-slate-100 shadow-lg ring-1 max-sm:text-base ${
-                    sex === "Male" ? "ring-slate-400" : "ring-[#9bbeaa]"
-                  } md:w-1/4`}
-                >
-                  <span
-                    className={`rounded-lg text-2xl font-bold ${
-                      sex === "Male" ? "text-yellow-500" : "text-[#8cbeac]"
-                    }`}
-                  >
-                    {msg.split("%")[0]}%
+          {formatValue(sexAgeTuple?.[1]) == 0 ||
+            formatValue(sexTuple?.[1]) == 0 || (
+              <>
+                <div className="relative flex items-center py-3">
+                  <div className="flex-grow border-t border-gray-400"></div>
+                  <span className="mx-4 flex-shrink text-xl text-slate-100 max-sm:text-lg">
+                    Which is
                   </span>
-                  <br />
-                  {msg.split("%")[1]}
-                </h2>
-              );
-            })}
-          </div>
+                  <div className="flex-grow border-t border-gray-400"></div>
+                </div>
+                <div className=" flex justify-center gap-4 rounded-xl  bg-opacity-70 p-2 max-md:flex-col max-sm:p-1">
+                  {myMessages.map((msg) => {
+                    return (
+                      <h2
+                        className={`flex-1 rounded-xl bg-slate-400 bg-opacity-5 p-4 text-center text-lg tracking-wide text-slate-100 shadow-lg ring-1 max-sm:text-base ${
+                          sex === "Male" ? "ring-slate-400" : "ring-[#9bbeaa]"
+                        } md:w-1/4`}
+                      >
+                        <span
+                          className={`rounded-lg text-2xl font-bold ${
+                            sex === "Male"
+                              ? "text-yellow-500"
+                              : "text-[#8cbeac]"
+                          }`}
+                        >
+                          {msg.split("%")[0]}%
+                        </span>
+                        <br />
+                        {msg.split("%")[1]}
+                      </h2>
+                    );
+                  })}
+                </div>
+              </>
+            )}
         </div>
         <div className="mx-2 mt-6  flex items-center justify-center gap-3">
           <a

@@ -616,7 +616,7 @@ body {
     text-align: center;
     opacity: 0.4;
     width: 155px;
-    transform: translate(-193%,-57%) rotate(-30deg) ;
+    transform: translate(-225%,-90%) rotate(-30deg) ;
 
 }
 
@@ -634,13 +634,13 @@ body {
     text-align: center;
     opacity: 0.4;
     width: 155px;
-    transform: translate(210%,-57%)  rotate(30deg);
+    transform: translate(225%,-90%)  rotate(30deg);
 
 }
 
 @media screen and (max-width: 1024px) {
     .rubber-male {
-        transform: translate(140%,-50%) rotate(20deg);
+        transform: translate(170%,-100%) rotate(20deg);
         padding: 5px 3px;
         line-height: 20px;
         color: #219be1;
@@ -648,7 +648,7 @@ body {
         width: 133px;
     }
     .rubber-female {
-        transform: translate(-140%,-50%) rotate(-20deg);
+        transform: translate(-170%,-100%) rotate(-20deg);
         padding: 5px 3px;
         line-height: 20px;
 

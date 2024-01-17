@@ -17,7 +17,7 @@ function App({ sex, setSex, sexColors }) {
     val: 0,
     isMax: false,
   });
-  const [age, setAge] = useSessionStorageState("age", [20, 37]);
+  const [age, setAge] = useSessionStorageState("age", [18, 37]);
   const [race, setRace] = useSessionStorageState("race", {
     White: false,
     Black: false,
@@ -59,7 +59,7 @@ function App({ sex, setSex, sexColors }) {
         <div className="title">
           <Header sex={sex} />
         </div>
-        <div className="content">
+        <div>
           <Form
             sex={sex}
             setSex={setSex}

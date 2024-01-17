@@ -87,7 +87,7 @@ export const Form = ({
 
   return (
     <article className=" overflow-hidden   pb-6  ">
-      <div className=" px-3 py-6 sm:px-4 md:px-6">
+      <div className=" px-3 pb-6 max-sm:pt-6  sm:px-4 md:px-6">
         <p className="mb-2 font-bold text-slate-100 transition-all max-md:text-sm md:text-lg lg:text-xl">
           Select the gender of your ideal partner
         </p>
