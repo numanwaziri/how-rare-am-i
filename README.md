@@ -10,7 +10,7 @@ Welcome to the **[Perfect Partner Probability](https://perfectpartner.netlify.ap
 
 2. **backend (Django):**
 
-   - Houses the Django-based backend responsible for handling data and computations.
+   - Contains code for the Django-based backend responsible for handling data and computations.
 
 3. **data_preprocessing (Pandas):**
    - Holds the preliminary data preprocessing notebook implemented in Python, harmonizing ASEC and NHANES survey data to be used in Django backend. **Please note that the directory does not include the raw data or the outputs due to size constraints. You can find the data on the respective survey websites.**
