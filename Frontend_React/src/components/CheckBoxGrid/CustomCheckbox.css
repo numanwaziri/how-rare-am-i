@@ -12,6 +12,7 @@
 }
 
 .checkbox:after {
+
     content: attr(data-name);
     top: 50%;
     position: absolute;
@@ -46,7 +47,8 @@ font-size: 0.95rem;
 }
 .checkbox:checked:before {
     /*opacity: 0;*/
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -101%);
+
 }
 .checkbox:checked:after {
     color: 	rgb(241 245 249);
