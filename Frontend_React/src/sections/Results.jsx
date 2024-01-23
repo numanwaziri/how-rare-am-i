@@ -200,7 +200,7 @@ export const Results = ({
   return (
     <div className=" flex h-full w-full flex-1 flex-col items-center ">
       <div
-        className={`mt-8 w-full rounded-xl bg-slate-400 bg-opacity-5 p-6 text-center text-xl tracking-wide text-slate-100 shadow-lg ring-1 ${
+        className={`mt-6 w-full rounded-xl bg-slate-600 bg-opacity-5 p-6 text-center text-xl tracking-wide text-slate-100 shadow-lg ring-1 ${
           sex === "Male" ? "ring-slate-400" : "ring-[#9bbeaa]"
         } max-sm:mt-4 max-sm:p-4 max-sm:text-base`}
       >
@@ -211,11 +211,14 @@ export const Results = ({
         >
           CRITERIA
         </span>
-        <div className="grid grid-cols-1  md:grid-cols-2 md:gap-1.5">
+        <div className="grid grid-cols-1 gap-1.5 md:grid-cols-2 ">
           {criteria.map((c, index) => {
             return (
-              <div key={index} className="text-center">
-                ✦ {c} ✦
+              <div
+                key={index}
+                className="flex rounded-lg  bg-slate-100 bg-opacity-5 p-1 text-center"
+              >
+                <div className="m-auto ">{c}</div>
               </div>
             );
           })}

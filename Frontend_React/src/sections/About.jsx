@@ -56,9 +56,10 @@ export const About = ({ sex }) => {
           <span className="rounded-sm bg-slate-400 bg-opacity-20 px-1 font-bold">
             proportion or relative frequency
           </span>{" "}
-          of a population meeting specific criteria. It represents the
-          likelihood, expressed as a percentage, of finding individuals with
-          desired qualities within the defined group.
+          of a population (population weights provided in survey) meeting
+          specific criteria. It represents the likelihood, expressed as a
+          percentage, of finding individuals with desired qualities within the
+          defined group.
         </CustomAccordion>
         <CustomAccordion title="Limitations and Assumptions">
           <li className="font-bold text-yellow-400">Data Alignment</li>
@@ -74,7 +75,9 @@ export const About = ({ sex }) => {
             targeting the same demographic groups across both datasets.
           </p>
           <br />
-          <li className="font-bold text-yellow-400">Linear Approximation</li>
+          <li className="font-bold text-yellow-400">
+            Linear Approximation (Independence)
+          </li>
           <div className="py-3">
             <h2 className="mb-2  font-semibold">
               1. Impact Analysis within NHANES

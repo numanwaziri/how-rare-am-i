@@ -124,11 +124,7 @@ export const Form = ({
           </div>
         </div>
 
-        <div
-          className={`flex-1 rounded-2xl transition-all ease-custom-bezier  sm:mx-4 ${
-            sex === "Male" ? "bg-msale-light" : "bg-female-lisght"
-          }`}
-        >
+        <div className="flex-1 rounded-2xl transition-all ease-custom-bezier  sm:mx-4">
           <Controls
             sex={sex}
             sexColors={sexColors}
