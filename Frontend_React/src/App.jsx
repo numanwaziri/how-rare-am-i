@@ -83,19 +83,35 @@ function App({ sex, setSex, sexColors }) {
 
       {fetchedData && (
         <section
-          className=" flex min-h-screen flex-col  justify-center bg-opacity-25 px-3 transition-all ease-custom-bezier  sm:px-4 md:px-6 lg:px-8 "
+          className=" flex min-h-screen flex-col justify-center px-3 transition-all ease-custom-bezier  sm:px-4 md:px-6 lg:px-8 "
           ref={resultSection}
         >
-          <Results
-            data={fetchedData}
-            setData={setFetchedData}
-            sex={sex}
-            height={height}
-            income={income}
-            age={age}
-            race={race}
-            exclude={exclude}
-          />
+          {" "}
+          <div className="">
+            <Results
+              data={fetchedData}
+              setData={setFetchedData}
+              sex={sex}
+              height={height}
+              income={income}
+              age={age}
+              race={race}
+              exclude={exclude}
+            />{" "}
+            {/*result compoenent with no zero is added again for alignment (doesn't affect performance as result is 0, won't trigger the d3 plot*/}
+            <div className="invisible -translate-y-full">
+              <Results
+                data={{ ...fetchedData, proportion_in_age_sex: 0 }}
+                setData={setFetchedData}
+                sex={sex}
+                height={300}
+                income={income}
+                age={age}
+                race={race}
+                exclude={exclude}
+              />
+            </div>
+          </div>
         </section>
       )}
     </div>

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+import { useTheme } from "@mui/material/styles";
 export const Results = ({
   data,
   setData,
@@ -13,6 +16,9 @@ export const Results = ({
   height,
   exclude,
 }) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -189,9 +195,9 @@ export const Results = ({
             ? formatValue(sexAgeTuple[1] / 100)
             : formatValue(sexTuple[1] / 100)
         }
-        totalPoints={300}
+        totalPoints={isSmallScreen ? 150 : isLargeScreen ? 300 : 500}
         color={sex === "Male" ? "#1f90ce" : "#b78060"}
-        activeColor="white"
+        activeColor="#f1f5f9"
       />
     ),
     [sexAgeTuple], // Dependency array - recompute when sexAgeTuple changes
@@ -200,8 +206,8 @@ export const Results = ({
   return (
     <div className=" flex h-full w-full flex-1 flex-col items-center ">
       <div
-        className={`mt-6 w-full rounded-xl bg-slate-600 bg-opacity-5 p-6 text-center text-xl tracking-wide text-slate-100 shadow-lg ring-1 ${
-          sex === "Male" ? "ring-slate-400" : "ring-[#9bbeaa]"
+        className={`mt-6 w-full rounded-xl bg-slate-600 bg-opacity-5 p-6 pt-4 text-center text-xl tracking-wide text-slate-100 shadow-lg ring-1 ${
+          sex === "Male" ? "ring-slate-400" : "ring-[#75a294] ring-opacity-80"
         } max-sm:mt-4 max-sm:p-4 max-sm:text-base`}
       >
         <span
@@ -299,7 +305,7 @@ export const Results = ({
           </span>
           <br />
           <span
-            className={`${
+            className={`px-2 transition-all hover:scale-105 ${
               formatValue(sexAgeTuple?.[1]) == 0 ||
               formatValue(sexTuple?.[1]) == 0
                 ? `-mt-3 inline-block pb-5 text-2xl font-semibold tracking-wide ${
@@ -349,7 +355,9 @@ export const Results = ({
                     return (
                       <h2
                         className={`flex-1 rounded-xl bg-slate-400 bg-opacity-5 p-4 text-center text-lg tracking-wide text-slate-100 shadow-lg ring-1 max-sm:text-base ${
-                          sex === "Male" ? "ring-slate-400" : "ring-[#9bbeaa]"
+                          sex === "Male"
+                            ? "ring-slate-400"
+                            : "ring-[#75a294] ring-opacity-80"
                         } md:w-1/4`}
                       >
                         <span

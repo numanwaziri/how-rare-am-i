@@ -22,7 +22,6 @@ export const Controls = memo(
   }) => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-    const isMidScreen = useMediaQuery(theme.breakpoints.down("md"));
 
     const raceCheckboxGrid = useMemo(
       () => (
