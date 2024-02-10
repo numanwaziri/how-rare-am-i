@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import CountUp, { useCountUp } from "react-countup";
+import CountUp from "react-countup";
 import { useTheme } from "@mui/material/styles";
 export const Results = ({
   data,

@@ -147,7 +147,7 @@ export const Pictogram = ({
           const circle = select(this);
           setTimeout(() => {
             circle.transition().duration(500).attr("fill", activeColor);
-          }, i * 10); // Adjust delay time as needed
+          }, i * 5); // Adjust delay time as needed
         });
     }, 2300);
   }, [size.width, sex, data]);
