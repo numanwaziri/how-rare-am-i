@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
+import CountUp, { useCountUp } from "react-countup";
 import { useTheme } from "@mui/material/styles";
 export const Results = ({
   data,
@@ -305,7 +305,7 @@ export const Results = ({
           </span>
           <br />
           <span
-            className={`px-2 transition-all hover:scale-105 ${
+            className={`px-2 ${
               formatValue(sexAgeTuple?.[1]) == 0 ||
               formatValue(sexTuple?.[1]) == 0
                 ? `-mt-3 inline-block pb-5 text-2xl font-semibold tracking-wide ${
@@ -315,11 +315,23 @@ export const Results = ({
             }`}
           >
             {formatValue(sexAgeTuple?.[1]) == 0 ||
-            formatValue(sexTuple?.[1]) == 0
-              ? "Criteria set to the stars! No survey matches found, so chances are close to zero. However, outliers might still surprise us in this vast universe!"
-              : sexAgeTuple
-                ? formatValue(sexAgeTuple[1])
-                : formatValue(sexTuple[1])}
+            formatValue(sexTuple?.[1]) == 0 ? (
+              "Criteria set to the stars! No survey matches found, so chances are close to zero. However, outliers might still surprise us in this vast universe!"
+            ) : sexAgeTuple ? (
+              <CountUp
+                end={formatValue(sexAgeTuple[1])}
+                duration="3"
+                decimals={formatValue(sexAgeTuple[1]) < 1 ? 4 : 2}
+                delay={0.3}
+              />
+            ) : (
+              <CountUp
+                end={formatValue(sexTuple[1])}
+                duration="3"
+                decimals={formatValue(sexTuple[1]) < 1 ? 4 : 2}
+                delay={0.3}
+              />
+            )}
             {formatValue(sexAgeTuple?.[1]) == 0 ||
             formatValue(sexTuple?.[1]) == 0
               ? ""

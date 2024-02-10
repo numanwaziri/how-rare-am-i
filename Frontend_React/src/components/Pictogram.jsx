@@ -133,10 +133,24 @@ export const Pictogram = ({
       )
       .attr("cy", (d) => Math.floor(d / numCols) * radius * 1.5)
       .attr("r", radius)
-      .attr("fill", (d) => (activeIndices.has(d) ? activeColor : color))
+      .attr("fill", color)
       .style("stroke", borderColor)
       .style("filter", "url(#drop-shadow)");
-  }, [size, sex, data]);
+
+    // Transition active circles to active color after 1 second
+
+    setTimeout(() => {
+      container
+        .selectAll("circle")
+        .filter((d) => activeIndices.has(d))
+        .each(function (d, i) {
+          const circle = select(this);
+          setTimeout(() => {
+            circle.transition().duration(500).attr("fill", activeColor);
+          }, i * 10); // Adjust delay time as needed
+        });
+    }, 2300);
+  }, [size.width, sex, data]);
 
   return (
     <div id="grid-container" className=" h-full w-full   ">
