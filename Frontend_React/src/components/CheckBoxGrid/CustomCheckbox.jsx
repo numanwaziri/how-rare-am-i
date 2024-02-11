@@ -1,13 +1,14 @@
 import "./CustomCheckbox.css";
 import { memo } from "react";
 
-const CustomCheckbox = memo(({ dataName, sex, checked, onChange }) => {
+const CustomCheckbox = memo(({ dataName, sex, checked, onChange, idx }) => {
   const handleChange = (event) => {
     onChange(event.target.checked);
   };
   return (
     <div className="flex h-full w-full items-center justify-center ">
       <input
+        id={idx}
         type="checkbox"
         checked={checked}
         onChange={handleChange}

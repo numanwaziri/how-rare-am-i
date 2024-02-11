@@ -5,6 +5,7 @@ import { Results } from "./sections/Results.jsx";
 
 import useSessionStorageState from "./hooks/useSessionStorageState.js";
 import createApiRequest from "./utils/apiUtils.js";
+import InfoAlert from "./components/InfoAlert.jsx";
 
 function App({ sex, setSex, sexColors }) {
   const resultSection = useRef(null);
@@ -56,6 +57,13 @@ function App({ sex, setSex, sexColors }) {
   return (
     <div className=" ">
       <section className=" flex min-h-screen flex-col justify-center   px-3 transition-all ease-custom-bezier  sm:px-4 md:px-6 lg:px-8 ">
+        <div className="mt-4">
+          <InfoAlert title="Disclaimer">
+            This is a lighthearted project to showcase my frontend and backend
+            skills creatively, there are no negative connotations associated
+            with it.
+          </InfoAlert>
+        </div>
         <div className="title">
           <Header sex={sex} />
         </div>

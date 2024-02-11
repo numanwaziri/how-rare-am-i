@@ -19,7 +19,8 @@ const CheckboxGrid = memo(({ items, sex, value, setValue }) => {
       >
         {items.map((item, index) => (
           <CustomCheckbox
-            key={index}
+            key={item}
+            idx={item}
             dataName={item}
             sex={sex}
             checked={value[item]}

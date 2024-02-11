@@ -77,6 +77,7 @@ export const Form = ({
 
     return (
       <Checkbox
+        id="heightMinMaxToggle"
         checked={height.isMax}
         onChange={heightMinMaxToggle}
         style={style}

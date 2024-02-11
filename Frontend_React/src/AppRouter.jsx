@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { About } from "./sections/About.jsx";
 import App from "./App.jsx";
-import { Fireflies } from "./components/Fireflies.jsx";
+import { Fireflies } from "./components/Fireflies/Fireflies.jsx";
 import { useEffect, useMemo } from "react";
 import useSessionStorageState from "./hooks/useSessionStorageState.js";
 export const AppRouter = () => {

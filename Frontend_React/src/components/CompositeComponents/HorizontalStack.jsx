@@ -45,6 +45,7 @@ export const HorizontalStack = ({
 
     return (
       <Checkbox
+        id="checkboxIncome"
         checked={value?.isMax}
         onChange={handleChange}
         sx={checkboxStyle}
