@@ -195,7 +195,7 @@ export const Results = ({
             ? formatValue(sexAgeTuple[1] / 100)
             : formatValue(sexTuple[1] / 100)
         }
-        totalPoints={isSmallScreen ? 150 : isLargeScreen ? 300 : 500}
+        totalPoints={isSmallScreen ? 150 : isLargeScreen ? 300 : 400}
         color={sex === "Male" ? "#1f90ce" : "#b78060"}
         activeColor="#f1f5f9"
       />

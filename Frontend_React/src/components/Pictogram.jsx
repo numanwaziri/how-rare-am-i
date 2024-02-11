@@ -135,21 +135,14 @@ export const Pictogram = ({
       .attr("r", radius)
       .attr("fill", color)
       .style("stroke", borderColor)
-      .style("filter", "url(#drop-shadow)");
+      .style("filter", "url(#drop-shadow)")
+      .filter((d) => activeIndices.has(d))
+      .transition()
+      .delay(3300)
+      .duration(500)
+      .attr("fill", activeColor);
 
     // Transition active circles to active color after 1 second
-
-    setTimeout(() => {
-      container
-        .selectAll("circle")
-        .filter((d) => activeIndices.has(d))
-        .each(function (d, i) {
-          const circle = select(this);
-          setTimeout(() => {
-            circle.transition().duration(500).attr("fill", activeColor);
-          }, i * 5); // Adjust delay time as needed
-        });
-    }, 2300);
   }, [size.width, sex, data]);
 
   return (
