@@ -138,9 +138,15 @@ export const Pictogram = ({
       .style("filter", "url(#drop-shadow)")
       .filter((d) => activeIndices.has(d))
       .transition()
-      .delay(3300)
+      .delay(3200)
+      .transition()
       .duration(500)
-      .attr("fill", activeColor);
+      .attr("transform", "translate(0, -7)") // Move up by 5 units
+      .transition()
+      .duration(500)
+      .attr("fill", activeColor)
+      .duration(500)
+      .attr("transform", "translate(0, 0)");
 
     // Transition active circles to active color after 1 second
   }, [size.width, sex, data]);
