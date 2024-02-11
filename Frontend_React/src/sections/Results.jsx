@@ -214,8 +214,10 @@ export const Results = ({
       <div
         className={`mt-6 w-full rounded-xl bg-slate-600 bg-opacity-5 p-6 pt-4 text-center text-xl tracking-wide text-slate-100 shadow-lg ring-1 ${
           sex === "Male" ? "ring-slate-400" : "ring-[#75a294] ring-opacity-80"
-        } transition-scale delay-300 duration-[4s] ease-out-expo max-sm:mt-4 max-sm:p-4 max-sm:text-base ${
-          visible ? "scale-100" : "scale-[65%]"
+        }    ease-out-expo max-sm:mt-4 max-sm:p-4 max-sm:text-base ${
+          visible
+            ? "scale-100 opacity-100  delay-300 duration-[4s]"
+            : "scale-[80%] opacity-80 delay-300 duration-[4s]"
         }`}
       >
         <span
@@ -239,7 +241,7 @@ export const Results = ({
         </div>
       </div>
       <div className="mt-6 h-60 w-full bg-opacity-20  text-center max-sm:h-52     ">
-        <div className="  text-slate-100">
+        <div className="  text-slate-100 max-md:pb-3">
           <span className=" max-sm:leading-relaxed  sm:text-xl">
             {sexAgeTuple ? (
               <h2>
@@ -319,7 +321,7 @@ export const Results = ({
                 ? `-mt-3 inline-block pb-5 text-2xl font-semibold tracking-wide ${
                     sex === "Male" ? "text-rose-500" : "text-amber-400"
                   } drop-shadow-[0_1px_1px_rgba(0,0,0,1)] max-md:text-xl max-sm:-mt-3 max-sm:pb-4 max-sm:text-lg`
-                : "-mt-3 inline-block pb-5 text-6xl font-semibold tracking-wide text-slate-100 drop-shadow-[0_1px_1px_rgba(0,0,0,1)] max-md:text-5xl max-sm:-mt-5 max-sm:pb-4 max-sm:text-4xl"
+                : "-mt-3 inline-block pb-5 text-6xl font-semibold tracking-wide text-slate-100 drop-shadow-[0_1px_1px_rgba(0,0,0,1)] max-md:text-5xl max-sm:-mt-4 "
             }`}
           >
             {formatValue(sexAgeTuple?.[1]) == 0 ||
@@ -330,7 +332,6 @@ export const Results = ({
                 end={formatValue(sexAgeTuple[1])}
                 duration="4"
                 decimals={formatValue(sexAgeTuple[1]) < 1 ? 4 : 2}
-                delay={0.3}
                 easingFn={(t, b, c, d) => {
                   const x = t / d;
                   return x < 0.5
@@ -342,9 +343,8 @@ export const Results = ({
             ) : (
               <CountUp
                 end={formatValue(sexTuple[1])}
-                duration="3"
+                duration="4"
                 decimals={formatValue(sexTuple[1]) < 1 ? 4 : 2}
-                delay={0.3}
               />
             )}
             {formatValue(sexAgeTuple?.[1]) == 0 ||
@@ -353,7 +353,13 @@ export const Results = ({
               : "%"}
           </span>
         </div>
-        <div className=" mx-auto -mt-6 h-full w-full sm:-mt-3">
+        <div
+          className={` transition-scale mx-auto -mt-6 h-full w-full   sm:-mt-3 ${
+            visible
+              ? "scale-100 delay-[3.6s] duration-[1.5s]"
+              : "scale-95 delay-[3.6s] duration-[1.5s]"
+          } `}
+        >
           {formatValue(sexAgeTuple?.[1]) == 0 ||
           formatValue(sexTuple?.[1]) == 0 ? (
             <SentimentVeryDissatisfiedIcon

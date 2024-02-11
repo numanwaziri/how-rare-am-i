@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { select, range } from "d3";
+import React, { useEffect, useRef, useState } from "react";
+
 export const Pictogram = ({
   totalPoints = 100,
   activePointsRatio = 0.3,
@@ -9,52 +9,48 @@ export const Pictogram = ({
   sex,
   data,
 }) => {
-  const gridChartRef = useRef(null);
+  const canvasRef = useRef(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
-
-  // Function to update the size state
-  const updateSize = () => {
-    if (gridChartRef.current) {
-      setSize({
-        width: gridChartRef.current.clientWidth,
-        height: gridChartRef.current.clientHeight,
-      });
-    }
-  };
-
-  // Debounce function
-  const debounce = (func, delay) => {
-    let debounceTimer;
-    return function () {
-      const context = this;
-      const args = arguments;
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => func.apply(context, args), delay);
-    };
-  };
-
-  const debouncedUpdateSize = debounce(updateSize, 500); // 250 milliseconds
+  const [showActiveColor, setShowActiveColor] = useState(false);
 
   useEffect(() => {
-    // Initial size update
-    updateSize();
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
 
-    // Update size on window resize
+    const updateSize = () => {
+      const scaleFactor = window.devicePixelRatio;
+      const width = canvas.clientWidth * scaleFactor;
+      const height = canvas.clientHeight * scaleFactor;
+
+      ctx.scale(scaleFactor, scaleFactor);
+      setSize({ width, height });
+    };
+
+    const debounce = (func, delay) => {
+      let debounceTimer;
+      return function () {
+        const context = this;
+        const args = arguments;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => func.apply(context, args), delay);
+      };
+    };
+
+    const debouncedUpdateSize = debounce(updateSize, 500);
+
+    updateSize();
     window.addEventListener("resize", debouncedUpdateSize);
 
-    // Cleanup
     return () => window.removeEventListener("resize", debouncedUpdateSize);
   }, []);
 
   useEffect(() => {
     if (!size.width || !size.height) return;
 
-    const containerWidth = gridChartRef.current.clientWidth;
-    const containerHeight = gridChartRef.current.clientHeight;
-
+    const ctx = canvasRef.current.getContext("2d");
     const padding = 20;
-    const drawingWidth = containerWidth - 2 * padding;
-    const drawingHeight = containerHeight - 2 * padding;
+    const drawingWidth = size.width - 2 * padding;
+    const drawingHeight = size.height - 2 * padding;
 
     var numCols = Math.ceil(
       Math.sqrt(totalPoints * (drawingWidth / drawingHeight)),
@@ -69,41 +65,12 @@ export const Pictogram = ({
     numCols = Math.ceil(drawingWidth / (radius * 2));
     numRows = Math.ceil(drawingHeight / (radius * 1.5));
 
-    select("#grid-chart svg").remove();
-
-    var svg = select("#grid-chart")
-      .append("svg")
-      .attr("width", containerWidth)
-      .attr("height", containerHeight);
-
-    // Define a shadow filter
-    var defs = svg.append("defs");
-    var filter = defs
-      .append("filter")
-      .attr("id", "drop-shadow")
-      .attr("height", "130%"); // To accommodate the shadow
-
-    filter
-      .append("feGaussianBlur")
-      .attr("in", "SourceAlpha")
-      .attr("stdDeviation", 0.2) // Adjust for desired shadow strength
-      .attr("result", "blur");
-
-    filter
-      .append("feOffset")
-      .attr("in", "blur")
-      .attr("dx", 2) // Horizontal offset
-      .attr("dy", 2) // Vertical offset
-      .attr("result", "offsetBlur");
-
-    var feMerge = filter.append("feMerge");
-    feMerge.append("feMergeNode").attr("in", "offsetBlur");
-    feMerge.append("feMergeNode").attr("in", "SourceGraphic");
+    ctx.clearRect(0, 0, size.width, size.height);
 
     const numPoints = numCols * numRows;
     let activePointsCount = Math.floor(numPoints * activePointsRatio);
 
-    const data = range(numPoints);
+    const data = Array.from({ length: numPoints }, (_, i) => i);
 
     let activeIndices = new Set();
 
@@ -117,43 +84,53 @@ export const Pictogram = ({
     const patternHeight = numRows * radius * 1.4 - radius / 2;
     const verticalOffset = padding + (drawingHeight - patternHeight) / 2;
 
-    var container = svg
-      .append("g")
-      .attr("transform", `translate(${horizontalOffset}, ${verticalOffset})`);
+    ctx.save();
+    ctx.translate(horizontalOffset, verticalOffset);
 
-    container
-      .selectAll("circle")
-      .data(data)
-      .enter()
-      .append("circle")
-      .attr(
-        "cx",
-        (d) =>
-          (d % numCols) * radius * 2 + (Math.floor(d / numCols) % 2) * radius,
-      )
-      .attr("cy", (d) => Math.floor(d / numCols) * radius * 1.5)
-      .attr("r", radius)
-      .attr("fill", color)
-      .style("stroke", borderColor)
-      .style("filter", "url(#drop-shadow)")
-      .filter((d) => activeIndices.has(d))
-      .transition()
-      .delay(4200)
-      .transition()
-      .duration(500)
-      .attr("transform", "translate(0, -3)") // Move up by 5 units
-      .transition()
-      .duration(500)
-      .attr("fill", activeColor)
-      .duration(500)
-      .attr("transform", "translate(0, 0)");
+    // Add drop shadow effect
+    ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+    ctx.shadowBlur = 5;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
 
-    // Transition active circles to active color after 1 second
-  }, [size.width, sex, data]);
+    data.forEach((d) => {
+      const cx =
+        (d % numCols) * radius * 2 + (Math.floor(d / numCols) % 2) * radius;
+      const cy = Math.floor(d / numCols) * radius * 1.5;
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+
+      // Set the color with a transition
+      ctx.fillStyle =
+        showActiveColor && activeIndices.has(d) ? activeColor : color;
+
+      ctx.strokeStyle = borderColor;
+      ctx.lineWidth = 1;
+      ctx.fill();
+      ctx.stroke();
+    });
+
+    ctx.restore();
+  }, [size.width, sex, data, showActiveColor]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowActiveColor(true);
+    }, 4000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
-    <div id="grid-container" className=" h-full w-full   ">
-      <div id="grid-chart" ref={gridChartRef} className="h-full w-full "></div>
-    </div>
+    <canvas
+      ref={canvasRef}
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+      width={size.width}
+      height={size.height}
+    ></canvas>
   );
 };
