@@ -1,6 +1,6 @@
 import { Pictogram } from "../components/Pictogram.jsx";
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -203,15 +203,23 @@ export const Results = ({
     [sexAgeTuple], // Dependency array - recompute when sexAgeTuple changes
   );
 
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setVisible(true);
+  }, []);
+
   return (
     <div className=" flex h-full w-full flex-1 flex-col items-center ">
       <div
         className={`mt-6 w-full rounded-xl bg-slate-600 bg-opacity-5 p-6 pt-4 text-center text-xl tracking-wide text-slate-100 shadow-lg ring-1 ${
           sex === "Male" ? "ring-slate-400" : "ring-[#75a294] ring-opacity-80"
-        } max-sm:mt-4 max-sm:p-4 max-sm:text-base`}
+        } transition-scale delay-300 duration-[4s] ease-out-expo max-sm:mt-4 max-sm:p-4 max-sm:text-base ${
+          visible ? "scale-100" : "scale-[65%]"
+        }`}
       >
         <span
-          className={`w-2/3 font-extrabold tracking-wider ${
+          className={`block  pb-2 font-extrabold tracking-wider ${
             sex === "Male" ? "text-yellow-500" : "text-[#8cbeac]"
           }`}
         >
@@ -222,7 +230,7 @@ export const Results = ({
             return (
               <div
                 key={index}
-                className="flex rounded-lg  bg-slate-100 bg-opacity-5 p-1 text-center"
+                className={`flex rounded-lg  bg-slate-100 bg-opacity-5 p-1 text-center `}
               >
                 <div className="m-auto ">{c}</div>
               </div>
@@ -320,9 +328,16 @@ export const Results = ({
             ) : sexAgeTuple ? (
               <CountUp
                 end={formatValue(sexAgeTuple[1])}
-                duration="3"
+                duration="4"
                 decimals={formatValue(sexAgeTuple[1]) < 1 ? 4 : 2}
                 delay={0.3}
+                easingFn={(t, b, c, d) => {
+                  const x = t / d;
+                  return x < 0.5
+                    ? ((1 - Math.sqrt(1 - Math.pow(2 * x, 2))) / 2) * c + b // ease-out
+                    : ((Math.sqrt(1 - Math.pow(-2 * x + 2, 2)) + 1) / 2) * c +
+                        b; // ease-in
+                }}
               />
             ) : (
               <CountUp

@@ -138,10 +138,10 @@ export const Pictogram = ({
       .style("filter", "url(#drop-shadow)")
       .filter((d) => activeIndices.has(d))
       .transition()
-      .delay(3200)
+      .delay(4200)
       .transition()
       .duration(500)
-      .attr("transform", "translate(0, -7)") // Move up by 5 units
+      .attr("transform", "translate(0, -3)") // Move up by 5 units
       .transition()
       .duration(500)
       .attr("fill", activeColor)
