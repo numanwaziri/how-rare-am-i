@@ -11,6 +11,7 @@ export const Results = ({
   setData,
   sex,
   age,
+  weight,
   race,
   income,
   height,
@@ -57,8 +58,31 @@ export const Results = ({
     if (!exclude.Married) criteria.push("any marital status");
     else criteria.push("not married");
 
-    if (!exclude.Obese) criteria.push("any weight");
-    else criteria.push("not obese");
+    // if (!exclude["BMI>30"]) criteria.push("any weight");
+    // else criteria.push("Maximum BMI is 30");
+    if (weight) {
+      const weightMin = weight[0];
+      const weightMax = weight[1];
+      const minValue = 29.4835;
+      const maxValue = 256.27968905;
+      let text;
+      if (weightMin === minValue && weightMax !== maxValue) {
+        text = `max weight ${Math.round(weightMax * 2.20462262185)} lbs`;
+      } else if (weightMax === maxValue && weightMin !== minValue) {
+        text = `mix weight ${Math.round(weightMin * 2.20462262185)} lbs`;
+      } else if (weightMin !== minValue && weightMax !== maxValue) {
+        text = `weight between ${Math.round(
+          weightMin * 2.20462262185,
+        )}-${Math.round(weightMax * 2.20462262185)} lbs`;
+      } else {
+        text = "Any weight";
+      }
+
+      criteria.push(text);
+    }
+
+    //
+    //
 
     const allRaces = Object.values(race).every((value) => value);
     const noRaces = Object.values(race).every((value) => !value);

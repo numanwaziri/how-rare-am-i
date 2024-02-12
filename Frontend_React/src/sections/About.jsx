@@ -103,9 +103,13 @@ export const About = ({ sex }) => {
                 However
               </span>
               , this method assumes similarities in impacts across datasets.
-              While aiming for a close approximation of effects between
-              datasets, it acknowledges potential limitations due to
-              complexities and dependencies among variables within these groups.
+              While aiming for a{" "}
+              <span className="rounded-sm bg-slate-400 bg-opacity-20 px-1 font-bold">
+                close approximation
+              </span>{" "}
+              of effects between datasets, it acknowledges potential limitations
+              due to complexities and dependencies among variables within these
+              groups.
             </p>
           </div>
         </CustomAccordion>

@@ -55,8 +55,8 @@ export const HorizontalStack = ({
   }, [isSmallScreen, value]);
 
   return (
-    <div className="flex items-center justify-center gap-5 rounded-xl bg-slate-400 bg-opacity-30 py-3 pl-4 pr-3 shadow-xl max-sm:gap-4 max-sm:py-1 max-sm:pl-3 max-sm:pr-4">
-      <span className="  text-left font-bold  text-slate-50 max-sm:text-sm">
+    <div className="flex flex-1 items-center justify-center gap-5 rounded-xl bg-slate-400 bg-opacity-30 py-3 pl-4 pr-5 shadow-xl max-sm:gap-4 max-sm:py-1 max-sm:pl-3 ">
+      <span className="   text-left font-bold  text-slate-50 max-sm:text-sm">
         {text}
       </span>
       {component}

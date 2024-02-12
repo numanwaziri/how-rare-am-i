@@ -1,5 +1,5 @@
 import { ApiUrl } from "../Config.js";
-const createApiRequest = (sex, height, income, age, race, exclude) => {
+const createApiRequest = (sex, height, income, age, weight, race, exclude) => {
   const params = new URLSearchParams();
 
   // Sex (1 for Male, 2 for Female)
@@ -25,6 +25,10 @@ const createApiRequest = (sex, height, income, age, race, exclude) => {
     params.append("age_max", age[1]);
   }
 
+  // Weight range
+  if (weight[0] !== 29.4835) params.append("weight_min", weight[0]);
+  if (weight[1] !== 256.27968905) params.append("weight_max", weight[1]);
+
   // Race
   const allRaces = Object.values(race).every((value) => value);
   const noRaces = Object.values(race).every((value) => !value);
@@ -38,7 +42,6 @@ const createApiRequest = (sex, height, income, age, race, exclude) => {
   }
 
   // Exclude
-  if (exclude.Obese) params.append("bmi_max", 30);
   if (exclude.Married) params.append("exclude_married", 1);
 
   return `${ApiUrl}?${params.toString()}`;

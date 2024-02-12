@@ -17,6 +17,7 @@ export const CustomSlider = memo(
     style,
     orientation,
     marks,
+    gaps = 1,
   }) => {
     const theme = createTheme({
       breakpoints: {
@@ -109,7 +110,7 @@ export const CustomSlider = memo(
     const handleChange = (event, newValue) => {
       if (Array.isArray(newValue) && newValue.length === 2) {
         // Ensure there's at least 1 unit gap between the slider values
-        const gap = 1; // Minimum gap
+        const gap = gaps; // Minimum gap
         const [newLower, newUpper] = newValue;
 
         if (newUpper - newLower < gap) {

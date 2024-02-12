@@ -13,14 +13,14 @@ export const ImageSlider = memo(({ sex }) => {
           <img
             src={female}
             alt="Your SVG"
-            className="h-[80%] w-[70%]   object-contain"
+            className="h-[80%] w-[70%]  object-contain   max-md:w-[60%]"
           />
         </div>
         <div className="flex  h-full w-1/2 items-center justify-center bg-male-light ">
           <img
             src={male}
             alt="Your SVG"
-            className="h-[80%] w-[70%] object-contain"
+            className="h-[80%] w-[70%] object-contain max-md:w-[60%]"
           />
         </div>
       </div>

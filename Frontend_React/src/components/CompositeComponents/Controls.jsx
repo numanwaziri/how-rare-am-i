@@ -13,6 +13,8 @@ export const Controls = memo(
     setIncome,
     age,
     setAge,
+    weight,
+    setWeight,
     race,
     setRace,
     exclude,
@@ -34,6 +36,30 @@ export const Controls = memo(
       ),
       [race, sex, setRace],
     );
+
+    const WeightSlider = useMemo(() => {
+      return (
+        <CustomSlider
+          sex={sex}
+          sexColors={sexColors}
+          value={weight}
+          setValue={setWeight}
+          min={29.4835}
+          max={256.27968905}
+          step={5 / 2.20462262185}
+          gaps={5 / 2.20462262185}
+          formatLabel={(kg) => {
+            let val;
+            if (kg === 29.4835 || kg === 256.27968905) {
+              val = "Any";
+            } else {
+              val = Math.round(kg * 2.20462262185);
+            }
+            return val;
+          }}
+        />
+      );
+    }, [sex, weight, setWeight]);
 
     const excludeCheckboxGrid = useMemo(
       () => (
@@ -117,9 +143,11 @@ export const Controls = memo(
           value={income}
         />
 
+        <div className="flex gap-2 max-lg:flex-col">
+          <HorizontalStack text="Weight (lbs)" component={WeightSlider} />
+          <HorizontalStack text="Exclude" component={excludeCheckboxGrid} />
+        </div>
         <HorizontalStack text="Race" component={raceCheckboxGrid} />
-
-        <HorizontalStack text="Exclude" component={excludeCheckboxGrid} />
         <div className="sm:h-[6.63rem]">
           <FancyButton sex={sex} fetchData={fetchData} isLoading={isLoading} />
         </div>

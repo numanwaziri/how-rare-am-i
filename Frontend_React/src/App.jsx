@@ -14,6 +14,10 @@ function App({ sex, setSex, sexColors }) {
     val: 152.4,
     isMax: false,
   });
+  const [weight, setWeight] = useSessionStorageState(
+    "weight",
+    [29.4835, 256.27968905],
+  );
   const [income, setIncome] = useSessionStorageState("income", {
     val: 0,
     isMax: false,
@@ -26,7 +30,7 @@ function App({ sex, setSex, sexColors }) {
     Other: false,
   });
   const [exclude, setExclude] = useSessionStorageState("exclude", {
-    Obese: false,
+    // "BMI>30": false,
     Married: true,
   });
   const [isLoading, setIsLoading] = useSessionStorageState("isLoading", false);
@@ -34,7 +38,15 @@ function App({ sex, setSex, sexColors }) {
 
   const fetchData = async () => {
     setIsLoading(true);
-    const URL = createApiRequest(sex, height, income, age, race, exclude);
+    const URL = createApiRequest(
+      sex,
+      height,
+      income,
+      age,
+      weight,
+      race,
+      exclude,
+    );
     try {
       const response = await fetch(URL);
       if (!response.ok) {
@@ -79,6 +91,8 @@ function App({ sex, setSex, sexColors }) {
             setIncome={setIncome}
             age={age}
             setAge={setAge}
+            weight={weight}
+            setWeight={setWeight}
             race={race}
             setRace={setRace}
             exclude={exclude}
@@ -104,6 +118,7 @@ function App({ sex, setSex, sexColors }) {
               height={height}
               income={income}
               age={age}
+              weight={weight}
               race={race}
               exclude={exclude}
             />{" "}

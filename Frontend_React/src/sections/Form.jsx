@@ -17,6 +17,8 @@ export const Form = ({
   setIncome,
   age,
   setAge,
+  weight,
+  setWeight,
   race,
   setRace,
   exclude,
@@ -53,7 +55,7 @@ export const Form = ({
 
   useEffect(() => {
     setFetchedData(null);
-  }, [height, income, age, exclude, race, sex]);
+  }, [height, income, age, exclude, race, sex, weight]);
 
   const cmToFeetInches = useCallback((cm) => {
     if (cm === 121.92) {
@@ -96,7 +98,7 @@ export const Form = ({
         <SexToggle sex={sex} setSex={setSex} setFetchedData={setFetchedData} />
       </div>
       <div className="flex px-2 max-sm:flex-col">
-        <div className="h-[26.6rem] w-1/4 transition-all   max-lg:h-[26.3rem] max-md:h-[29.3rem] max-sm:h-28 max-sm:w-full sm:px-2 sm:pb-3 md:px-4">
+        <div className="h-[26rem] w-1/4 transition-all   max-lg:h-[30.8rem] max-md:h-[33.7rem] max-sm:h-28 max-sm:w-full sm:px-2 sm:pb-3 md:px-4">
           <ImageSlider sex={sex} />
         </div>
         <div className=" flex">
@@ -133,6 +135,8 @@ export const Form = ({
             setIncome={setIncome}
             age={age}
             setAge={setAge}
+            weight={weight}
+            setWeight={setWeight}
             race={race}
             setRace={setRace}
             exclude={exclude}

@@ -14,8 +14,12 @@ const CheckboxGrid = memo(({ items, sex, value, setValue }) => {
     <div className="flex flex-1 items-center justify-center gap-3 transition-all">
       <div
         className={`justify-content-center grid flex-1 ${
-          items.length == 4 ? "grid-cols-4" : "grid-cols-2"
-        } justify-items-center gap-2 rounded-2xl max-md:grid-cols-2 max-sm:gap-1 max-sm:p-1`}
+          items.length == 4
+            ? "grid-cols-4  max-md:grid-cols-2"
+            : items.length == 1
+              ? "grid-cols-1 "
+              : "grid-cols-2"
+        } justify-items-center gap-2 rounded-2xl max-sm:gap-1 max-sm:p-1`}
       >
         {items.map((item, index) => (
           <CustomCheckbox
@@ -36,7 +40,7 @@ const CheckboxGrid = memo(({ items, sex, value, setValue }) => {
             : "-ml-7 scale-0 max-sm:-ml-10"
         }`}
       >
-        {items.length === 2 ? "Both" : "Any"}
+        {items.length === 4 ? "Any" : ""}
       </span>
     </div>
   );
