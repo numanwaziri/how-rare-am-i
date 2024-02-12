@@ -216,8 +216,8 @@ export const Results = ({
           sex === "Male" ? "ring-slate-400" : "ring-[#75a294] ring-opacity-80"
         }    ease-out-expo max-sm:mt-4 max-sm:p-4 max-sm:text-base ${
           visible
-            ? "scale-100 opacity-100  delay-300 duration-[4s]"
-            : "scale-[80%] opacity-80 delay-300 duration-[4s]"
+            ? "scale-100 opacity-100   duration-[4s]"
+            : "scale-[80%] opacity-80  duration-[4s]"
         }`}
       >
         <span
@@ -354,9 +354,9 @@ export const Results = ({
           </span>
         </div>
         <div
-          className={` transition-scale mx-auto -mt-6 h-full w-full   sm:-mt-3 ${
+          className={` transition-scale mx-auto -mt-5 mb-2 h-full w-full   sm:-mt-3 ${
             visible
-              ? "scale-100 delay-[3.6s] duration-[1.5s]"
+              ? "scale-[102%] delay-[3.6s] duration-[1.5s]"
               : "scale-95 delay-[3.6s] duration-[1.5s]"
           } `}
         >

@@ -59,9 +59,10 @@ function App({ sex, setSex, sexColors }) {
       <section className=" flex min-h-screen flex-col justify-center   px-3 transition-all ease-custom-bezier  sm:px-4 md:px-6 lg:px-8 ">
         <div className="mt-4">
           <InfoAlert title="Disclaimer">
-            This is a lighthearted project to showcase my frontend and backend
-            skills creatively, there are no negative connotations associated
-            with it.
+            This is a light-hearted project, intended to creatively showcase my
+            skills in frontend and backend web development within the context of
+            data analytics. There are no negative connotations associated with
+            it.
           </InfoAlert>
         </div>
         <div className="title">

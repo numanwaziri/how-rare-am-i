@@ -14,7 +14,7 @@ function InfoAlert({ title, children }) {
   return !dismissed ? (
     <div
       id="alert-additional-content-5"
-      className="rounded-lg border  border-gray-600 bg-slate-950 bg-opacity-40 p-4"
+      className="rounded-lg border  border-gray-600 bg-slate-950 bg-opacity-40 p-4 sm:px-8 sm:pt-8"
       role="alert"
     >
       <div className="flex items-center">
