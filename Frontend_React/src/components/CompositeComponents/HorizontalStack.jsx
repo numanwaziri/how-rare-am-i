@@ -55,7 +55,7 @@ export const HorizontalStack = ({
   }, [isSmallScreen, value]);
 
   return (
-    <div className="flex flex-1 items-center justify-center gap-5 rounded-xl bg-slate-400 bg-opacity-30 py-3 pl-4 pr-5 shadow-xl max-sm:gap-4 max-sm:py-1 max-sm:pl-3 ">
+    <div className="flex flex-1 items-center justify-center gap-5 rounded-xl bg-slate-400 bg-opacity-30 py-3 pl-4 pr-8 shadow-xl max-sm:gap-4 max-sm:py-1 max-sm:pl-3 ">
       <span className="   text-left font-bold  text-slate-50 max-sm:text-sm">
         {text}
       </span>
@@ -63,7 +63,7 @@ export const HorizontalStack = ({
       {checkbox && (
         <>
           {memoizedCheckbox}
-          <span className="max-sm:-ml-6.5 -ml-6 text-sm text-slate-50 max-sm:-mr-2">
+          <span className="-ml-7 -mr-4 text-sm text-slate-50 max-sm:-ml-6 max-sm:-mr-4">
             Max
           </span>
         </>

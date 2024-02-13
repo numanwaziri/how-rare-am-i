@@ -27,7 +27,7 @@ export const Header = memo(({ sex }) => {
             sex === "Male" ? "rubber-male " : "rubber-female"
           }`}
         >
-          In odds we trust. In love we hope.
+          Numbers hum, Insights drum
         </span>
       </div>
     </header>

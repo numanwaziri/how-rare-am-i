@@ -11,18 +11,18 @@ function App({ sex, setSex, sexColors }) {
   const resultSection = useRef(null);
 
   const [height, setHeight] = useSessionStorageState("height", {
-    val: 152.4,
+    val: 160.02,
     isMax: false,
   });
   const [weight, setWeight] = useSessionStorageState(
     "weight",
-    [29.4835, 256.27968905],
+    [29.4835, 201.849],
   );
   const [income, setIncome] = useSessionStorageState("income", {
     val: 0,
     isMax: false,
   });
-  const [age, setAge] = useSessionStorageState("age", [18, 37]);
+  const [age, setAge] = useSessionStorageState("age", [22, 44]);
   const [race, setRace] = useSessionStorageState("race", {
     White: false,
     Black: false,

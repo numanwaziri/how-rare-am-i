@@ -5,6 +5,7 @@ import { CustomSlider } from "../CustomSlider.jsx";
 import { HorizontalStack } from "./HorizontalStack.jsx";
 import CheckboxGrid from "../CheckBoxGrid/CheckboxGrid.jsx";
 import { FancyButton } from "../FancyButton.jsx";
+import CustomCheckbox from "../CheckBoxGrid/CustomCheckbox.jsx";
 export const Controls = memo(
   ({
     sex,
@@ -136,7 +137,30 @@ export const Controls = memo(
         />
 
         <HorizontalStack
-          text={income.isMax ? "Max Income" : "Min Income"}
+          text={
+            <>
+              {" "}
+              <span
+                className={`absolute inline-block transition-all ${
+                  income.isMax
+                    ? "rotate-0 opacity-100"
+                    : "-rotate-180 opacity-0"
+                }`}
+              >
+                Max
+              </span>
+              <span
+                className={`  inline-block transition-all ${
+                  !income.isMax
+                    ? "rotate-0 opacity-100"
+                    : "rotate-180 opacity-0"
+                }`}
+              >
+                Min
+              </span>
+              Income
+            </>
+          }
           component={memoizedIncomeSlider}
           checkbox={true}
           setCheckboxValue={setIncome}
@@ -144,8 +168,23 @@ export const Controls = memo(
         />
 
         <div className="flex gap-2 max-lg:flex-col">
-          <HorizontalStack text="Weight (lbs)" component={WeightSlider} />
-          <HorizontalStack text="Exclude" component={excludeCheckboxGrid} />
+          <div className="flex-1 lg:w-3/5">
+            <HorizontalStack text="Weight (lbs)" component={WeightSlider} />
+          </div>
+          <div className="rounded-xl bg-slate-400 bg-opacity-30 px-3 py-2 max-sm:h-14  lg:w-2/5 lg:px-3.5">
+            <CustomCheckbox
+              sex={sex}
+              dataName="Exclude Married"
+              checked={exclude["Married"]}
+              onChange={(isChecked) =>
+                setExclude({
+                  ...exclude,
+                  Married: isChecked,
+                })
+              }
+            />
+            {/*<HorizontalStack component={excludeCheckboxGrid} />*/}
+          </div>
         </div>
         <HorizontalStack text="Race" component={raceCheckboxGrid} />
         <div className="sm:h-[6.63rem]">

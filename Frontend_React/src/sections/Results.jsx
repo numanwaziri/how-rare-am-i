@@ -75,7 +75,7 @@ export const Results = ({
           weightMin * 2.20462262185,
         )}-${Math.round(weightMax * 2.20462262185)} lbs`;
       } else {
-        text = "Any weight";
+        text = "any weight";
       }
 
       criteria.push(text);

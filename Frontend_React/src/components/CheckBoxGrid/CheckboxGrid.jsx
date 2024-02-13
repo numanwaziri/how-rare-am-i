@@ -34,10 +34,10 @@ const CheckboxGrid = memo(({ items, sex, value, setValue }) => {
       </div>
 
       <span
-        className={`texte -ml-1 rounded text-left text-xs font-bold text-slate-100 transition-all  ${
-          areAllChecked || (areNoneChecked && items.length !== 2)
-            ? "scale-100 max-sm:-ml-1"
-            : "-ml-7 scale-0 max-sm:-ml-10"
+        className={`texte -ml-1 rounded text-left text-xs font-bold text-slate-100 transition-all duration-100  ${
+          areAllChecked || areNoneChecked
+            ? "-mr-5 scale-100 opacity-100 max-sm:-ml-2"
+            : "-ml-12 scale-0 opacity-0 max-sm:-ml-14"
         }`}
       >
         {items.length === 4 ? "Any" : ""}

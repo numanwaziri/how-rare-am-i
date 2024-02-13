@@ -70,8 +70,8 @@ export const Form = ({
 
   const memoizedCheckbox = useMemo(() => {
     const style = {
-      marginTop: !isSmallScreen ? "0.5rem" : "0rem",
-      marginLeft: isSmallScreen ? "0.5rem" : "0rem",
+      marginTop: !isSmallScreen ? "0.4rem" : "0rem",
+      marginLeft: isSmallScreen ? "0.2rem" : "0rem",
     };
     const heightMinMaxToggle = (e) => {
       setHeight({ ...height, isMax: e.target.checked });
@@ -104,7 +104,26 @@ export const Form = ({
         <div className=" flex">
           <div className=" flex flex-1 items-center justify-center transition-all max-sm:py-3 sm:flex-col ">
             <span className=" text-center font-bold text-slate-100 max-sm:mr-4  max-sm:text-sm sm:mb-6  sm:mt-2">
-              {height.isMax ? "Max" : "Min"} <br />
+              <span
+                className={`absolute inline-block transition-all ${
+                  height.isMax
+                    ? "rotate-0 opacity-100"
+                    : "-rotate-180 opacity-0"
+                }`}
+              >
+                Max
+              </span>
+              <span
+                className={`  inline-block transition-all ${
+                  !height.isMax
+                    ? "rotate-0 opacity-100"
+                    : "rotate-180 opacity-0"
+                }`}
+              >
+                Min
+              </span>
+              <br />
+              {/*{height.isMax ? "s" : "Min"} <br />*/}
               Height
             </span>
 
@@ -123,7 +142,9 @@ export const Form = ({
             />
 
             {memoizedCheckbox}
-            <span className="text-sm text-slate-100 sm:-mt-2">Max</span>
+            <span className="text-sm text-slate-100 max-sm:-ml-2 max-sm:mr-1.5 sm:-mt-2.5 sm:mb-1">
+              Max
+            </span>
           </div>
         </div>
 
