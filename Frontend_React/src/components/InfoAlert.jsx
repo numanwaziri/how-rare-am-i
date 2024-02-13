@@ -34,7 +34,7 @@ function InfoAlert({ title, children }) {
       <div className="flex">
         <button
           type="button"
-          className="ml-auto w-[6.5rem] rounded-lg border border-gray-600 bg-transparent px-3 py-1.5 text-center text-xs font-medium tracking-widest text-gray-300 ring-1  ring-slate-100 hover:scale-100 hover:bg-gray-600 hover:text-white focus:outline-none focus:ring-4  focus:ring-gray-800"
+          className="ml-auto h-8 w-[6.5rem] rounded-lg border border-gray-600 bg-transparent px-3 py-1.5 text-center text-xs font-medium tracking-widest text-gray-300 ring-1  ring-slate-100 hover:scale-100 hover:bg-gray-600 hover:text-white focus:outline-none focus:ring-4  focus:ring-gray-800"
           onClick={handleDismiss}
           aria-label="Close"
         >

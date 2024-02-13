@@ -10,7 +10,7 @@ export const SexToggle = memo(({ sex, setSex }) => {
     //
     <div className="relative inset-0 flex items-center justify-center  shadow-xl">
       <div
-        className={`tabs  relative flex w-full rounded-2xl  bg-slate-100 p-1 ring-1 ring-opacity-60 ${
+        className={`tabs  relative flex w-full rounded-xl  bg-slate-100 p-1 ring-1 ring-opacity-60 ${
           sex === "Male" ? "ring-male-dark" : "ring-female-dark"
         }`}
       >
@@ -18,8 +18,8 @@ export const SexToggle = memo(({ sex, setSex }) => {
           className={`  absolute flex h-10 w-[calc(50%-0.25rem)]  transition duration-300 ease-custom-bezier  max-lg:h-9  max-sm:h-8
             ${
               sex === "Male"
-                ? `w-[calc(50%-0.5rem)]  rounded-l-xl bg-male-light`
-                : `translate-x-full rounded-r-xl bg-female-light`
+                ? `w-[calc(50%-0.5rem)]  rounded-l-lg bg-male-light`
+                : `translate-x-full rounded-r-lg bg-female-light`
             }
           `}
         ></span>

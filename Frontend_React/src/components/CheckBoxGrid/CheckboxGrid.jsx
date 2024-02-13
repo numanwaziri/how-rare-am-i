@@ -13,19 +13,20 @@ const CheckboxGrid = memo(({ items, sex, value, setValue }) => {
   return (
     <div className="flex flex-1 items-center justify-center gap-3 transition-all">
       <div
-        className={`justify-content-center grid flex-1 ${
+        className={`grid   flex-1  ${
           items.length == 4
             ? "grid-cols-4  max-md:grid-cols-2"
             : items.length == 1
               ? "grid-cols-1 "
               : "grid-cols-2"
-        } justify-items-center gap-2 rounded-2xl max-sm:gap-1 max-sm:p-1`}
+        } justify-center gap-2  max-sm:gap-1 max-sm:p-1`}
       >
-        {items.map((item, index) => (
+        {items.map((item) => (
           <CustomCheckbox
             key={item}
             idx={item}
             dataName={item}
+            height="h-11 max-lg:h-10  max-sm:h-8"
             sex={sex}
             checked={value[item]}
             onChange={(isChecked) => handleCheckboxChange(item, isChecked)}

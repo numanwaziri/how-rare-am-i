@@ -62,17 +62,22 @@ export const Controls = memo(
       );
     }, [sex, weight, setWeight]);
 
-    const excludeCheckboxGrid = useMemo(
-      () => (
-        <CheckboxGrid
-          items={Object.keys(exclude)}
+    const memoizedExcludeCheckbox = useMemo(() => {
+      return (
+        <CustomCheckbox
           sex={sex}
-          value={exclude}
-          setValue={setExclude}
+          dataName="Exclude Married"
+          checked={exclude["Married"]}
+          height="lg:h-full h-11  "
+          onChange={(isChecked) =>
+            setExclude({
+              ...exclude,
+              Married: isChecked,
+            })
+          }
         />
-      ),
-      [exclude, sex, setExclude],
-    );
+      );
+    }, [sex, exclude, setExclude]);
 
     const incomeSliderStyle = useMemo(
       () => ({
@@ -171,19 +176,8 @@ export const Controls = memo(
           <div className="flex-1 lg:w-3/5">
             <HorizontalStack text="Weight (lbs)" component={WeightSlider} />
           </div>
-          <div className="rounded-xl bg-slate-400 bg-opacity-30 px-3 py-2 max-sm:h-14  lg:w-2/5 lg:px-3.5">
-            <CustomCheckbox
-              sex={sex}
-              dataName="Exclude Married"
-              checked={exclude["Married"]}
-              onChange={(isChecked) =>
-                setExclude({
-                  ...exclude,
-                  Married: isChecked,
-                })
-              }
-            />
-            {/*<HorizontalStack component={excludeCheckboxGrid} />*/}
+          <div className="rounded-xl bg-slate-400 bg-opacity-30 px-2.5 py-2 max-sm:h-14 max-sm:px-2  lg:w-2/5 lg:px-2.5">
+            {memoizedExcludeCheckbox}
           </div>
         </div>
         <HorizontalStack text="Race" component={raceCheckboxGrid} />
