@@ -67,11 +67,11 @@ export const Results = ({
       const maxValue = 256.27968905;
       let text;
       if (weightMin === minValue && weightMax !== maxValue) {
-        text = `max weight ${Math.round(weightMax * 2.20462262185)} lbs`;
+        text = `at most weigh ${Math.round(weightMax * 2.20462262185)} lbs`;
       } else if (weightMax === maxValue && weightMin !== minValue) {
-        text = `mix weight ${Math.round(weightMin * 2.20462262185)} lbs`;
+        text = `at least weigh ${Math.round(weightMin * 2.20462262185)} lbs`;
       } else if (weightMin !== minValue && weightMax !== maxValue) {
-        text = `weight between ${Math.round(
+        text = `weigh between ${Math.round(
           weightMin * 2.20462262185,
         )}-${Math.round(weightMax * 2.20462262185)} lbs`;
       } else {
@@ -380,8 +380,8 @@ export const Results = ({
         <div
           className={` transition-scale mx-auto -mt-5 mb-2 h-full w-full   sm:-mt-3 ${
             visible
-              ? "scale-[102%] delay-[3.6s] duration-[1.5s]"
-              : "scale-95 delay-[3.6s] duration-[1.5s]"
+              ? "scale-[101.6%] delay-[3.2s] duration-[1.5s]"
+              : "scale-95 delay-[3.2s] duration-[1.5s]"
           } `}
         >
           {formatValue(sexAgeTuple?.[1]) == 0 ||
@@ -408,27 +408,32 @@ export const Results = ({
                   <div className="flex-grow border-t border-gray-400"></div>
                 </div>
                 <div className=" flex justify-center gap-4 rounded-xl  bg-opacity-70 p-2 max-md:flex-col max-sm:p-1">
-                  {myMessages.map((msg) => {
+                  {myMessages.map((msg, idx) => {
                     return (
-                      <h2
-                        className={`flex-1 rounded-xl bg-slate-400 bg-opacity-5 p-4 text-center text-lg tracking-wide text-slate-100 shadow-lg ring-1 max-sm:text-base ${
+                      <div
+                        key={idx}
+                        className={`flex flex-1 gap-4 rounded-xl bg-slate-400 bg-opacity-5 px-7 py-4 text-center text-base text-slate-100 shadow-lg ring-1   max-sm:px-4 max-sm:text-base md:flex-col md:gap-0 lg:flex-row lg:gap-2 ${
                           sex === "Male"
                             ? "ring-slate-400"
                             : "ring-[#75a294] ring-opacity-80"
                         } md:w-1/4`}
                       >
-                        <span
-                          className={`rounded-lg text-2xl font-bold ${
-                            sex === "Male"
-                              ? "text-yellow-500"
-                              : "text-[#8cbeac]"
-                          }`}
-                        >
-                          {msg.split("%")[0]}%
-                        </span>
+                        <div className="flex w-full flex-1 items-center max-sm:ml-1 md:mt-1.5 md:justify-center lg:mt-0">
+                          <span
+                            className={`rounded-lg  text-[1.8rem] font-bold max-sm:text-2xl ${
+                              sex === "Male"
+                                ? "text-yellow-500"
+                                : "text-[#8cbeac]"
+                            }`}
+                          >
+                            {msg.split("%")[0]}%
+                          </span>
+                        </div>
                         <br />
-                        {msg.split("%")[1]}
-                      </h2>
+                        <span className="flex h-full w-full items-center  justify-center  md:-mt-3 lg:-mt-0">
+                          {msg.split("%")[1]}
+                        </span>
+                      </div>
                     );
                   })}
                 </div>
@@ -439,7 +444,7 @@ export const Results = ({
           <a
             href="#"
             onClick={handleNewSearch}
-            className={`group relative inline-block inline-flex flex-1 items-center justify-start overflow-hidden rounded-xl max-sm:h-11 ${
+            className={`group relative inline-flex flex-1 items-center justify-start overflow-hidden rounded-xl max-sm:h-11 ${
               sex === "Male" ? "bg-male-light" : "bg-female-light"
             } px-5 py-3 font-medium transition-all hover:bg-slate-100`}
           >
@@ -457,7 +462,7 @@ export const Results = ({
           </a>
           <Link
             to="/about"
-            className={`group relative inline-block inline-flex flex-1 items-center justify-start overflow-hidden rounded-xl max-sm:h-11 ${
+            className={`group relative inline-flex flex-1 items-center justify-start overflow-hidden rounded-xl max-sm:h-11 ${
               sex === "Male" ? "bg-male-light" : "bg-female-light"
             } px-5 py-3 font-medium transition-all hover:bg-slate-100`}
           >

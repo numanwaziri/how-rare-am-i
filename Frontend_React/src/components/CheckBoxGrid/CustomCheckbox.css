@@ -22,7 +22,7 @@ font-size: 1rem;
     /*font-family:  "sans-serif",'system-ui';*/
     font-weight: 600;
     color: #3f3f3f;
-    z-index: 99;
+    z-index: 30;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 

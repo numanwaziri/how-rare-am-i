@@ -11,10 +11,12 @@ function InfoAlert({ title, children }) {
     setDismissed(true);
   };
 
-  return !dismissed ? (
+  return (
     <div
       id="alert-additional-content-5"
-      className="rounded-lg border  border-gray-600 bg-slate-950 bg-opacity-40 p-4 sm:px-8 sm:pt-8"
+      className={`origin-top overflow-hidden rounded-lg border transition-all ${
+        dismissed ? "-mb-12 h-0 scale-y-0" : "-mb-0 h-full scale-y-100"
+      } border-gray-600 bg-slate-950 bg-opacity-40 p-4 sm:px-8 sm:pt-8`}
       role="alert"
     >
       <div className="flex items-center">
@@ -42,6 +44,6 @@ function InfoAlert({ title, children }) {
         </button>
       </div>
     </div>
-  ) : null;
+  );
 }
 export default InfoAlert;

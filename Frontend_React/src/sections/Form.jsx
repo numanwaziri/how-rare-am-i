@@ -6,6 +6,8 @@ import { createTheme } from "@mui/material/styles";
 import { Controls } from "../components/CompositeComponents/Controls.jsx";
 import { useCallback, useEffect, useMemo } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import { Link } from "react-router-dom";
 
 export const Form = ({
   sex,
@@ -91,9 +93,28 @@ export const Form = ({
   return (
     <article className=" overflow-hidden   pb-6  ">
       <div className=" px-3 pb-6 max-sm:pt-6  sm:px-4 md:px-6">
-        <p className="mb-2 font-bold text-slate-100 transition-all max-md:text-sm md:text-lg lg:text-xl">
-          Select the gender of your ideal partner
-        </p>
+        <div className="flex items-center justify-between gap-1">
+          <p className="mb-2 ml-1 font-bold text-slate-100 transition-all max-md:text-sm md:text-lg lg:text-xl">
+            {isSmallScreen
+              ? "Select gender"
+              : "Select the gender of your ideal partner"}
+          </p>
+          <Link to="/about">
+            <div className="mb-1 flex items-center gap-0.5 max-sm:mb-2">
+              <HelpOutlineIcon
+                className="text-slate-100"
+                sx={
+                  isSmallScreen
+                    ? { fontSize: "1.1rem" }
+                    : { fontSize: "1.34rem" }
+                }
+              />
+              <span className="font-medium text-slate-100 max-md:text-xs md:text-base lg:text-lg">
+                FAQ
+              </span>
+            </div>
+          </Link>
+        </div>
 
         <SexToggle sex={sex} setSex={setSex} setFetchedData={setFetchedData} />
       </div>

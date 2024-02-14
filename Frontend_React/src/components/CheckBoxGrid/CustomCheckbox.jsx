@@ -14,7 +14,7 @@ const CustomCheckbox = memo(
           checked={checked}
           onChange={handleChange}
           data-name={`${dataName}${checked ? "" : ""}`}
-          className={`checkbox ${height}  max-sm:text-sm ${
+          className={`checkbox ${height}  transition-all duration-75 max-sm:text-sm ${
             sex === "Male" ? "bg-male-dark" : "bg-female-dark"
           }`}
         />{" "}

@@ -65,10 +65,11 @@ export const Controls = memo(
     const memoizedExcludeCheckbox = useMemo(() => {
       return (
         <CustomCheckbox
+          idx={1}
           sex={sex}
           dataName="Exclude Married"
           checked={exclude["Married"]}
-          height="lg:h-full h-11  "
+          height="lg:h-full h-11 "
           onChange={(isChecked) =>
             setExclude({
               ...exclude,
@@ -140,7 +141,6 @@ export const Controls = memo(
             />
           }
         />
-
         <HorizontalStack
           text={
             <>
@@ -176,7 +176,7 @@ export const Controls = memo(
           <div className="flex-1 lg:w-3/5">
             <HorizontalStack text="Weight (lbs)" component={WeightSlider} />
           </div>
-          <div className="rounded-xl bg-slate-400 bg-opacity-30 px-2.5 py-2 max-sm:h-14 max-sm:px-2  lg:w-2/5 lg:px-2.5">
+          <div className="rounded-xl bg-slate-400 bg-opacity-30 p-[0.43rem] max-sm:h-14   lg:w-2/5 lg:p-[0.42rem]">
             {memoizedExcludeCheckbox}
           </div>
         </div>

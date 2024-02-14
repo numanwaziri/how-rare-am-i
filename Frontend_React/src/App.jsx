@@ -2,12 +2,16 @@ import { useState, useRef, useEffect } from "react";
 import { Header } from "./sections/Header.jsx";
 import { Form } from "./sections/Form.jsx";
 import { Results } from "./sections/Results.jsx";
-
+import { motion, useIsPresent } from "framer-motion";
 import useSessionStorageState from "./hooks/useSessionStorageState.js";
 import createApiRequest from "./utils/apiUtils.js";
 import InfoAlert from "./components/InfoAlert.jsx";
-
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 function App({ sex, setSex, sexColors }) {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isPresent = useIsPresent();
   const resultSection = useRef(null);
 
   const [height, setHeight] = useSessionStorageState("height", {
@@ -138,6 +142,27 @@ function App({ sex, setSex, sexColors }) {
           </div>
         </section>
       )}
+      <motion.div
+        initial={isSmallScreen ? { scaleY: 1 } : { scaleX: 1 }}
+        animate={
+          isSmallScreen
+            ? { scaleY: 0, transition: { duration: 0.4, ease: "circOut" } }
+            : { scaleX: 0, transition: { duration: 0.4, ease: "circOut" } }
+        }
+        exit={
+          isSmallScreen
+            ? { scaleY: 1, transition: { duration: 0.4, ease: "circIn" } }
+            : { scaleX: 1, transition: { duration: 0.4, ease: "circIn" } }
+        }
+        style={
+          isSmallScreen
+            ? { originY: isPresent ? 0 : 1 }
+            : { originX: isPresent ? 1 : 0 }
+        }
+        className={`fixed bottom-0 left-0 right-0 top-0 z-40  ${
+          sex === "Male" ? "bg-male-light" : "bg-female-light"
+        }`}
+      />
     </div>
   );
 }

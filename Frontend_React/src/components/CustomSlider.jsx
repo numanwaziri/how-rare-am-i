@@ -60,11 +60,11 @@ export const CustomSlider = memo(
       },
       "& .MuiSlider-valueLabel": {
         lineHeight: 1.2,
-        fontSize: isSmallScreen ? "14px" : "16px",
+        fontSize: isSmallScreen ? "15px" : "16px",
         background: "unset",
         padding: "0",
-        width: isSmallScreen ? 36 : 45,
-        height: isSmallScreen ? 36 : 45,
+        width: isSmallScreen ? 42 : 45,
+        height: isSmallScreen ? 42 : 45,
         borderRadius: "50% 50% 50% 0",
         backgroundColor:
           sex === "Male" ? sexColors.maleLight : sexColors.femaleLight,
@@ -81,17 +81,13 @@ export const CustomSlider = memo(
           transform:
             (orientation === "vertical") & !isSmallScreen
               ? "translate(148%, -120%) rotate(-45deg) scale(1)"
-              : (orientation === "vertical") & isSmallScreen
-                ? "translate(80%, -50%) rotate(45deg) scale(1)"
-                : "translate(51%, -58%) rotate(-20deg) scale(1)",
+              : "translate(51%, -58%) rotate(-20deg) scale(1)",
         },
         "& > *": {
           transform:
-            (orientation === "vertical") & isSmallScreen
-              ? "rotate(-45deg)"
-              : (orientation === "vertical") & !isSmallScreen
-                ? "rotate(45deg)"
-                : "rotate(20deg)",
+            (orientation === "vertical") & !isSmallScreen
+              ? "rotate(45deg)"
+              : "rotate(20deg)",
         },
       },
     };

@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { CustomAccordion } from "../components/CustomAccordion.jsx";
+import { motion, useIsPresent } from "framer-motion";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 export const About = ({ sex }) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isPresent = useIsPresent();
   return (
     <div className="flex min-h-screen justify-center py-8 max-sm:py-6 sm:items-center">
       <div className=" w-4/5 max-sm:w-11/12">
@@ -156,6 +163,27 @@ export const About = ({ sex }) => {
           Numan@2023
         </span>
       </div>
+      <motion.div
+        initial={isSmallScreen ? { scaleY: 1 } : { scaleX: 1 }}
+        animate={
+          isSmallScreen
+            ? { scaleY: 0, transition: { duration: 0.4, ease: "circOut" } }
+            : { scaleX: 0, transition: { duration: 0.4, ease: "circOut" } }
+        }
+        exit={
+          isSmallScreen
+            ? { scaleY: 1, transition: { duration: 0.4, ease: "circIn" } }
+            : { scaleX: 1, transition: { duration: 0.4, ease: "circIn" } }
+        }
+        style={
+          isSmallScreen
+            ? { originY: isPresent ? 0 : 1 }
+            : { originX: isPresent ? 1 : 0 }
+        }
+        className={`fixed bottom-0 left-0 right-0 top-0 z-40 ${
+          sex === "Male" ? "bg-male-light" : "bg-female-light"
+        }`}
+      />
     </div>
   );
 };

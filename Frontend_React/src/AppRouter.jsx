@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { About } from "./sections/About.jsx";
 import App from "./App.jsx";
 import { Fireflies } from "./components/Fireflies/Fireflies.jsx";
 import { useEffect, useMemo } from "react";
 import useSessionStorageState from "./hooks/useSessionStorageState.js";
+import { AnimatePresence } from "framer-motion";
 export const AppRouter = () => {
   const sexColors = useMemo(
     () => ({
@@ -22,18 +23,20 @@ export const AppRouter = () => {
       sex === "Male" ? sexColors.maleDark : sexColors.femaleDark;
   }, [sex]);
 
+  const location = useLocation();
+
   return (
-    <Router>
-      <div className="mx-auto max-w-screen-xl ">
-        <Fireflies />
-        <Routes>
+    <div className="mx-auto max-w-screen-xl ">
+      <Fireflies />
+      <AnimatePresence mode="wait" initial={false}>
+        <Routes location={location} key={location.pathname}>
           <Route
-            path="/"
+            path="/*"
             element={<App sex={sex} setSex={setSex} sexColors={sexColors} />}
           />
           <Route path="/about" element={<About sex={sex} />} />
         </Routes>
-      </div>
-    </Router>
+      </AnimatePresence>
+    </div>
   );
 };
