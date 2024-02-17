@@ -99,7 +99,7 @@ export const Form = ({
               ? "Select gender"
               : "Select the gender of your ideal partner"}
           </p>
-          <Link to="/about">
+          <Link to="/analyze">
             <div className="mb-1 flex items-center gap-0.5 max-sm:mb-2">
               <HelpOutlineIcon
                 className="text-slate-100"

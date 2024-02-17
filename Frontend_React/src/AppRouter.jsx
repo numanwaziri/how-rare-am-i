@@ -5,6 +5,7 @@ import { Fireflies } from "./components/Fireflies/Fireflies.jsx";
 import { useEffect, useMemo } from "react";
 import useSessionStorageState from "./hooks/useSessionStorageState.js";
 import { AnimatePresence } from "framer-motion";
+import { Analyze } from "./sections/Analyze.jsx";
 export const AppRouter = () => {
   const sexColors = useMemo(
     () => ({
@@ -15,6 +16,10 @@ export const AppRouter = () => {
     }),
     [],
   );
+  const [income, setIncome] = useSessionStorageState("income", {
+    val: 0,
+    isMax: false,
+  });
   // Get the sex value from session storage if it exists, default to 'Male'
   const [sex, setSex] = useSessionStorageState("sex", "Male");
   useEffect(() => {
@@ -32,9 +37,21 @@ export const AppRouter = () => {
         <Routes location={location} key={location.pathname}>
           <Route
             path="/*"
-            element={<App sex={sex} setSex={setSex} sexColors={sexColors} />}
+            element={
+              <App
+                sex={sex}
+                setSex={setSex}
+                sexColors={sexColors}
+                income={income}
+                setIncome={setIncome}
+              />
+            }
           />
           <Route path="/about" element={<About sex={sex} />} />
+          <Route
+            path="/analyze"
+            element={<Analyze sex={sex} income={income} />}
+          />
         </Routes>
       </AnimatePresence>
     </div>

@@ -8,7 +8,11 @@ import createApiRequest from "./utils/apiUtils.js";
 import InfoAlert from "./components/InfoAlert.jsx";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-function App({ sex, setSex, sexColors }) {
+import LineChart from "./components/LineChart.jsx";
+import { incomePercentile as incomePercentile } from "./components/Data.js";
+import { LinePlot } from "./components/LinePlot.jsx";
+
+function App({ sex, setSex, sexColors, income, setIncome }) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isPresent = useIsPresent();
@@ -22,10 +26,7 @@ function App({ sex, setSex, sexColors }) {
     "weight",
     [29.4835, 201.849],
   );
-  const [income, setIncome] = useSessionStorageState("income", {
-    val: 0,
-    isMax: false,
-  });
+
   const [age, setAge] = useSessionStorageState("age", [22, 44]);
   const [race, setRace] = useSessionStorageState("race", {
     White: false,
@@ -73,6 +74,16 @@ function App({ sex, setSex, sexColors }) {
   return (
     <div className=" ">
       <section className=" flex min-h-screen flex-col justify-center   px-3 transition-all ease-custom-bezier  sm:px-4 md:px-6 lg:px-8 ">
+        <div className="flex flex-col items-center justify-center gap-5 max-md:my-20 max-sm:my-44 md:flex-row">
+          <div className="bg-slate-9150  ml-2 flex h-96 w-full items-center justify-center rounded-md  max-sm:h-72 md:h-[29rem]   ">
+            <LinePlot
+              data={incomePercentile}
+              sex={sex}
+              incomee={income.val}
+              isMax={income.isMax}
+            />
+          </div>
+        </div>
         <div className="mt-4">
           <InfoAlert title="Disclaimer">
             This is a light-hearted project, intended to creatively showcase my
@@ -142,6 +153,7 @@ function App({ sex, setSex, sexColors }) {
           </div>
         </section>
       )}
+
       <motion.div
         initial={isSmallScreen ? { scaleY: 1 } : { scaleX: 1 }}
         animate={

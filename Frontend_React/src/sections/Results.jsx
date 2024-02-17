@@ -256,9 +256,9 @@ export const Results = ({
             return (
               <div
                 key={index}
-                className={`flex rounded-lg  bg-slate-100 bg-opacity-5 p-1 text-center `}
+                className={`flex items-center justify-center rounded-lg bg-slate-100 bg-opacity-5 p-1 text-center text-base`}
               >
-                <div className="m-auto ">{c}</div>
+                {c}
               </div>
             );
           })}
@@ -412,7 +412,7 @@ export const Results = ({
                     return (
                       <div
                         key={idx}
-                        className={`flex flex-1 gap-4 rounded-xl bg-slate-400 bg-opacity-5 px-7 py-4 text-center text-base text-slate-100 shadow-lg ring-1   max-sm:px-4 max-sm:text-base md:flex-col md:gap-0 lg:flex-row lg:gap-2 ${
+                        className={`flex flex-1 gap-4 rounded-xl bg-slate-400 bg-opacity-5 px-7 py-4 text-center text-slate-100 shadow-lg ring-1   max-sm:px-4  md:flex-col md:gap-0 lg:flex-row lg:gap-2 ${
                           sex === "Male"
                             ? "ring-slate-400"
                             : "ring-[#75a294] ring-opacity-80"
