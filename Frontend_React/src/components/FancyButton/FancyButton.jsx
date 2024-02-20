@@ -1,10 +1,11 @@
 import { memo } from "react";
+import "./FancyButton.css";
 export const FancyButton = memo(({ sex, fetchData, isLoading }) => {
   return (
     <button
       disabled={isLoading}
       onClick={fetchData}
-      className={`flex  h-full items-center justify-center transition-all ease-custom-bezier ${
+      className={`custom-button flex h-full items-center justify-center transition-all ease-custom-bezier ${
         sex === "Male" ? "bg-gradient-male-btn" : "bg-gradient-female-btn"
       }`}
     >

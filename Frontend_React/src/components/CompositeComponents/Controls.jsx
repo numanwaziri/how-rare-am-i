@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import { CustomSlider } from "../CustomSlider.jsx";
 import { HorizontalStack } from "./HorizontalStack.jsx";
 import CheckboxGrid from "../CheckBoxGrid/CheckboxGrid.jsx";
-import { FancyButton } from "../FancyButton.jsx";
+import { FancyButton } from "../FancyButton/FancyButton.jsx";
 import CustomCheckbox from "../CheckBoxGrid/CustomCheckbox.jsx";
 export const Controls = memo(
   ({

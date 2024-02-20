@@ -74,16 +74,6 @@ function App({ sex, setSex, sexColors, income, setIncome }) {
   return (
     <div className=" ">
       <section className=" flex min-h-screen flex-col justify-center   px-3 transition-all ease-custom-bezier  sm:px-4 md:px-6 lg:px-8 ">
-        <div className="flex flex-col items-center justify-center gap-5 max-md:my-20 max-sm:my-44 md:flex-row">
-          <div className="bg-slate-9150  ml-2 flex h-96 w-full items-center justify-center rounded-md  max-sm:h-72 md:h-[29rem]   ">
-            <LinePlot
-              data={incomePercentile}
-              sex={sex}
-              incomee={income.val}
-              isMax={income.isMax}
-            />
-          </div>
-        </div>
         <div className="mt-4">
           <InfoAlert title="Disclaimer">
             This is a light-hearted project, intended to creatively showcase my

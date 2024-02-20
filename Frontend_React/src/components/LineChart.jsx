@@ -36,7 +36,6 @@ const LineChart = ({ data, sex, incomee, isMax }) => {
       svgRef.current.parentElement.clientHeight -
       parseFloat(getComputedStyle(svgRef.current.parentElement).paddingTop) -
       parseFloat(getComputedStyle(svgRef.current.parentElement).paddingBottom);
-    console.log(containerWidth, containerHeight);
     const width = containerWidth - margin.left - margin.right;
     const height = containerHeight - margin.top - margin.bottom;
 
@@ -187,7 +186,7 @@ const LineChart = ({ data, sex, incomee, isMax }) => {
             : "end",
       ) // Set text anchor to middle
 
-      .style("fill", sex === "Male" ? "#b6eeff" : "#b9ffe7")
+      .style("fill", "#EE4B2B")
       .style("font-size", width < 600 ? "0.64rem" : "0.82rem")
       .style("letter-spacing", "0.07em")
       .text(
