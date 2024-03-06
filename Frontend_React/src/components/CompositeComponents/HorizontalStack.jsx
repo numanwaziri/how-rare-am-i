@@ -9,6 +9,7 @@ export const HorizontalStack = ({
   checkbox,
   value,
   setCheckboxValue,
+  radius = "rounded-xl",
 }) => {
   const checkboxStyle = {
     color: "rgb(241 245 249)", // Default color
@@ -39,34 +40,31 @@ export const HorizontalStack = ({
       setCheckboxValue({ ...value, isMax: e.target.checked });
     };
 
-    const style = {
-      marginLeft: isSmallScreen ? "-10px" : "-20px",
-    };
-
     return (
       <Checkbox
         id="checkboxIncome"
         checked={value?.isMax}
         onChange={handleChange}
         sx={checkboxStyle}
-        style={style}
       />
     );
   }, [isSmallScreen, value]);
 
   return (
-    <div className="flex flex-1 items-center justify-center gap-5 rounded-xl bg-slate-400 bg-opacity-30 py-3 pl-4 pr-8 shadow-xl max-sm:gap-4 max-sm:py-1 max-sm:pl-3 ">
-      <span className="   text-left font-bold  text-slate-50 max-sm:text-sm">
+    <div
+      className={`flex flex-1 items-center justify-center  ${radius} bg-slate-400 bg-opacity-30 py-3 pl-4 pr-8 shadow-xl  max-sm:py-1 max-sm:pl-3 `}
+    >
+      <span className=" mr-5 text-left  font-bold text-slate-50  max-sm:mr-3 max-sm:text-sm">
         {text}
       </span>
       {component}
       {checkbox && (
-        <>
+        <div className="-mr-7 ml-1 flex h-8 w-8 flex-col items-center gap-0  max-sm:ml-4 sm:-mr-6 sm:gap-1">
           {memoizedCheckbox}
-          <span className="-ml-7 -mr-4 text-sm text-slate-50 max-sm:-ml-6 max-sm:-mr-4">
+          <span className=" -translate-y-[2.86rem] text-sm  text-slate-50  max-sm:text-xs sm:-translate-y-14">
             Max
           </span>
-        </>
+        </div>
       )}
     </div>
   );

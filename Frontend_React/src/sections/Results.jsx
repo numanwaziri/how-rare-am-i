@@ -354,7 +354,7 @@ export const Results = ({
             ) : sexAgeTuple ? (
               <CountUp
                 end={formatValue(sexAgeTuple[1])}
-                duration="4"
+                duration={2}
                 decimals={formatValue(sexAgeTuple[1]) < 1 ? 4 : 2}
                 easingFn={(t, b, c, d) => {
                   const x = t / d;
@@ -367,7 +367,7 @@ export const Results = ({
             ) : (
               <CountUp
                 end={formatValue(sexTuple[1])}
-                duration="4"
+                duration={2}
                 decimals={formatValue(sexTuple[1]) < 1 ? 4 : 2}
               />
             )}
@@ -380,8 +380,8 @@ export const Results = ({
         <div
           className={` transition-scale mx-auto -mt-5 mb-2 h-full w-full   sm:-mt-3 ${
             visible
-              ? "scale-[101.6%] delay-[3.2s] duration-[1.5s]"
-              : "scale-95 delay-[3.2s] duration-[1.5s]"
+              ? "scale-[101.6%] delay-[1.2s] duration-[1.5s]"
+              : "scale-95 delay-[1.2s] duration-[1.5s]"
           } `}
         >
           {formatValue(sexAgeTuple?.[1]) == 0 ||

@@ -1,5 +1,5 @@
 import { memo } from "react";
-
+import React from "react";
 export const SexToggle = memo(({ sex, setSex }) => {
   const options = ["Male", "Female"]; // options array
 
@@ -25,9 +25,8 @@ export const SexToggle = memo(({ sex, setSex }) => {
         ></span>
         {options.map((opt) => {
           return (
-            <>
+            <React.Fragment key={opt}>
               <input
-                key={opt}
                 type="radio"
                 id={opt}
                 name="tabs"
@@ -48,7 +47,7 @@ export const SexToggle = memo(({ sex, setSex }) => {
               >
                 {opt}
               </label>
-            </>
+            </React.Fragment>
           );
         })}
       </div>

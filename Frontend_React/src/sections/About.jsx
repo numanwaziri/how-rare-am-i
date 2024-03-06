@@ -144,11 +144,11 @@ export const About = ({ sex }) => {
 
         <Link
           to="/"
-          className={`group relative mt-2 inline-flex  items-center justify-start overflow-hidden rounded-sm ${
+          className={`group relative mt-2 inline-flex  items-center justify-start overflow-hidden rounded-xl ${
             sex === "Male" ? "bg-male-light" : "bg-female-light"
           } px-5 py-3 font-medium transition-all hover:bg-slate-100`}
         >
-          <span className="absolute inset-0 rounded-sm border-0 border-slate-100 transition-all duration-100 ease-linear group-hover:border-[25px]"></span>
+          <span className="absolute inset-0 rounded-xl border-0 border-slate-100 transition-all duration-100 ease-linear group-hover:border-[25px]"></span>
           <span
             className={`relative w-full text-center font-semibold text-slate-100 transition-colors duration-200 ease-in-out ${
               sex === "Male"

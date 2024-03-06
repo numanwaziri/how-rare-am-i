@@ -99,7 +99,7 @@ export const Form = ({
               ? "Select gender"
               : "Select the gender of your ideal partner"}
           </p>
-          <Link to="/analyze">
+          <Link to="/about">
             <div className="mb-1 flex items-center gap-0.5 max-sm:mb-2">
               <HelpOutlineIcon
                 className="text-slate-100"
@@ -124,7 +124,7 @@ export const Form = ({
         </div>
         <div className=" flex">
           <div className=" flex flex-1 items-center justify-center transition-all max-sm:py-3 sm:flex-col ">
-            <span className=" text-center font-bold text-slate-100 max-sm:mr-4  max-sm:text-sm sm:mb-6  sm:mt-2">
+            <span className="  text-center font-bold text-slate-100 max-sm:mr-4  max-sm:text-sm sm:mb-6  sm:mt-2">
               <span
                 className={`absolute inline-block transition-all ${
                   height.isMax
@@ -163,7 +163,7 @@ export const Form = ({
             />
 
             {memoizedCheckbox}
-            <span className="text-sm text-slate-100 max-sm:-ml-2 max-sm:mr-1.5 sm:-mt-2.5 sm:mb-1">
+            <span className="text-sm text-slate-100 max-sm:-ml-2 max-sm:mr-1.5 max-sm:text-xs sm:-mt-2.5 sm:mb-1">
               Max
             </span>
           </div>

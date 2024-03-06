@@ -2,11 +2,15 @@ import {
   incomePercentile_female as data2,
   incomePercentile_male as data1,
 } from "./Data.js";
-import React, { useEffect, useRef, useState } from "react";
-import * as d3 from "d3";
-
-import { ZoomIn, ZoomOut } from "@mui/icons-material";
+import { useEffect, useRef, useState } from "react";
 import { SexToggle2 } from "./SexToggle/SexToggle2.jsx";
+import { transition } from "d3-transition";
+import { scaleLinear } from "d3-scale";
+import { axisBottom, axisLeft } from "d3-axis";
+import { extent, min, max } from "d3-array";
+import { line } from "d3-shape";
+import { format } from "d3-format";
+import { select } from "d3-selection";
 
 export const LinePlot = ({ sex, incomee, isMax }) => {
   const [isZoomed, setIsZoomed] = useState(false);
@@ -14,8 +18,10 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
   const zoomData = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const svgRef = useRef();
-  const margin = { top: 40, right: 18, bottom: 20, left: 31 };
-  const [currentData, setCurrentData] = useState(data1); // Initialize with data1
+  const margin = { top: 40, right: 26, bottom: 20, left: 31 };
+  const [currentData, setCurrentData] = useState(
+    sex === "Male" ? data1 : data2,
+  ); // Initialize with data1
 
   const width = dimensions.width - margin.left - margin.right;
   const height = dimensions.height - margin.top - margin.bottom;
@@ -32,20 +38,19 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
             : "0.6rem";
 
   useEffect(() => {
-    const svg = d3
-      .select(svgRef.current)
+    const svg = select(svgRef.current)
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const x = d3.scaleLinear().range([0, width]);
-    const xAxis = d3.axisBottom().scale(x);
+    const x = scaleLinear().range([0, width]);
+    const xAxis = axisBottom().scale(x);
     svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .attr("class", "myXaxis")
-      .style("color", sex === "Male" ? "#eef7ff" : "#d7ffee");
+      .style("color", "#eef7ff");
 
     const xLabel = svg
       .append("text")
@@ -61,16 +66,13 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
       )
       .style("text-anchor", "end")
       .style("font-style", "italic")
-      .style("fill", sex === "Male" ? "#eef7ff" : "#d7ffee")
+      .style("fill", "#eef7ff")
       .text("Percentile")
       .attr("filter", "url(#glow4)");
 
-    const y = d3.scaleLinear().range([height, 0]);
-    const yAxis = d3.axisLeft().scale(y).tickSize(-width).tickSizeOuter(0);
-    svg
-      .append("g")
-      .attr("class", "myYaxis")
-      .style("color", sex === "Male" ? "#eef7ff" : "#d7ffee");
+    const y = scaleLinear().range([height, 0]);
+    const yAxis = axisLeft().scale(y).tickSize(-width).tickSizeOuter(0);
+    svg.append("g").attr("class", "myYaxis").style("color", "#eef7ff");
 
     const yLabel = svg
       .append("text")
@@ -83,7 +85,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
       .style("font-style", "italic")
       .style("text-anchor", "start")
 
-      .style("fill", sex === "Male" ? "#eef7ff" : "#d7ffee") // Color for y-axis label
+      .style("fill", "#eef7ff") // Color for y-axis label
       .text("Income $")
       .attr("filter", "url(#glow4)");
 
@@ -151,7 +153,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
         .selectAll(".arrow-line")
         .transition()
         .duration(1200) // Adjust duration as needed
-        .attr("transform", "translate(-1200,0)") // Adjust translation based on your layout
+        .attr("transform", "translate(-1200,-100)") // Adjust translation based on your layout
         .remove(); // Remove after transition
 
       svg
@@ -165,7 +167,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
 
       // Update Axes ...................................................................................................
       // X Axis
-      const [minValueX, maxValueX] = d3.extent(
+      const [minValueX, maxValueX] = extent(
         zoomedData.map((d) => d.income_percentile),
       );
       x.domain([minValueX, maxValueX]);
@@ -174,9 +176,8 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
         .transition()
         .duration(800)
         .call(
-          d3
-            .axisBottom(x)
-            .tickFormat(d3.format(".1%"))
+          axisBottom(x)
+            .tickFormat(format(".1%"))
             .ticks(5)
             .tickValues([
               income_percentile - rangeLength / 2,
@@ -193,8 +194,8 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
 
       // Y Axis
       y.domain([
-        d3.min(zoomedData, (d) => d.income),
-        d3.max(zoomedData, (d) => d.income) + 1000,
+        min(zoomedData, (d) => d.income),
+        max(zoomedData, (d) => d.income) + 1000,
       ]);
       const yAxisGroup = svg.selectAll(".myYaxis");
       yAxisGroup
@@ -204,9 +205,9 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
           yAxis
             .ticks(3)
             .tickValues([
-              d3.min(zoomedData, (d) => d.income),
+              min(zoomedData, (d) => d.income),
               income,
-              d3.max(zoomedData, (d) => d.income),
+              max(zoomedData, (d) => d.income),
             ]),
         );
 
@@ -237,13 +238,12 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
         .transition()
         .duration(800)
         .attr("fill", "none")
-        .attr("stroke", sex === "Male" ? "#b6eeff" : "#b9ffe7")
-        .attr("stroke-width", width < 600 ? 3.8 : 4.5)
+        .attr("stroke", "#b6eeff")
+        .attr("stroke-width", width < 600 ? 4 : 6)
         .attr("filter", "url(#glow)") // Apply the glow filter here
         .attr(
           "d",
-          d3
-            .line()
+          line()
             .x((d) => x(d.income_percentile))
             .y((d) => y(d.income)),
         );
@@ -270,7 +270,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
     };
     const updateChart = (data) => {
       // Misc.........................................................................................................
-      const [minValueX, maxValueX] = d3.extent(
+      const [minValueX, maxValueX] = extent(
         data.map((d) => d.income_percentile),
       );
 
@@ -297,7 +297,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
         .duration(800)
         .call(
           xAxis
-            .tickFormat(d3.format(".1%"))
+            .tickFormat(format(".1%"))
             .ticks(width < 600 ? 2 : 5)
             .tickValues(
               width < 600
@@ -316,7 +316,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
         .style("font-size", tickFontSize);
 
       // Update y Axis and Label .........................................................................
-      y.domain([0, d3.max(data, (d) => d.income) + 1000]);
+      y.domain([0, max(data, (d) => d.income) + 1000]);
 
       let tickValues = [100000, 200000, 300000, 400000, 500000];
       const closestIndex = tickValues.reduce(
@@ -336,7 +336,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
           yAxis
             .ticks(6)
             .tickValues(tickValues)
-            .tickFormat(d3.format(income < 100000 ? ".2s" : ".3s")),
+            .tickFormat(format(income < 100000 ? ".2s" : ".3s")),
         );
       yAxisGroup.select("path").attr("stroke", "none");
       yAxisGroup.selectAll("line").style("opacity", "12%");
@@ -354,13 +354,12 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
         .transition()
         .duration(800)
         .attr("fill", "none")
-        .attr("stroke", sex === "Male" ? "#b6eeff" : "#b9ffe7")
-        .attr("stroke-width", width < 600 ? 3.5 : 6)
+        .attr("stroke", "#b6eeff")
+        .attr("stroke-width", width < 600 ? 4 : 6)
         .attr("filter", "url(#glow)") // Apply the glow filter here
         .attr(
           "d",
-          d3
-            .line()
+          line()
             .x((d) => x(d.income_percentile))
             .y((d) => y(d.income)),
         );
@@ -406,7 +405,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
                         : income_percentile < 0.9
                           ? 30
                           : income_percentile < 0.96
-                            ? 15
+                            ? 50
                             : income_percentile < 0.98
                               ? 5
                               : -5;
@@ -551,15 +550,17 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
   };
 
   return (
-    <div className="-mt-5 h-full w-full flex-1">
+    <div className="h-full w-full flex-1">
       <div className=" mr-4 flex items-center justify-end gap-5">
-        <SexToggle2 func1={() => handleUpdate()} func2={() => handleUpdate()} />
+        <SexToggle2
+          func1={() => handleUpdate()}
+          func2={() => handleUpdate()}
+          sex={sex}
+        />
         <div className="flex flex-col items-center justify-center gap-1 ">
           <span className="text-xs text-slate-100">Zoom</span>
           <button
-            className={`flex h-6 w-6 items-center justify-center rounded-full shadow-lg ring-1 focus:outline-none ${
-              sex === "Male" ? "ring-[#b6eeff]" : "ring-[#b9ffe7]"
-            }`}
+            className={`flex h-6 w-6 items-center justify-center rounded-full shadow-lg ring-1 ring-[#b6eeff] focus:outline-none`}
             onClick={handleZoomToggle}
           >
             <span className="text-2xl text-slate-100">

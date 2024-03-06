@@ -6,6 +6,9 @@ import { HorizontalStack } from "./HorizontalStack.jsx";
 import CheckboxGrid from "../CheckBoxGrid/CheckboxGrid.jsx";
 import { FancyButton } from "../FancyButton/FancyButton.jsx";
 import CustomCheckbox from "../CheckBoxGrid/CustomCheckbox.jsx";
+import TroubleshootIcon from "@mui/icons-material/Troubleshoot";
+import ClearIcon from "@mui/icons-material/Clear";
+import { Link } from "react-router-dom";
 export const Controls = memo(
   ({
     sex,
@@ -141,36 +144,67 @@ export const Controls = memo(
             />
           }
         />
-        <HorizontalStack
-          text={
-            <>
-              {" "}
-              <span
-                className={`absolute inline-block transition-all ${
-                  income.isMax
-                    ? "rotate-0 opacity-100"
-                    : "-rotate-180 opacity-0"
-                }`}
-              >
-                Max
-              </span>
-              <span
-                className={`  inline-block transition-all ${
-                  !income.isMax
-                    ? "rotate-0 opacity-100"
-                    : "rotate-180 opacity-0"
-                }`}
-              >
-                Min
-              </span>
-              Income
-            </>
-          }
-          component={memoizedIncomeSlider}
-          checkbox={true}
-          setCheckboxValue={setIncome}
-          value={income}
-        />
+        <div className="flex flex-row items-center justify-center">
+          <HorizontalStack
+            text={
+              <>
+                {" "}
+                <span
+                  className={`absolute inline-block transition-all ${
+                    income.isMax
+                      ? "rotate-0 opacity-100"
+                      : "-rotate-180 opacity-0"
+                  }`}
+                >
+                  Max
+                </span>
+                <span
+                  className={`  inline-block transition-all ${
+                    !income.isMax
+                      ? "rotate-0 opacity-100"
+                      : "rotate-180 opacity-0"
+                  }`}
+                >
+                  Min
+                </span>
+                Income
+              </>
+            }
+            component={memoizedIncomeSlider}
+            checkbox={true}
+            setCheckboxValue={setIncome}
+            value={income}
+            radius="rounded-l-xl"
+          />
+
+          <Link to="/analyze">
+            <button
+              disabled={income.val === 0}
+              type="button"
+              className={`h-[4.5rem] w-[4.5rem]  rounded-r-xl ${
+                sex === "Male"
+                  ? "bg-gradient-male-btn"
+                  : "bg-gradient-female-btn"
+              } text-center text-base  font-bold text-white  shadow-lg transition-all ease-custom-bezier  hover:scale-105 hover:shadow-2xl  active:scale-95   max-sm:h-[3.25rem] max-sm:w-[2.75rem]`}
+            >
+              {income.val === 0 ? (
+                <ClearIcon
+                  sx={{
+                    fontSize: isSmallScreen ? "180%" : "250%",
+                    filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))", // Add the glow effect
+                  }}
+                />
+              ) : (
+                <TroubleshootIcon
+                  sx={{
+                    fontSize: isSmallScreen ? "180%" : "220%",
+                    filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))", // Add the glow effect
+                  }}
+                />
+              )}
+            </button>
+          </Link>
+        </div>
 
         <div className="flex gap-2 max-lg:flex-col">
           <div className="flex-1 lg:w-3/5">

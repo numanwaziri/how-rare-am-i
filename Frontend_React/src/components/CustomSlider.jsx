@@ -42,8 +42,8 @@ export const CustomSlider = memo(
         transition: "all 0.3s cubic-bezier(.81,.04,.41,1.27)",
       },
       "& .MuiSlider-thumb": {
-        height: isSmallScreen ? "23px" : "27px",
-        width: isSmallScreen ? "23px" : "27px",
+        height: isSmallScreen ? "22px" : "27px",
+        width: isSmallScreen ? "22px" : "27px",
         backgroundColor: "rgb(241 245 249)",
         border: isSmallScreen
           ? "4px solid currentColor"

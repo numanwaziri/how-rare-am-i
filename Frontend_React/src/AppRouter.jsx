@@ -17,7 +17,7 @@ export const AppRouter = () => {
     [],
   );
   const [income, setIncome] = useSessionStorageState("income", {
-    val: 0,
+    val: 30000,
     isMax: false,
   });
   // Get the sex value from session storage if it exists, default to 'Male'

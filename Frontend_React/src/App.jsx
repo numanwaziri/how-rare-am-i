@@ -8,9 +8,6 @@ import createApiRequest from "./utils/apiUtils.js";
 import InfoAlert from "./components/InfoAlert.jsx";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import LineChart from "./components/LineChart.jsx";
-import { incomePercentile as incomePercentile } from "./components/Data.js";
-import { LinePlot } from "./components/LinePlot.jsx";
 
 function App({ sex, setSex, sexColors, income, setIncome }) {
   const theme = useTheme();

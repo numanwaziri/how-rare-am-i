@@ -117,7 +117,7 @@ export const Pictogram = ({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowActiveColor(true);
-    }, 4000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
