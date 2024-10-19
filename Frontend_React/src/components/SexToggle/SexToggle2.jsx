@@ -39,7 +39,7 @@ export const SexToggle2 = ({ func1, func2, sex }) => {
                   : " bg-slate-800 bg-opacity-40"
             }`}
           >
-            <FemaleIcon />
+            <MaleIcon />
           </span>
           <span
             className={`flex h-7 w-9 items-center justify-center rounded-r text-slate-100 max-sm:h-[24px] max-sm:w-[2.35rem] ${
@@ -50,7 +50,7 @@ export const SexToggle2 = ({ func1, func2, sex }) => {
                   : " bg-slate-800 bg-opacity-40"
             }`}
           >
-            <MaleIcon />
+            <FemaleIcon />
           </span>
         </div>
       </label>
