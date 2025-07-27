@@ -152,14 +152,14 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
       svg
         .selectAll(".arrow-line")
         .transition()
-        .duration(1200) // Adjust duration as needed
-        .attr("transform", "translate(-1200,-100)") // Adjust translation based on your layout
+        .duration(200) // Adjust duration as needed
+        .attr("transform", "translate(-1200,-100)") // Adjust translation based on  layout
         .remove(); // Remove after transition
 
       svg
         .selectAll(".arrow-text")
         .transition()
-        .duration(500) // Adjust duration as needed
+        .duration(300) // Adjust duration as needed
         .attr("x", -100) // Move to the left
         .style("opacity", 0) // Set opacity to 0
         .remove(); // Remove after transition
@@ -370,7 +370,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
         .enter()
         .append("circle")
         .attr("class", "glowing-point")
-        .attr("r", width < 600 ? 6 : 9)
+        .attr("r", width < 600 ? 6 : 7)
         .attr("fill", "#ffd54f")
         .attr("filter", "url(#glow7)") // Apply the glow filter here
         .merge(glowingPoint)
@@ -482,7 +482,7 @@ export const LinePlot = ({ sex, incomee, isMax }) => {
           income === 0
             ? `${
                 Math.round(income_percentile * 10000) / 100
-              }% of ${gender} with no income`
+              }% of ${gender} with no positive income`
             : isMax
               ? `${Math.round(income_percentile * 10000) / 100}% ${gender}  ≤ ${
                   income / 1000

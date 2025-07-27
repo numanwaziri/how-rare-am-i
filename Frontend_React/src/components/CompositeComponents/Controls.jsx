@@ -138,7 +138,7 @@ export const Controls = memo(
               sexColors={sexColors}
               value={age}
               setValue={setAge}
-              min={18}
+              min={15}
               max={80}
               step={1}
             />
@@ -179,7 +179,7 @@ export const Controls = memo(
 
           <Link to="/analyze">
             <button
-              disabled={income.val === 0}
+              // disabled={income.val === 0}
               type="button"
               className={`h-[4.5rem] w-[4.5rem]  rounded-r-xl ${
                 sex === "Male"
@@ -187,21 +187,14 @@ export const Controls = memo(
                   : "bg-gradient-female-btn"
               } text-center text-base  font-bold text-white  shadow-lg transition-all ease-custom-bezier  hover:scale-105 hover:shadow-2xl  active:scale-95   max-sm:h-[3.25rem] max-sm:w-[2.75rem]`}
             >
-              {income.val === 0 ? (
-                <ClearIcon
-                  sx={{
-                    fontSize: isSmallScreen ? "180%" : "250%",
-                    filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))", // Add the glow effect
-                  }}
-                />
-              ) : (
+
                 <TroubleshootIcon
                   sx={{
                     fontSize: isSmallScreen ? "180%" : "220%",
                     filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))", // Add the glow effect
                   }}
                 />
-              )}
+
             </button>
           </Link>
         </div>

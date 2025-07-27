@@ -136,8 +136,8 @@ export const Results = ({
     const genderText = sex !== "None" ? ` ${sex}s` : "";
     const ageText =
       age !== "None"
-        ? `, between the ages of ${age[0]} and ${age[1]}, in US`
-        : ", over the age of 18 in US";
+        ? `, between the ages of ${age[0]} and ${age[1]}, in the U.S.`
+        : ", in the U.S.";
     const demographicText = genderText
       ? `${genderText}${ageText}`
       : `${ageText}`;
@@ -182,7 +182,7 @@ export const Results = ({
       switch (key) {
         case "proportion_in_sex":
           messages.push(
-            `${formatValue(value)}% of all ${sex}s over the age of 18 in US`,
+            `${formatValue(value)}% of all ${sex}s in the U.S.`,
           );
           continue;
         case "proportion_in_sex_race":
@@ -479,9 +479,7 @@ export const Results = ({
           </Link>
         </div>
         <div className="h-4"></div>
-        <span className="block w-full pb-3 pr-3 text-right text-xs text-slate-300">
-          Numan@2023
-        </span>
+
       </div>
     </div>
   );

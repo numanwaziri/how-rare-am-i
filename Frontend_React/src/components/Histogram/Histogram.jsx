@@ -59,8 +59,8 @@ export const Histogram = ({
     svgElement.append("g").style("color", "#eef7ff").call(yAxisGenerator);
 
     // this is the population with income over 500k which is not in the bins (calculated during preprocessing step)
-    const over500kIncomeMale = 927599;
-    const over500kIncomeFemale = 417585;
+    const over500kIncomeMale = 1059096.07;
+    const over500kIncomeFemale = 397306.76;
     const highlightedPopulationMinIncome = (
       sex === "Males" ? income_bins_male_5k : income_bins_female_5k
     ).reduce(

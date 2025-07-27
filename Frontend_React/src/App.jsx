@@ -70,15 +70,15 @@ function App({ sex, setSex, sexColors, income, setIncome }) {
 
   return (
     <div className=" ">
-      <section className=" flex min-h-screen flex-col justify-center   px-3 transition-all ease-custom-bezier  sm:px-4 md:px-6 lg:px-8 ">
-        <div className="mt-4">
-          <InfoAlert title="Disclaimer">
-            This is a light-hearted project, intended to creatively showcase my
-            skills in frontend and backend web development within the context of
-            data analytics. There are no negative connotations associated with
-            it.
-          </InfoAlert>
-        </div>
+      <section className=" flex min-h-screen flex-col justify-center   px-3 transition-all ease-custom-bezier mt-4  sm:px-4 md:px-6 lg:px-8 ">
+        {/*<div className="mt-4">*/}
+        {/*  <InfoAlert title="Disclaimer">*/}
+        {/*    This is a light-hearted project, intended to creatively showcase my*/}
+        {/*    skills in frontend and backend web development within the context of*/}
+        {/*    data analytics. There are no negative connotations associated with*/}
+        {/*    it.*/}
+        {/*  </InfoAlert>*/}
+        {/*</div>*/}
         <div className="title">
           <Header sex={sex} />
         </div>

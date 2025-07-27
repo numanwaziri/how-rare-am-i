@@ -27,12 +27,12 @@ export const Analyze = ({ sex, income }) => {
               {income.val / 1000}k {income.isMax ? "Maximum" : "Minimum"}
             </span>
           </p>
-          <p className="text-left text-lg font-[500] max-md:text-sm">
-            <span className="rounded-lg bg-slate-950 bg-opacity-30 px-2 py-1 text-yellow-400">
+          <p className="text-left text-base font-[500] max-md:text-sm">
+            <span className="rounded-lg bg-slate-950 bg-opacity-20 px-2 py-1 text-yellow-400">
               NOTE:
             </span>{" "}
-            Statistics focus solely on adults aged 18 and above; income data
-            excludes those under 18.
+            Income data is collected for individuals aged 15 and older, so all income statistics are limited to this age group.
+
           </p>
         </div>
         <div className="mb-2 flex flex-col items-center justify-center gap-6 rounded-xl bg-slate-950 bg-opacity-30 px-3 py-5 sm:p-5 md:flex-row md:gap-4 md:p-8  lg:mt-6 ">

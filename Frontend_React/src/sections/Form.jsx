@@ -95,9 +95,9 @@ export const Form = ({
       <div className=" px-3 pb-6 max-sm:pt-6  sm:px-4 md:px-6">
         <div className="flex items-center justify-between gap-1">
           <p className="mb-2 ml-1 font-bold text-slate-100 transition-all max-md:text-sm md:text-lg lg:text-xl">
-            {isSmallScreen
-              ? "Select gender"
-              : "Select the gender of your ideal partner"}
+
+            Select your gender assigned at birth
+
           </p>
           <Link to="/about">
             <div className="mb-1 flex items-center gap-0.5 max-sm:mb-2">

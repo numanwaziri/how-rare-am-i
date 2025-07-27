@@ -20,7 +20,7 @@ const createApiRequest = (sex, height, income, age, weight, race, exclude) => {
   }
 
   // Age range
-  if (age[0] !== 18 || age[1] !== 85) {
+  if (age[0] !== 15 || age[1] !== 85) {
     params.append("age_min", age[0]);
     params.append("age_max", age[1]);
   }

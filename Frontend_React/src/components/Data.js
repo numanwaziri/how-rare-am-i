@@ -1,573 +1,2580 @@
 export const incomePercentile_female = [
-  { income: 0, income_percentile: 0.1083 },
-  { income: 5000, income_percentile: 0.1894 },
-  { income: 10000, income_percentile: 0.2379 },
-  { income: 15000, income_percentile: 0.3177 },
-  { income: 20000, income_percentile: 0.3889 },
-  { income: 25000, income_percentile: 0.4534 },
-  { income: 30000, income_percentile: 0.5146 },
-  { income: 35000, income_percentile: 0.5692 },
-  { income: 40000, income_percentile: 0.6164 },
-  { income: 45000, income_percentile: 0.6569 },
-  { income: 50000, income_percentile: 0.6985 },
-  { income: 55000, income_percentile: 0.7363 },
-  { income: 60000, income_percentile: 0.7662 },
-  { income: 65000, income_percentile: 0.795 },
-  { income: 70000, income_percentile: 0.8163 },
-  { income: 75000, income_percentile: 0.8378 },
-  { income: 80000, income_percentile: 0.8573 },
-  { income: 85000, income_percentile: 0.8739 },
-  { income: 90000, income_percentile: 0.8869 },
-  { income: 95000, income_percentile: 0.8982 },
-  { income: 100000, income_percentile: 0.9087 },
-  { income: 105000, income_percentile: 0.921 },
-  { income: 110000, income_percentile: 0.9272 },
-  { income: 115000, income_percentile: 0.9335 },
-  { income: 120000, income_percentile: 0.9387 },
-  { income: 125000, income_percentile: 0.9446 },
-  { income: 130000, income_percentile: 0.9487 },
-  { income: 135000, income_percentile: 0.9532 },
-  { income: 140000, income_percentile: 0.9566 },
-  { income: 145000, income_percentile: 0.9602 },
-  { income: 150000, income_percentile: 0.9629 },
-  { income: 155000, income_percentile: 0.9678 },
-  { income: 160000, income_percentile: 0.9703 },
-  { income: 165000, income_percentile: 0.9725 },
-  { income: 170000, income_percentile: 0.9737 },
-  { income: 175000, income_percentile: 0.9754 },
-  { income: 180000, income_percentile: 0.9769 },
-  { income: 185000, income_percentile: 0.9785 },
-  { income: 190000, income_percentile: 0.9796 },
-  { income: 195000, income_percentile: 0.9805 },
-  { income: 200000, income_percentile: 0.9813 },
-  { income: 205000, income_percentile: 0.9831 },
-  { income: 210000, income_percentile: 0.9836 },
-  { income: 215000, income_percentile: 0.9843 },
-  { income: 220000, income_percentile: 0.985 },
-  { income: 225000, income_percentile: 0.9859 },
-  { income: 230000, income_percentile: 0.9865 },
-  { income: 235000, income_percentile: 0.9871 },
-  { income: 240000, income_percentile: 0.9875 },
-  { income: 245000, income_percentile: 0.9881 },
-  { income: 250000, income_percentile: 0.9884 },
-  { income: 255000, income_percentile: 0.9897 },
-  { income: 260000, income_percentile: 0.99 },
-  { income: 265000, income_percentile: 0.9902 },
-  { income: 270000, income_percentile: 0.9907 },
-  { income: 275000, income_percentile: 0.9909 },
-  { income: 280000, income_percentile: 0.9911 },
-  { income: 285000, income_percentile: 0.9913 },
-  { income: 290000, income_percentile: 0.9914 },
-  { income: 295000, income_percentile: 0.9916 },
-  { income: 300000, income_percentile: 0.992 },
-  { income: 305000, income_percentile: 0.9926 },
-  { income: 310000, income_percentile: 0.9927 },
-  { income: 315000, income_percentile: 0.993 },
-  { income: 320000, income_percentile: 0.9933 },
-  { income: 325000, income_percentile: 0.9934 },
-  { income: 330000, income_percentile: 0.9936 },
-  { income: 335000, income_percentile: 0.9938 },
-  { income: 340000, income_percentile: 0.9938 },
-  { income: 345000, income_percentile: 0.9939 },
-  { income: 350000, income_percentile: 0.994 },
-  { income: 355000, income_percentile: 0.9943 },
-  { income: 360000, income_percentile: 0.9944 },
-  { income: 365000, income_percentile: 0.9945 },
-  { income: 370000, income_percentile: 0.9948 },
-  { income: 375000, income_percentile: 0.9949 },
-  { income: 380000, income_percentile: 0.995 },
-  { income: 385000, income_percentile: 0.9951 },
-  { income: 390000, income_percentile: 0.9951 },
-  { income: 400000, income_percentile: 0.9952 },
-  { income: 400000, income_percentile: 0.9952 },
-  { income: 405000, income_percentile: 0.9956 },
-  { income: 410000, income_percentile: 0.9957 },
-  { income: 415000, income_percentile: 0.9958 },
-  { income: 420000, income_percentile: 0.9958 },
-  { income: 425000, income_percentile: 0.996 },
-  { income: 430000, income_percentile: 0.9961 },
-  { income: 435000, income_percentile: 0.9962 },
-  { income: 440000, income_percentile: 0.9962 },
-  { income: 445000, income_percentile: 0.9963 },
-  { income: 450000, income_percentile: 0.9963 },
-  { income: 455000, income_percentile: 0.9964 },
-  { income: 460000, income_percentile: 0.9965 },
-  { income: 465000, income_percentile: 0.9965 },
-  { income: 470000, income_percentile: 0.9966 },
-  { income: 475000, income_percentile: 0.9967 },
-  { income: 480000, income_percentile: 0.9967 },
-  { income: 490000, income_percentile: 0.9967 },
-  { income: 495000, income_percentile: 0.9968 },
-  { income: 500000, income_percentile: 0.9968 },
+  {
+    "income":0,
+    "income_percentile":0.1318
+  },
+  {
+    "income":5000,
+    "income_percentile":0.2138
+  },
+  {
+    "income":10000,
+    "income_percentile":0.2604
+  },
+  {
+    "income":15000,
+    "income_percentile":0.3285
+  },
+  {
+    "income":20000,
+    "income_percentile":0.3951
+  },
+  {
+    "income":25000,
+    "income_percentile":0.4562
+  },
+  {
+    "income":30000,
+    "income_percentile":0.5164
+  },
+  {
+    "income":35000,
+    "income_percentile":0.5663
+  },
+  {
+    "income":40000,
+    "income_percentile":0.6141
+  },
+  {
+    "income":45000,
+    "income_percentile":0.6548
+  },
+  {
+    "income":50000,
+    "income_percentile":0.694
+  },
+  {
+    "income":55000,
+    "income_percentile":0.7301
+  },
+  {
+    "income":60000,
+    "income_percentile":0.7589
+  },
+  {
+    "income":65000,
+    "income_percentile":0.784
+  },
+  {
+    "income":70000,
+    "income_percentile":0.8061
+  },
+  {
+    "income":75000,
+    "income_percentile":0.8264
+  },
+  {
+    "income":80000,
+    "income_percentile":0.8441
+  },
+  {
+    "income":85000,
+    "income_percentile":0.8611
+  },
+  {
+    "income":90000,
+    "income_percentile":0.8744
+  },
+  {
+    "income":95000,
+    "income_percentile":0.8871
+  },
+  {
+    "income":100000,
+    "income_percentile":0.8969
+  },
+  {
+    "income":105000,
+    "income_percentile":0.9082
+  },
+  {
+    "income":110000,
+    "income_percentile":0.9148
+  },
+  {
+    "income":115000,
+    "income_percentile":0.9223
+  },
+  {
+    "income":120000,
+    "income_percentile":0.9283
+  },
+  {
+    "income":125000,
+    "income_percentile":0.9353
+  },
+  {
+    "income":130000,
+    "income_percentile":0.9412
+  },
+  {
+    "income":135000,
+    "income_percentile":0.9459
+  },
+  {
+    "income":140000,
+    "income_percentile":0.9497
+  },
+  {
+    "income":145000,
+    "income_percentile":0.9537
+  },
+  {
+    "income":150000,
+    "income_percentile":0.9567
+  },
+  {
+    "income":155000,
+    "income_percentile":0.9613
+  },
+  {
+    "income":160000,
+    "income_percentile":0.9635
+  },
+  {
+    "income":165000,
+    "income_percentile":0.9658
+  },
+  {
+    "income":170000,
+    "income_percentile":0.9681
+  },
+  {
+    "income":175000,
+    "income_percentile":0.9701
+  },
+  {
+    "income":180000,
+    "income_percentile":0.972
+  },
+  {
+    "income":185000,
+    "income_percentile":0.9745
+  },
+  {
+    "income":190000,
+    "income_percentile":0.9757
+  },
+  {
+    "income":195000,
+    "income_percentile":0.9771
+  },
+  {
+    "income":200000,
+    "income_percentile":0.9786
+  },
+  {
+    "income":205000,
+    "income_percentile":0.9805
+  },
+  {
+    "income":210000,
+    "income_percentile":0.9815
+  },
+  {
+    "income":215000,
+    "income_percentile":0.9825
+  },
+  {
+    "income":220000,
+    "income_percentile":0.9831
+  },
+  {
+    "income":225000,
+    "income_percentile":0.9841
+  },
+  {
+    "income":230000,
+    "income_percentile":0.9846
+  },
+  {
+    "income":235000,
+    "income_percentile":0.9857
+  },
+  {
+    "income":240000,
+    "income_percentile":0.9863
+  },
+  {
+    "income":245000,
+    "income_percentile":0.9869
+  },
+  {
+    "income":250000,
+    "income_percentile":0.9874
+  },
+  {
+    "income":255000,
+    "income_percentile":0.9883
+  },
+  {
+    "income":260000,
+    "income_percentile":0.9887
+  },
+  {
+    "income":265000,
+    "income_percentile":0.9893
+  },
+  {
+    "income":270000,
+    "income_percentile":0.9896
+  },
+  {
+    "income":275000,
+    "income_percentile":0.9899
+  },
+  {
+    "income":280000,
+    "income_percentile":0.9903
+  },
+  {
+    "income":285000,
+    "income_percentile":0.9908
+  },
+  {
+    "income":290000,
+    "income_percentile":0.991
+  },
+  {
+    "income":295000,
+    "income_percentile":0.9913
+  },
+  {
+    "income":300000,
+    "income_percentile":0.9916
+  },
+  {
+    "income":305000,
+    "income_percentile":0.9923
+  },
+  {
+    "income":310000,
+    "income_percentile":0.9926
+  },
+  {
+    "income":315000,
+    "income_percentile":0.993
+  },
+  {
+    "income":320000,
+    "income_percentile":0.9932
+  },
+  {
+    "income":325000,
+    "income_percentile":0.9935
+  },
+  {
+    "income":330000,
+    "income_percentile":0.9936
+  },
+  {
+    "income":335000,
+    "income_percentile":0.9938
+  },
+  {
+    "income":340000,
+    "income_percentile":0.994
+  },
+  {
+    "income":345000,
+    "income_percentile":0.9941
+  },
+  {
+    "income":350000,
+    "income_percentile":0.9943
+  },
+  {
+    "income":355000,
+    "income_percentile":0.9948
+  },
+  {
+    "income":360000,
+    "income_percentile":0.995
+  },
+  {
+    "income":365000,
+    "income_percentile":0.9952
+  },
+  {
+    "income":370000,
+    "income_percentile":0.9953
+  },
+  {
+    "income":375000,
+    "income_percentile":0.9954
+  },
+  {
+    "income":380000,
+    "income_percentile":0.9954
+  },
+  {
+    "income":385000,
+    "income_percentile":0.9956
+  },
+  {
+    "income":390000,
+    "income_percentile":0.9957
+  },
+  {
+    "income":395000,
+    "income_percentile":0.9958
+  },
+  {
+    "income":400000,
+    "income_percentile":0.9958
+  },
+  {
+    "income":405000,
+    "income_percentile":0.9959
+  },
+  {
+    "income":410000,
+    "income_percentile":0.996
+  },
+  {
+    "income":415000,
+    "income_percentile":0.996
+  },
+  {
+    "income":420000,
+    "income_percentile":0.9961
+  },
+  {
+    "income":425000,
+    "income_percentile":0.9962
+  },
+  {
+    "income":430000,
+    "income_percentile":0.9963
+  },
+  {
+    "income":435000,
+    "income_percentile":0.9963
+  },
+  {
+    "income":440000,
+    "income_percentile":0.9964
+  },
+  {
+    "income":445000,
+    "income_percentile":0.9965
+  },
+  {
+    "income":450000,
+    "income_percentile":0.9966
+  },
+  {
+    "income":455000,
+    "income_percentile":0.9966
+  },
+  {
+    "income":460000,
+    "income_percentile":0.9967
+  },
+  {
+    "income":465000,
+    "income_percentile":0.9967
+  },
+  {
+    "income":470000,
+    "income_percentile":0.9968
+  },
+  {
+    "income":475000,
+    "income_percentile":0.9968
+  },
+  {
+    "income":480000,
+    "income_percentile":0.9969
+  },
+  {
+    "income":485000,
+    "income_percentile":0.997
+  },
+  {
+    "income":490000,
+    "income_percentile":0.9971
+  },
+  {
+    "income":495000,
+    "income_percentile":0.9971
+  },
+  {
+    "income":500000,
+    "income_percentile":0.9972
+  }
 ];
 
 export const incomePercentile_male = [
-  { income: 0, income_percentile: 0.0727 },
-  { income: 5000, income_percentile: 0.1172 },
-  { income: 10000, income_percentile: 0.1502 },
-  { income: 15000, income_percentile: 0.1994 },
-  { income: 20000, income_percentile: 0.2524 },
-  { income: 25000, income_percentile: 0.3064 },
-  { income: 30000, income_percentile: 0.3608 },
-  { income: 35000, income_percentile: 0.411 },
-  { income: 40000, income_percentile: 0.4602 },
-  { income: 45000, income_percentile: 0.5029 },
-  { income: 50000, income_percentile: 0.5491 },
-  { income: 55000, income_percentile: 0.592 },
-  { income: 60000, income_percentile: 0.6297 },
-  { income: 65000, income_percentile: 0.6637 },
-  { income: 70000, income_percentile: 0.692 },
-  { income: 75000, income_percentile: 0.7201 },
-  { income: 80000, income_percentile: 0.7443 },
-  { income: 85000, income_percentile: 0.7665 },
-  { income: 90000, income_percentile: 0.7837 },
-  { income: 95000, income_percentile: 0.7997 },
-  { income: 100000, income_percentile: 0.8152 },
-  { income: 105000, income_percentile: 0.8364 },
-  { income: 110000, income_percentile: 0.8464 },
-  { income: 115000, income_percentile: 0.8571 },
-  { income: 120000, income_percentile: 0.8665 },
-  { income: 125000, income_percentile: 0.8775 },
-  { income: 130000, income_percentile: 0.8863 },
-  { income: 135000, income_percentile: 0.8946 },
-  { income: 140000, income_percentile: 0.9005 },
-  { income: 145000, income_percentile: 0.9062 },
-  { income: 150000, income_percentile: 0.9114 },
-  { income: 155000, income_percentile: 0.9207 },
-  { income: 160000, income_percentile: 0.9253 },
-  { income: 165000, income_percentile: 0.9309 },
-  { income: 170000, income_percentile: 0.9344 },
-  { income: 175000, income_percentile: 0.938 },
-  { income: 180000, income_percentile: 0.9415 },
-  { income: 185000, income_percentile: 0.9452 },
-  { income: 190000, income_percentile: 0.9473 },
-  { income: 195000, income_percentile: 0.95 },
-  { income: 200000, income_percentile: 0.952 },
-  { income: 205000, income_percentile: 0.9578 },
-  { income: 210000, income_percentile: 0.9596 },
-  { income: 215000, income_percentile: 0.9614 },
-  { income: 220000, income_percentile: 0.9632 },
-  { income: 225000, income_percentile: 0.9648 },
-  { income: 230000, income_percentile: 0.9663 },
-  { income: 235000, income_percentile: 0.968 },
-  { income: 240000, income_percentile: 0.9691 },
-  { income: 245000, income_percentile: 0.97 },
-  { income: 250000, income_percentile: 0.9707 },
-  { income: 255000, income_percentile: 0.973 },
-  { income: 260000, income_percentile: 0.974 },
-  { income: 265000, income_percentile: 0.9752 },
-  { income: 270000, income_percentile: 0.9758 },
-  { income: 275000, income_percentile: 0.9765 },
-  { income: 280000, income_percentile: 0.9771 },
-  { income: 285000, income_percentile: 0.9778 },
-  { income: 290000, income_percentile: 0.9784 },
-  { income: 295000, income_percentile: 0.979 },
-  { income: 300000, income_percentile: 0.9795 },
-  { income: 305000, income_percentile: 0.9809 },
-  { income: 310000, income_percentile: 0.9816 },
-  { income: 315000, income_percentile: 0.9822 },
-  { income: 320000, income_percentile: 0.9827 },
-  { income: 325000, income_percentile: 0.9832 },
-  { income: 330000, income_percentile: 0.9836 },
-  { income: 335000, income_percentile: 0.9843 },
-  { income: 340000, income_percentile: 0.9844 },
-  { income: 345000, income_percentile: 0.9846 },
-  { income: 350000, income_percentile: 0.985 },
-  { income: 355000, income_percentile: 0.9858 },
-  { income: 360000, income_percentile: 0.9863 },
-  { income: 365000, income_percentile: 0.9867 },
-  { income: 370000, income_percentile: 0.9869 },
-  { income: 375000, income_percentile: 0.9873 },
-  { income: 380000, income_percentile: 0.9876 },
-  { income: 385000, income_percentile: 0.9879 },
-  { income: 390000, income_percentile: 0.9881 },
-  { income: 395000, income_percentile: 0.9882 },
-  { income: 400000, income_percentile: 0.9886 },
-  { income: 405000, income_percentile: 0.9894 },
-  { income: 410000, income_percentile: 0.9897 },
-  { income: 415000, income_percentile: 0.9899 },
-  { income: 420000, income_percentile: 0.9901 },
-  { income: 425000, income_percentile: 0.9904 },
-  { income: 430000, income_percentile: 0.9905 },
-  { income: 435000, income_percentile: 0.9907 },
-  { income: 440000, income_percentile: 0.9908 },
-  { income: 445000, income_percentile: 0.991 },
-  { income: 450000, income_percentile: 0.9911 },
-  { income: 455000, income_percentile: 0.9915 },
-  { income: 460000, income_percentile: 0.9916 },
-  { income: 465000, income_percentile: 0.9918 },
-  { income: 470000, income_percentile: 0.9918 },
-  { income: 475000, income_percentile: 0.9921 },
-  { income: 480000, income_percentile: 0.9922 },
-  { income: 485000, income_percentile: 0.9922 },
-  { income: 490000, income_percentile: 0.9924 },
-  { income: 495000, income_percentile: 0.9925 },
-  { income: 500000, income_percentile: 0.9927 },
+  {
+    "income":0,
+    "income_percentile":0.0982
+  },
+  {
+    "income":5000,
+    "income_percentile":0.1492
+  },
+  {
+    "income":10000,
+    "income_percentile":0.1779
+  },
+  {
+    "income":15000,
+    "income_percentile":0.2262
+  },
+  {
+    "income":20000,
+    "income_percentile":0.2712
+  },
+  {
+    "income":25000,
+    "income_percentile":0.319
+  },
+  {
+    "income":30000,
+    "income_percentile":0.3711
+  },
+  {
+    "income":35000,
+    "income_percentile":0.4149
+  },
+  {
+    "income":40000,
+    "income_percentile":0.4593
+  },
+  {
+    "income":45000,
+    "income_percentile":0.4989
+  },
+  {
+    "income":50000,
+    "income_percentile":0.5409
+  },
+  {
+    "income":55000,
+    "income_percentile":0.5827
+  },
+  {
+    "income":60000,
+    "income_percentile":0.6187
+  },
+  {
+    "income":65000,
+    "income_percentile":0.6531
+  },
+  {
+    "income":70000,
+    "income_percentile":0.6805
+  },
+  {
+    "income":75000,
+    "income_percentile":0.7079
+  },
+  {
+    "income":80000,
+    "income_percentile":0.7318
+  },
+  {
+    "income":85000,
+    "income_percentile":0.7535
+  },
+  {
+    "income":90000,
+    "income_percentile":0.7708
+  },
+  {
+    "income":95000,
+    "income_percentile":0.7871
+  },
+  {
+    "income":100000,
+    "income_percentile":0.8019
+  },
+  {
+    "income":105000,
+    "income_percentile":0.8211
+  },
+  {
+    "income":110000,
+    "income_percentile":0.8322
+  },
+  {
+    "income":115000,
+    "income_percentile":0.8441
+  },
+  {
+    "income":120000,
+    "income_percentile":0.8542
+  },
+  {
+    "income":125000,
+    "income_percentile":0.8661
+  },
+  {
+    "income":130000,
+    "income_percentile":0.8741
+  },
+  {
+    "income":135000,
+    "income_percentile":0.8822
+  },
+  {
+    "income":140000,
+    "income_percentile":0.8889
+  },
+  {
+    "income":145000,
+    "income_percentile":0.8954
+  },
+  {
+    "income":150000,
+    "income_percentile":0.9014
+  },
+  {
+    "income":155000,
+    "income_percentile":0.9123
+  },
+  {
+    "income":160000,
+    "income_percentile":0.9168
+  },
+  {
+    "income":165000,
+    "income_percentile":0.922
+  },
+  {
+    "income":170000,
+    "income_percentile":0.9265
+  },
+  {
+    "income":175000,
+    "income_percentile":0.9306
+  },
+  {
+    "income":180000,
+    "income_percentile":0.9345
+  },
+  {
+    "income":185000,
+    "income_percentile":0.9387
+  },
+  {
+    "income":190000,
+    "income_percentile":0.9416
+  },
+  {
+    "income":195000,
+    "income_percentile":0.9441
+  },
+  {
+    "income":200000,
+    "income_percentile":0.9469
+  },
+  {
+    "income":205000,
+    "income_percentile":0.9524
+  },
+  {
+    "income":210000,
+    "income_percentile":0.9552
+  },
+  {
+    "income":215000,
+    "income_percentile":0.9574
+  },
+  {
+    "income":220000,
+    "income_percentile":0.9592
+  },
+  {
+    "income":225000,
+    "income_percentile":0.9612
+  },
+  {
+    "income":230000,
+    "income_percentile":0.9629
+  },
+  {
+    "income":235000,
+    "income_percentile":0.9647
+  },
+  {
+    "income":240000,
+    "income_percentile":0.9661
+  },
+  {
+    "income":245000,
+    "income_percentile":0.9673
+  },
+  {
+    "income":250000,
+    "income_percentile":0.9686
+  },
+  {
+    "income":255000,
+    "income_percentile":0.9709
+  },
+  {
+    "income":260000,
+    "income_percentile":0.9722
+  },
+  {
+    "income":265000,
+    "income_percentile":0.9733
+  },
+  {
+    "income":270000,
+    "income_percentile":0.974
+  },
+  {
+    "income":275000,
+    "income_percentile":0.975
+  },
+  {
+    "income":280000,
+    "income_percentile":0.9759
+  },
+  {
+    "income":285000,
+    "income_percentile":0.9766
+  },
+  {
+    "income":290000,
+    "income_percentile":0.9772
+  },
+  {
+    "income":295000,
+    "income_percentile":0.9777
+  },
+  {
+    "income":300000,
+    "income_percentile":0.9782
+  },
+  {
+    "income":305000,
+    "income_percentile":0.9799
+  },
+  {
+    "income":310000,
+    "income_percentile":0.9808
+  },
+  {
+    "income":315000,
+    "income_percentile":0.9816
+  },
+  {
+    "income":320000,
+    "income_percentile":0.982
+  },
+  {
+    "income":325000,
+    "income_percentile":0.9824
+  },
+  {
+    "income":330000,
+    "income_percentile":0.9828
+  },
+  {
+    "income":335000,
+    "income_percentile":0.9831
+  },
+  {
+    "income":340000,
+    "income_percentile":0.9834
+  },
+  {
+    "income":345000,
+    "income_percentile":0.9838
+  },
+  {
+    "income":350000,
+    "income_percentile":0.9841
+  },
+  {
+    "income":355000,
+    "income_percentile":0.9849
+  },
+  {
+    "income":360000,
+    "income_percentile":0.9854
+  },
+  {
+    "income":365000,
+    "income_percentile":0.9858
+  },
+  {
+    "income":370000,
+    "income_percentile":0.986
+  },
+  {
+    "income":375000,
+    "income_percentile":0.9863
+  },
+  {
+    "income":380000,
+    "income_percentile":0.9866
+  },
+  {
+    "income":385000,
+    "income_percentile":0.987
+  },
+  {
+    "income":390000,
+    "income_percentile":0.9873
+  },
+  {
+    "income":395000,
+    "income_percentile":0.9876
+  },
+  {
+    "income":400000,
+    "income_percentile":0.9879
+  },
+  {
+    "income":405000,
+    "income_percentile":0.9886
+  },
+  {
+    "income":410000,
+    "income_percentile":0.9887
+  },
+  {
+    "income":415000,
+    "income_percentile":0.989
+  },
+  {
+    "income":420000,
+    "income_percentile":0.9893
+  },
+  {
+    "income":425000,
+    "income_percentile":0.9896
+  },
+  {
+    "income":430000,
+    "income_percentile":0.9897
+  },
+  {
+    "income":435000,
+    "income_percentile":0.9901
+  },
+  {
+    "income":440000,
+    "income_percentile":0.9901
+  },
+  {
+    "income":445000,
+    "income_percentile":0.9901
+  },
+  {
+    "income":450000,
+    "income_percentile":0.9904
+  },
+  {
+    "income":455000,
+    "income_percentile":0.9907
+  },
+  {
+    "income":460000,
+    "income_percentile":0.9909
+  },
+  {
+    "income":465000,
+    "income_percentile":0.9911
+  },
+  {
+    "income":470000,
+    "income_percentile":0.9912
+  },
+  {
+    "income":475000,
+    "income_percentile":0.9914
+  },
+  {
+    "income":480000,
+    "income_percentile":0.9915
+  },
+  {
+    "income":485000,
+    "income_percentile":0.9916
+  },
+  {
+    "income":490000,
+    "income_percentile":0.9917
+  },
+  {
+    "income":495000,
+    "income_percentile":0.9919
+  },
+  {
+    "income":500000,
+    "income_percentile":0.9921
+  }
 ];
 
 export const income_bins_male = [
-  { population: 18971174.8959220797, left: 0.0, right: 10000.0 },
-  { population: 12916763.2341189906, left: 10000.0, right: 20000.0 },
-  { population: 13696877.3145762291, left: 20000.0, right: 30000.0 },
-  { population: 12545181.2973618694, left: 30000.0, right: 40000.0 },
-  { population: 11237719.7022834793, left: 40000.0, right: 50000.0 },
-  { population: 10182931.3794450201, left: 50000.0, right: 60000.0 },
-  { population: 7870307.0041755997, left: 60000.0, right: 70000.0 },
-  { population: 6609548.1079644198, left: 70000.0, right: 80000.0 },
-  { population: 4974691.7453884901, left: 80000.0, right: 90000.0 },
-  { population: 3980605.7874152199, left: 90000.0, right: 100000.0 },
-  { population: 3932247.7618432399, left: 100000.0, right: 110000.0 },
-  { population: 2539581.1537929699, left: 110000.0, right: 120000.0 },
-  { population: 2505034.3119441802, left: 120000.0, right: 130000.0 },
-  { population: 1801733.8407326399, left: 130000.0, right: 140000.0 },
-  { population: 1365749.7929410399, left: 140000.0, right: 150000.0 },
-  { population: 1766535.1278735499, left: 150000.0, right: 160000.0 },
-  { population: 1146948.1848995399, left: 160000.0, right: 170000.0 },
-  { population: 895809.58955244, left: 170000.0, right: 180000.0 },
-  { population: 729337.54284874, left: 180000.0, right: 190000.0 },
-  { population: 601558.7516924, left: 190000.0, right: 200000.0 },
-  { population: 952192.9802128, left: 200000.0, right: 210000.0 },
-  { population: 452663.46157747, left: 210000.0, right: 220000.0 },
-  { population: 400874.48569794, left: 220000.0, right: 230000.0 },
-  { population: 348058.89911554, left: 230000.0, right: 240000.0 },
-  { population: 203692.51799019, left: 240000.0, right: 250000.0 },
-  { population: 410959.53166496, left: 250000.0, right: 260000.0 },
-  { population: 231218.92981108, left: 260000.0, right: 270000.0 },
-  { population: 159158.88985397, left: 270000.0, right: 280000.0 },
-  { population: 170301.18854945, left: 280000.0, right: 290000.0 },
-  { population: 136594.14125665, left: 290000.0, right: 300000.0 },
-  { population: 265103.31410503, left: 300000.0, right: 310000.0 },
-  { population: 141704.03181252, left: 310000.0, right: 320000.0 },
-  { population: 108723.19186579, left: 320000.0, right: 330000.0 },
-  { population: 107612.2909379, left: 330000.0, right: 340000.0 },
-  { population: 70800.60087112, left: 340000.0, right: 350000.0 },
-  { population: 166677.11925566, left: 350000.0, right: 360000.0 },
-  { population: 68240.73335793, left: 360000.0, right: 370000.0 },
-  { population: 97349.45662304, left: 370000.0, right: 380000.0 },
-  { population: 58075.31416574, left: 380000.0, right: 390000.0 },
-  { population: 61891.09629345, left: 390000.0, right: 400000.0 },
-  { population: 143958.14489917, left: 400000.0, right: 410000.0 },
-  { population: 46003.14341457, left: 410000.0, right: 420000.0 },
-  { population: 52628.24903983, left: 420000.0, right: 430000.0 },
-  { population: 38317.83059325, left: 430000.0, right: 440000.0 },
-  { population: 41463.47139146, left: 440000.0, right: 450000.0 },
-  { population: 61887.04476744, left: 450000.0, right: 460000.0 },
-  { population: 27343.98911916, left: 460000.0, right: 470000.0 },
-  { population: 43395.38648958, left: 470000.0, right: 480000.0 },
-  { population: 21369.94368127, left: 480000.0, right: 490000.0 },
-  { population: 41649.17120331, left: 490000.0, right: 500000.0 },
-];
+  {
+    "population":23226784.4665253013,
+    "left":0,
+    "right":10000
+  },
+  {
+    "population":12072271.9349602517,
+    "left":10000,
+    "right":20000
+  },
+  {
+    "population":12564829.7262442503,
+    "left":20000,
+    "right":30000
+  },
+  {
+    "population":12192309.883609781,
+    "left":30000,
+    "right":40000
+  },
+  {
+    "population":10751762.6374804191,
+    "left":40000,
+    "right":50000
+  },
+  {
+    "population":10546986.0167408586,
+    "left":50000,
+    "right":60000
+  },
+  {
+    "population":8879579.8284699097,
+    "left":60000,
+    "right":70000
+  },
+  {
+    "population":7082347.0542416601,
+    "left":70000,
+    "right":80000
+  },
+  {
+    "population":5405798.6329993904,
+    "left":80000,
+    "right":90000
+  },
+  {
+    "population":4011195.2120762197,
+    "left":90000,
+    "right":100000
+  },
+  {
+    "population":4292867.02211593,
+    "left":100000,
+    "right":110000
+  },
+  {
+    "population":2851610.87486488,
+    "left":110000,
+    "right":120000
+  },
+  {
+    "population":2795089.4228149499,
+    "left":120000,
+    "right":130000
+  },
+  {
+    "population":1993213.3143209403,
+    "left":130000,
+    "right":140000
+  },
+  {
+    "population":1540771.44361616,
+    "left":140000,
+    "right":150000
+  },
+  {
+    "population":2196737.4693855201,
+    "left":150000,
+    "right":160000
+  },
+  {
+    "population":1310833.3737264301,
+    "left":160000,
+    "right":170000
+  },
+  {
+    "population":1084753.26080631,
+    "left":170000,
+    "right":180000
+  },
+  {
+    "population":976193.9024891199,
+    "left":180000,
+    "right":190000
+  },
+  {
+    "population":614968.70445174,
+    "left":190000,
+    "right":200000
+  },
+  {
+    "population":1207875.8133777101,
+    "left":200000,
+    "right":210000
+  },
+  {
+    "population":516484.72784635,
+    "left":210000,
+    "right":220000
+  },
+  {
+    "population":507590.8858933999,
+    "left":220000,
+    "right":230000
+  },
+  {
+    "population":426023.51439835,
+    "left":230000,
+    "right":240000
+  },
+  {
+    "population":291041.87932332,
+    "left":240000,
+    "right":250000
+  },
+  {
+    "population":535295.58206227,
+    "left":250000,
+    "right":260000
+  },
+  {
+    "population":234582.25492652,
+    "left":260000,
+    "right":270000
+  },
+  {
+    "population":238200.43988661,
+    "left":270000,
+    "right":280000
+  },
+  {
+    "population":198149.76624567,
+    "left":280000,
+    "right":290000
+  },
+  {
+    "population":113364.97133917,
+    "left":290000,
+    "right":300000
+  },
+  {
+    "population":356187.40208419,
+    "left":300000,
+    "right":310000
+  },
+  {
+    "population":162018.19841297,
+    "left":310000,
+    "right":320000
+  },
+  {
+    "population":110397.26697944,
+    "left":320000,
+    "right":330000
+  },
+  {
+    "population":86256.14450269,
+    "left":330000,
+    "right":340000
+  },
+  {
+    "population":81674.33718414,
+    "left":340000,
+    "right":350000
+  },
+  {
+    "population":172274.1624314,
+    "left":350000,
+    "right":360000
+  },
+  {
+    "population":92118.94437191,
+    "left":360000,
+    "right":370000
+  },
+  {
+    "population":69689.96927407,
+    "left":370000,
+    "right":380000
+  },
+  {
+    "population":95583.18989287,
+    "left":380000,
+    "right":390000
+  },
+  {
+    "population":70004.84449431,
+    "left":390000,
+    "right":400000
+  },
+  {
+    "population":126478.97883124,
+    "left":400000,
+    "right":410000
+  },
+  {
+    "population":74844.45275,
+    "left":410000,
+    "right":420000
+  },
+  {
+    "population":55482.6626347,
+    "left":420000,
+    "right":430000
+  },
+  {
+    "population":56393.15104396,
+    "left":430000,
+    "right":440000
+  },
+  {
+    "population":27564.19321554,
+    "left":440000,
+    "right":450000
+  },
+  {
+    "population":76509.04815288,
+    "left":450000,
+    "right":460000
+  },
+  {
+    "population":39990.32610301,
+    "left":460000,
+    "right":470000
+  },
+  {
+    "population":32981.80354909,
+    "left":470000,
+    "right":480000
+  },
+  {
+    "population":37025.70531758,
+    "left":480000,
+    "right":490000
+  },
+  {
+    "population":41376.4044208,
+    "left":490000,
+    "right":500000
+  }
+]
 
 export const income_bins_female = [
-  { population: 31315729.4834302105, left: 0.0, right: 10000.0 },
-  { population: 19887397.1461549886, left: 10000.0, right: 20000.0 },
-  { population: 16546415.0116142109, left: 20000.0, right: 30000.0 },
-  { population: 13395938.2116109394, left: 30000.0, right: 40000.0 },
-  { population: 10812349.7171954103, left: 40000.0, right: 50000.0 },
-  { population: 8913553.8779974803, left: 50000.0, right: 60000.0 },
-  { population: 6597488.1605694704, left: 60000.0, right: 70000.0 },
-  { population: 5395051.9216449801, left: 70000.0, right: 80000.0 },
-  { population: 3895601.1942215101, left: 80000.0, right: 90000.0 },
-  { population: 2863421.3545384901, left: 90000.0, right: 100000.0 },
-  { population: 2438979.0938849002, left: 100000.0, right: 110000.0 },
-  { population: 1513636.39846076, left: 110000.0, right: 120000.0 },
-  { population: 1315160.3237425101, left: 120000.0, right: 130000.0 },
-  { population: 1037712.42082925, left: 130000.0, right: 140000.0 },
-  { population: 834991.02778572, left: 140000.0, right: 150000.0 },
-  { population: 967519.06519109, left: 150000.0, right: 160000.0 },
-  { population: 453953.42243679, left: 160000.0, right: 170000.0 },
-  { population: 423778.39317655, left: 170000.0, right: 180000.0 },
-  { population: 346821.05227938, left: 180000.0, right: 190000.0 },
-  { population: 232152.46691439, left: 190000.0, right: 200000.0 },
-  { population: 297007.25832792, left: 200000.0, right: 210000.0 },
-  { population: 184772.48358151, left: 210000.0, right: 220000.0 },
-  { population: 204047.50532124, left: 220000.0, right: 230000.0 },
-  { population: 119079.35549059, left: 230000.0, right: 240000.0 },
-  { population: 131557.17826731, left: 240000.0, right: 250000.0 },
-  { population: 203703.21064196, left: 250000.0, right: 260000.0 },
-  { population: 88165.73048087, left: 260000.0, right: 270000.0 },
-  { population: 64436.1043151, left: 270000.0, right: 280000.0 },
-  { population: 39849.43059819, left: 280000.0, right: 290000.0 },
-  { population: 79113.11316383, left: 290000.0, right: 300000.0 },
-  { population: 87344.93834243, left: 300000.0, right: 310000.0 },
-  { population: 72127.30373734, left: 310000.0, right: 320000.0 },
-  { population: 46667.14220657, left: 320000.0, right: 330000.0 },
-  { population: 24842.91487645, left: 330000.0, right: 340000.0 },
-  { population: 22977.28413859, left: 340000.0, right: 350000.0 },
-  { population: 55753.90355213, left: 350000.0, right: 360000.0 },
-  { population: 52244.10572398, left: 360000.0, right: 370000.0 },
-  { population: 27233.73688412, left: 370000.0, right: 380000.0 },
-  { population: 14754.1695597, left: 380000.0, right: 390000.0 },
-  { population: 13071.68059482, left: 390000.0, right: 400000.0 },
-  { population: 59894.5460479, left: 400000.0, right: 410000.0 },
-  { population: 22472.82918227, left: 410000.0, right: 420000.0 },
-  { population: 30647.50249559, left: 420000.0, right: 430000.0 },
-  { population: 16249.13859534, left: 430000.0, right: 440000.0 },
-  { population: 15619.8323368, left: 440000.0, right: 450000.0 },
-  { population: 16570.96136752, left: 450000.0, right: 460000.0 },
-  { population: 20016.26431357, left: 460000.0, right: 470000.0 },
-  { population: 11283.94675505, left: 470000.0, right: 480000.0 },
-  { population: 3825.9129873, left: 480000.0, right: 490000.0 },
-  { population: 15908.56892393, left: 490000.0, right: 500000.0 },
+  {
+    "population":35657091.984282583,
+    "left":0,
+    "right":10000
+  },
+  {
+    "population":18365631.092413418,
+    "left":10000,
+    "right":20000
+  },
+  {
+    "population":16409084.4285738207,
+    "left":20000,
+    "right":30000
+  },
+  {
+    "population":14113915.1267969012,
+    "left":30000,
+    "right":40000
+  },
+  {
+    "population":11341855.3418080304,
+    "left":40000,
+    "right":50000
+  },
+  {
+    "population":9263638.5074836314,
+    "left":50000,
+    "right":60000
+  },
+  {
+    "population":6957141.8364890805,
+    "left":60000,
+    "right":70000
+  },
+  {
+    "population":5325048.44756658,
+    "left":70000,
+    "right":80000
+  },
+  {
+    "population":4308783.2430448905,
+    "left":80000,
+    "right":90000
+  },
+  {
+    "population":3098596.1057718699,
+    "left":90000,
+    "right":100000
+  },
+  {
+    "population":2640784.6923503298,
+    "left":100000,
+    "right":110000
+  },
+  {
+    "population":1810652.5006953301,
+    "left":110000,
+    "right":120000
+  },
+  {
+    "population":1857599.0402078,
+    "left":120000,
+    "right":130000
+  },
+  {
+    "population":1252732.27854611,
+    "left":130000,
+    "right":140000
+  },
+  {
+    "population":904655.40916255,
+    "left":140000,
+    "right":150000
+  },
+  {
+    "population":1009080.6787971199,
+    "left":150000,
+    "right":160000
+  },
+  {
+    "population":652403.64516809,
+    "left":160000,
+    "right":170000
+  },
+  {
+    "population":536602.2693596,
+    "left":170000,
+    "right":180000
+  },
+  {
+    "population":520922.5991648099,
+    "left":180000,
+    "right":190000
+  },
+  {
+    "population":373703.52936984,
+    "left":190000,
+    "right":200000
+  },
+  {
+    "population":447235.39789836,
+    "left":200000,
+    "right":210000
+  },
+  {
+    "population":212580.77119282,
+    "left":210000,
+    "right":220000
+  },
+  {
+    "population":227097.00072695,
+    "left":220000,
+    "right":230000
+  },
+  {
+    "population":231026.31730685,
+    "left":230000,
+    "right":240000
+  },
+  {
+    "population":149194.9639075,
+    "left":240000,
+    "right":250000
+  },
+  {
+    "population":190526.95004372,
+    "left":250000,
+    "right":260000
+  },
+  {
+    "population":120735.17287561,
+    "left":260000,
+    "right":270000
+  },
+  {
+    "population":100157.98101172,
+    "left":270000,
+    "right":280000
+  },
+  {
+    "population":101162.00705592,
+    "left":280000,
+    "right":290000
+  },
+  {
+    "population":58844.2516563,
+    "left":290000,
+    "right":300000
+  },
+  {
+    "population":163823.3431604,
+    "left":300000,
+    "right":310000
+  },
+  {
+    "population":84356.20012597,
+    "left":310000,
+    "right":320000
+  },
+  {
+    "population":52279.97326681,
+    "left":320000,
+    "right":330000
+  },
+  {
+    "population":47999.2747659,
+    "left":330000,
+    "right":340000
+  },
+  {
+    "population":44016.07393954,
+    "left":340000,
+    "right":350000
+  },
+  {
+    "population":100795.82686084,
+    "left":350000,
+    "right":360000
+  },
+  {
+    "population":47296.13709935,
+    "left":360000,
+    "right":370000
+  },
+  {
+    "population":14822.14926401,
+    "left":370000,
+    "right":380000
+  },
+  {
+    "population":38971.20911651,
+    "left":380000,
+    "right":390000
+  },
+  {
+    "population":7920.39309218,
+    "left":390000,
+    "right":400000
+  },
+  {
+    "population":26915.39109786,
+    "left":400000,
+    "right":410000
+  },
+  {
+    "population":25501.52006666,
+    "left":410000,
+    "right":420000
+  },
+  {
+    "population":17342.06826134,
+    "left":420000,
+    "right":430000
+  },
+  {
+    "population":16808.91509612,
+    "left":430000,
+    "right":440000
+  },
+  {
+    "population":32651.4936821,
+    "left":440000,
+    "right":450000
+  },
+  {
+    "population":12877.99558666,
+    "left":450000,
+    "right":460000
+  },
+  {
+    "population":6307.64516853,
+    "left":460000,
+    "right":470000
+  },
+  {
+    "population":15164.3728333,
+    "left":470000,
+    "right":480000
+  },
+  {
+    "population":25856.74594588,
+    "left":480000,
+    "right":490000
+  },
+  {
+    "population":8795.74080221,
+    "left":490000,
+    "right":500000
+  }
 ];
 
 export const income_bins_female_5k = [
-  { population: 24933245.2355954088, left: 0.0, right: 5000.0 },
-  { population: 6382484.2478347998, left: 5000.0, right: 10000.0 },
-  { population: 10510708.9256970305, left: 10000.0, right: 15000.0 },
-  { population: 9376688.2204579599, left: 15000.0, right: 20000.0 },
-  { population: 8479430.8891856391, left: 20000.0, right: 25000.0 },
-  { population: 8066984.1224285699, left: 25000.0, right: 30000.0 },
-  { population: 7183740.1749275299, left: 30000.0, right: 35000.0 },
-  { population: 6212198.0366834104, left: 35000.0, right: 40000.0 },
-  { population: 5327134.6669240696, left: 40000.0, right: 45000.0 },
-  { population: 5485215.0502713397, left: 45000.0, right: 50000.0 },
-  { population: 4979659.3838199796, left: 50000.0, right: 55000.0 },
-  { population: 3933894.4941774998, left: 55000.0, right: 60000.0 },
-  { population: 3782450.15375394, left: 60000.0, right: 65000.0 },
-  { population: 2815038.0068155299, left: 65000.0, right: 70000.0 },
-  { population: 2824044.4463081402, left: 70000.0, right: 75000.0 },
-  { population: 2571007.4753368399, left: 75000.0, right: 80000.0 },
-  { population: 2179817.1820793799, left: 80000.0, right: 85000.0 },
-  { population: 1715784.0121421299, left: 85000.0, right: 90000.0 },
-  { population: 1486751.3333308799, left: 90000.0, right: 95000.0 },
-  { population: 1376670.0212076099, left: 95000.0, right: 100000.0 },
-  { population: 1626278.94795816, left: 100000.0, right: 105000.0 },
-  { population: 812700.14592674, left: 105000.0, right: 110000.0 },
-  { population: 827089.7978955, left: 110000.0, right: 115000.0 },
-  { population: 686546.60056526, left: 115000.0, right: 120000.0 },
-  { population: 776143.45392773, left: 120000.0, right: 125000.0 },
-  { population: 539016.86981478, left: 125000.0, right: 130000.0 },
-  { population: 597218.4417403, left: 130000.0, right: 135000.0 },
-  { population: 440493.97908895, left: 135000.0, right: 140000.0 },
-  { population: 484855.07706257, left: 140000.0, right: 145000.0 },
-  { population: 350135.95072315, left: 145000.0, right: 150000.0 },
-  { population: 640663.17989496, left: 150000.0, right: 155000.0 },
-  { population: 326855.88529613, left: 155000.0, right: 160000.0 },
-  { population: 290599.06451201, left: 160000.0, right: 165000.0 },
-  { population: 163354.35792478, left: 165000.0, right: 170000.0 },
-  { population: 223556.0695158, left: 170000.0, right: 175000.0 },
-  { population: 200222.32366075, left: 175000.0, right: 180000.0 },
-  { population: 211383.36191273, left: 180000.0, right: 185000.0 },
-  { population: 135437.69036665, left: 185000.0, right: 190000.0 },
-  { population: 124016.42590574, left: 190000.0, right: 195000.0 },
-  { population: 108136.04100865, left: 195000.0, right: 200000.0 },
-  { population: 229209.47287154, left: 200000.0, right: 205000.0 },
-  { population: 67797.78545638, left: 205000.0, right: 210000.0 },
-  { population: 94386.62549223, left: 210000.0, right: 215000.0 },
-  { population: 90385.85808928, left: 215000.0, right: 220000.0 },
-  { population: 118235.28183257, left: 220000.0, right: 225000.0 },
-  { population: 85812.22348867, left: 225000.0, right: 230000.0 },
-  { population: 78817.3225032, left: 230000.0, right: 235000.0 },
-  { population: 40262.03298739, left: 235000.0, right: 240000.0 },
-  { population: 80865.791115, left: 240000.0, right: 245000.0 },
-  { population: 50691.38715231, left: 245000.0, right: 250000.0 },
-  { population: 164525.96617382, left: 250000.0, right: 255000.0 },
-  { population: 39177.24446814, left: 255000.0, right: 260000.0 },
-  { population: 30122.76197121, left: 260000.0, right: 265000.0 },
-  { population: 58042.96850966, left: 265000.0, right: 270000.0 },
-  { population: 26441.9900085, left: 270000.0, right: 275000.0 },
-  { population: 37994.1143066, left: 275000.0, right: 280000.0 },
-  { population: 16775.33306399, left: 280000.0, right: 285000.0 },
-  { population: 23074.0975342, left: 285000.0, right: 290000.0 },
-  { population: 22049.56772523, left: 290000.0, right: 295000.0 },
-  { population: 57063.5454386, left: 295000.0, right: 300000.0 },
-  { population: 63849.44857513, left: 300000.0, right: 305000.0 },
-  { population: 23495.4897673, left: 305000.0, right: 310000.0 },
-  { population: 43488.84624624, left: 310000.0, right: 315000.0 },
-  { population: 28638.4574911, left: 315000.0, right: 320000.0 },
-  { population: 18105.90890567, left: 320000.0, right: 325000.0 },
-  { population: 28561.2333009, left: 325000.0, right: 330000.0 },
-  { population: 18319.7068749, left: 330000.0, right: 335000.0 },
-  { population: 6523.20800155, left: 335000.0, right: 340000.0 },
-  { population: 17716.5494181, left: 340000.0, right: 345000.0 },
-  { population: 5260.73472049, left: 345000.0, right: 350000.0 },
-  { population: 36852.38031632, left: 350000.0, right: 355000.0 },
-  { population: 18901.52323581, left: 355000.0, right: 360000.0 },
-  { population: 16429.0987542, left: 360000.0, right: 365000.0 },
-  { population: 35815.00696978, left: 365000.0, right: 370000.0 },
-  { population: 14385.60061192, left: 370000.0, right: 375000.0 },
-  { population: 12848.1362722, left: 375000.0, right: 380000.0 },
-  { population: 12546.7134908, left: 380000.0, right: 385000.0 },
-  { population: 2207.4560689, left: 385000.0, right: 390000.0 },
-  { population: 10727.92722952, left: 390000.0, right: 395000.0 },
-  { population: 2343.7533653, left: 395000.0, right: 400000.0 },
-  { population: 46097.31512714, left: 400000.0, right: 405000.0 },
-  { population: 13797.23092076, left: 405000.0, right: 410000.0 },
-  { population: 13861.25304247, left: 410000.0, right: 415000.0 },
-  { population: 8611.5761398, left: 415000.0, right: 420000.0 },
-  { population: 18380.54568804, left: 420000.0, right: 425000.0 },
-  { population: 12266.95680755, left: 425000.0, right: 430000.0 },
-  { population: 14003.80127774, left: 430000.0, right: 435000.0 },
-  { population: 2245.3373176, left: 435000.0, right: 440000.0 },
-  { population: 13463.4776519, left: 440000.0, right: 445000.0 },
-  { population: 2156.3546849, left: 445000.0, right: 450000.0 },
-  { population: 14064.20544112, left: 450000.0, right: 455000.0 },
-  { population: 2506.7559264, left: 455000.0, right: 460000.0 },
-  { population: 10736.29163225, left: 460000.0, right: 465000.0 },
-  { population: 9279.97268132, left: 465000.0, right: 470000.0 },
-  { population: 8584.10804425, left: 470000.0, right: 475000.0 },
-  { population: 2699.8387108, left: 475000.0, right: 480000.0 },
-  { population: 3825.9129873, left: 480000.0, right: 485000.0 },
-  { population: 0.0, left: 485000.0, right: 490000.0 },
-  { population: 2898.97250112, left: 490000.0, right: 495000.0 },
-  { population: 13009.59642281, left: 495000.0, right: 500000.0 },
+  {
+    "population":29416106.0672546513,
+    "left":0,
+    "right":5000
+  },
+  {
+    "population":6240985.9170279298,
+    "left":5000,
+    "right":10000
+  },
+  {
+    "population":9353292.3730467223,
+    "left":10000,
+    "right":15000
+  },
+  {
+    "population":9012338.7193666995,
+    "left":15000,
+    "right":20000
+  },
+  {
+    "population":8699093.0098694302,
+    "left":20000,
+    "right":25000
+  },
+  {
+    "population":7709991.4187043896,
+    "left":25000,
+    "right":30000
+  },
+  {
+    "population":7680302.4650851991,
+    "left":30000,
+    "right":35000
+  },
+  {
+    "population":6433612.6617117003,
+    "left":35000,
+    "right":40000
+  },
+  {
+    "population":6228682.36117143,
+    "left":40000,
+    "right":45000
+  },
+  {
+    "population":5113172.9806366004,
+    "left":45000,
+    "right":50000
+  },
+  {
+    "population":5518086.9567778707,
+    "left":50000,
+    "right":55000
+  },
+  {
+    "population":3745551.5507057598,
+    "left":55000,
+    "right":60000
+  },
+  {
+    "population":3945404.9073161101,
+    "left":60000,
+    "right":65000
+  },
+  {
+    "population":3011736.9291729699,
+    "left":65000,
+    "right":70000
+  },
+  {
+    "population":2880138.6049325801,
+    "left":70000,
+    "right":75000
+  },
+  {
+    "population":2444909.8426339999,
+    "left":75000,
+    "right":80000
+  },
+  {
+    "population":2545649.7490641898,
+    "left":80000,
+    "right":85000
+  },
+  {
+    "population":1763133.4939807002,
+    "left":85000,
+    "right":90000
+  },
+  {
+    "population":1880013.8448219197,
+    "left":90000,
+    "right":95000
+  },
+  {
+    "population":1218582.26094995,
+    "left":95000,
+    "right":100000
+  },
+  {
+    "population":1740116.2749620599,
+    "left":100000,
+    "right":105000
+  },
+  {
+    "population":900668.41738827,
+    "left":105000,
+    "right":110000
+  },
+  {
+    "population":1085292.1034260602,
+    "left":110000,
+    "right":115000
+  },
+  {
+    "population":725360.39726927,
+    "left":115000,
+    "right":120000
+  },
+  {
+    "population":1087113.3259408101,
+    "left":120000,
+    "right":125000
+  },
+  {
+    "population":770485.71426699,
+    "left":125000,
+    "right":130000
+  },
+  {
+    "population":705979.74791136,
+    "left":130000,
+    "right":135000
+  },
+  {
+    "population":546752.53063475,
+    "left":135000,
+    "right":140000
+  },
+  {
+    "population":555851.3474041501,
+    "left":140000,
+    "right":145000
+  },
+  {
+    "population":348804.0617583999,
+    "left":145000,
+    "right":150000
+  },
+  {
+    "population":721123.3579084199,
+    "left":150000,
+    "right":155000
+  },
+  {
+    "population":287957.3208887,
+    "left":155000,
+    "right":160000
+  },
+  {
+    "population":319101.83908258,
+    "left":160000,
+    "right":165000
+  },
+  {
+    "population":333301.8060855101,
+    "left":165000,
+    "right":170000
+  },
+  {
+    "population":273647.70518843,
+    "left":170000,
+    "right":175000
+  },
+  {
+    "population":262954.56417117,
+    "left":175000,
+    "right":180000
+  },
+  {
+    "population":363578.28063439,
+    "left":180000,
+    "right":185000
+  },
+  {
+    "population":157344.31853042,
+    "left":185000,
+    "right":190000
+  },
+  {
+    "population":205124.56503586,
+    "left":190000,
+    "right":195000
+  },
+  {
+    "population":168578.96433398,
+    "left":195000,
+    "right":200000
+  },
+  {
+    "population":304110.48869309,
+    "left":200000,
+    "right":205000
+  },
+  {
+    "population":143124.90920527,
+    "left":205000,
+    "right":210000
+  },
+  {
+    "population":144621.93026257,
+    "left":210000,
+    "right":215000
+  },
+  {
+    "population":67958.84093025,
+    "left":215000,
+    "right":220000
+  },
+  {
+    "population":132721.17809977,
+    "left":220000,
+    "right":225000
+  },
+  {
+    "population":94375.82262718,
+    "left":225000,
+    "right":230000
+  },
+  {
+    "population":140614.49606715,
+    "left":230000,
+    "right":235000
+  },
+  {
+    "population":90411.8212397,
+    "left":235000,
+    "right":240000
+  },
+  {
+    "population":77399.56334514,
+    "left":240000,
+    "right":245000
+  },
+  {
+    "population":71795.40056236,
+    "left":245000,
+    "right":250000
+  },
+  {
+    "population":130533.77087015,
+    "left":250000,
+    "right":255000
+  },
+  {
+    "population":59993.17917357,
+    "left":255000,
+    "right":260000
+  },
+  {
+    "population":70803.69494528,
+    "left":260000,
+    "right":265000
+  },
+  {
+    "population":49931.47793033,
+    "left":265000,
+    "right":270000
+  },
+  {
+    "population":45493.4128154,
+    "left":270000,
+    "right":275000
+  },
+  {
+    "population":54664.56819632,
+    "left":275000,
+    "right":280000
+  },
+  {
+    "population":65916.6862513,
+    "left":280000,
+    "right":285000
+  },
+  {
+    "population":35245.32080462,
+    "left":285000,
+    "right":290000
+  },
+  {
+    "population":41488.63868552,
+    "left":290000,
+    "right":295000
+  },
+  {
+    "population":17355.61297078,
+    "left":295000,
+    "right":300000
+  },
+  {
+    "population":120335.87475171,
+    "left":300000,
+    "right":305000
+  },
+  {
+    "population":43487.46840869,
+    "left":305000,
+    "right":310000
+  },
+  {
+    "population":57240.43172837,
+    "left":310000,
+    "right":315000
+  },
+  {
+    "population":27115.7683976,
+    "left":315000,
+    "right":320000
+  },
+  {
+    "population":36172.51150705,
+    "left":320000,
+    "right":325000
+  },
+  {
+    "population":16107.46175976,
+    "left":325000,
+    "right":330000
+  },
+  {
+    "population":23848.06141043,
+    "left":330000,
+    "right":335000
+  },
+  {
+    "population":24151.21335547,
+    "left":335000,
+    "right":340000
+  },
+  {
+    "population":27313.37430922,
+    "left":340000,
+    "right":345000
+  },
+  {
+    "population":16702.69963032,
+    "left":345000,
+    "right":350000
+  },
+  {
+    "population":72686.25946064,
+    "left":350000,
+    "right":355000
+  },
+  {
+    "population":28109.5674002,
+    "left":355000,
+    "right":360000
+  },
+  {
+    "population":31419.85521028,
+    "left":360000,
+    "right":365000
+  },
+  {
+    "population":15876.28188907,
+    "left":365000,
+    "right":370000
+  },
+  {
+    "population":5762.67759268,
+    "left":370000,
+    "right":375000
+  },
+  {
+    "population":9059.47167133,
+    "left":375000,
+    "right":380000
+  },
+  {
+    "population":25554.0935595,
+    "left":380000,
+    "right":385000
+  },
+  {
+    "population":13417.11555701,
+    "left":385000,
+    "right":390000
+  },
+  {
+    "population":7920.39309218,
+    "left":390000,
+    "right":395000
+  },
+  {
+    "population":0.0,
+    "left":395000,
+    "right":400000
+  },
+  {
+    "population":18049.94700632,
+    "left":400000,
+    "right":405000
+  },
+  {
+    "population":8865.44409154,
+    "left":405000,
+    "right":410000
+  },
+  {
+    "population":7848.47698256,
+    "left":410000,
+    "right":415000
+  },
+  {
+    "population":17653.0430841,
+    "left":415000,
+    "right":420000
+  },
+  {
+    "population":13924.16050564,
+    "left":420000,
+    "right":425000
+  },
+  {
+    "population":3417.9077557,
+    "left":425000,
+    "right":430000
+  },
+  {
+    "population":7875.41498704,
+    "left":430000,
+    "right":435000
+  },
+  {
+    "population":8933.50010908,
+    "left":435000,
+    "right":440000
+  },
+  {
+    "population":22564.8192556,
+    "left":440000,
+    "right":445000
+  },
+  {
+    "population":10086.6744265,
+    "left":445000,
+    "right":450000
+  },
+  {
+    "population":3698.96304236,
+    "left":450000,
+    "right":455000
+  },
+  {
+    "population":9179.0325443,
+    "left":455000,
+    "right":460000
+  },
+  {
+    "population":4387.35772553,
+    "left":460000,
+    "right":465000
+  },
+  {
+    "population":1920.287443,
+    "left":465000,
+    "right":470000
+  },
+  {
+    "population":10978.3174612,
+    "left":470000,
+    "right":475000
+  },
+  {
+    "population":4186.0553721,
+    "left":475000,
+    "right":480000
+  },
+  {
+    "population":20327.56210486,
+    "left":480000,
+    "right":485000
+  },
+  {
+    "population":5529.18384102,
+    "left":485000,
+    "right":490000
+  },
+  {
+    "population":8409.80400203,
+    "left":490000,
+    "right":495000
+  },
+  {
+    "population":385.93680018,
+    "left":495000,
+    "right":500000
+  }
 ];
 
 export const income_bins_male_5k = [
-  { population: 14811342.9261108991, left: 0.0, right: 5000.0 },
-  { population: 4159831.9698111801, left: 5000.0, right: 10000.0 },
-  { population: 6222827.7841525897, left: 10000.0, right: 15000.0 },
-  { population: 6693935.4499663999, left: 15000.0, right: 20000.0 },
-  { population: 6820511.1156435199, left: 20000.0, right: 25000.0 },
-  { population: 6876366.1989327101, left: 25000.0, right: 30000.0 },
-  { population: 6336116.5430512102, left: 30000.0, right: 35000.0 },
-  { population: 6209064.7543106601, left: 35000.0, right: 40000.0 },
-  { population: 5406123.8364010705, left: 40000.0, right: 45000.0 },
-  { population: 5831595.8658824097, left: 45000.0, right: 50000.0 },
-  { population: 5419970.7445814796, left: 50000.0, right: 55000.0 },
-  { population: 4762960.6348635396, left: 55000.0, right: 60000.0 },
-  { population: 4288443.72379144, left: 60000.0, right: 65000.0 },
-  { population: 3581863.2803841601, left: 65000.0, right: 70000.0 },
-  { population: 3546806.4916127599, left: 70000.0, right: 75000.0 },
-  { population: 3062741.6163516599, left: 75000.0, right: 80000.0 },
-  { population: 2798614.2862133402, left: 80000.0, right: 85000.0 },
-  { population: 2176077.4591751499, left: 85000.0, right: 90000.0 },
-  { population: 2017811.8779416, left: 90000.0, right: 95000.0 },
-  { population: 1962793.9094736201, left: 95000.0, right: 100000.0 },
-  { population: 2671399.3963889801, left: 100000.0, right: 105000.0 },
-  { population: 1260848.36545426, left: 105000.0, right: 110000.0 },
-  { population: 1362345.0185994401, left: 110000.0, right: 115000.0 },
-  { population: 1177236.13519353, left: 115000.0, right: 120000.0 },
-  { population: 1397213.05982771, left: 120000.0, right: 125000.0 },
-  { population: 1107821.2521164699, left: 125000.0, right: 130000.0 },
-  { population: 1048446.76428576, left: 130000.0, right: 135000.0 },
-  { population: 753287.07644688, left: 135000.0, right: 140000.0 },
-  { population: 707657.8768317, left: 140000.0, right: 145000.0 },
-  { population: 658091.91610934, left: 145000.0, right: 150000.0 },
-  { population: 1186079.1178095001, left: 150000.0, right: 155000.0 },
-  { population: 580456.01006405, left: 155000.0, right: 160000.0 },
-  { population: 702779.03520951, left: 160000.0, right: 165000.0 },
-  { population: 444169.14969003, left: 165000.0, right: 170000.0 },
-  { population: 457258.95022154, left: 170000.0, right: 175000.0 },
-  { population: 438550.6393309, left: 175000.0, right: 180000.0 },
-  { population: 465066.23152437, left: 180000.0, right: 185000.0 },
-  { population: 264271.31132437, left: 185000.0, right: 190000.0 },
-  { population: 344581.88944609, left: 190000.0, right: 195000.0 },
-  { population: 256976.86224631, left: 195000.0, right: 200000.0 },
-  { population: 732410.19383401, left: 200000.0, right: 205000.0 },
-  { population: 219782.78637879, left: 205000.0, right: 210000.0 },
-  { population: 234416.92516893, left: 210000.0, right: 215000.0 },
-  { population: 218246.53640854, left: 215000.0, right: 220000.0 },
-  { population: 207013.32715878, left: 220000.0, right: 225000.0 },
-  { population: 193861.15853916, left: 225000.0, right: 230000.0 },
-  { population: 206713.09095385, left: 230000.0, right: 235000.0 },
-  { population: 141345.80816169, left: 235000.0, right: 240000.0 },
-  { population: 115806.36562259, left: 240000.0, right: 245000.0 },
-  { population: 87886.1523676, left: 245000.0, right: 250000.0 },
-  { population: 292586.79402858, left: 250000.0, right: 255000.0 },
-  { population: 118372.73763638, left: 255000.0, right: 260000.0 },
-  { population: 157110.54340648, left: 260000.0, right: 265000.0 },
-  { population: 74108.3864046, left: 265000.0, right: 270000.0 },
-  { population: 95426.45637129, left: 270000.0, right: 275000.0 },
-  { population: 63732.43348268, left: 275000.0, right: 280000.0 },
-  { population: 90763.72211575, left: 280000.0, right: 285000.0 },
-  { population: 79537.4664337, left: 285000.0, right: 290000.0 },
-  { population: 71344.35147401, left: 290000.0, right: 295000.0 },
-  { population: 65249.78978264, left: 295000.0, right: 300000.0 },
-  { population: 183014.60498311, left: 300000.0, right: 305000.0 },
-  { population: 82088.70912192, left: 305000.0, right: 310000.0 },
-  { population: 73929.98086874, left: 310000.0, right: 315000.0 },
-  { population: 67774.05094378, left: 315000.0, right: 320000.0 },
-  { population: 66482.22144775, left: 320000.0, right: 325000.0 },
-  { population: 42240.97041804, left: 325000.0, right: 330000.0 },
-  { population: 82522.23564237, left: 330000.0, right: 335000.0 },
-  { population: 25090.05529553, left: 335000.0, right: 340000.0 },
-  { population: 26522.76149365, left: 340000.0, right: 345000.0 },
-  { population: 44277.83937747, left: 345000.0, right: 350000.0 },
-  { population: 99081.03655313, left: 350000.0, right: 355000.0 },
-  { population: 67596.08270253, left: 355000.0, right: 360000.0 },
-  { population: 50886.62876323, left: 360000.0, right: 365000.0 },
-  { population: 17354.1045947, left: 365000.0, right: 370000.0 },
-  { population: 47861.60079709, left: 370000.0, right: 375000.0 },
-  { population: 49487.85582595, left: 375000.0, right: 380000.0 },
-  { population: 34384.77043059, left: 380000.0, right: 385000.0 },
-  { population: 23690.54373515, left: 385000.0, right: 390000.0 },
-  { population: 13325.59104836, left: 390000.0, right: 395000.0 },
-  { population: 48565.50524509, left: 395000.0, right: 400000.0 },
-  { population: 109463.64427931, left: 400000.0, right: 405000.0 },
-  { population: 34494.50061986, left: 405000.0, right: 410000.0 },
-  { population: 22706.21984868, left: 410000.0, right: 415000.0 },
-  { population: 23296.92356589, left: 415000.0, right: 420000.0 },
-  { population: 38630.13226053, left: 420000.0, right: 425000.0 },
-  { population: 13998.1167793, left: 425000.0, right: 430000.0 },
-  { population: 22057.60061807, left: 430000.0, right: 435000.0 },
-  { population: 16260.22997518, left: 435000.0, right: 440000.0 },
-  { population: 21256.57467336, left: 440000.0, right: 445000.0 },
-  { population: 20206.8967181, left: 445000.0, right: 450000.0 },
-  { population: 45867.10570707, left: 450000.0, right: 455000.0 },
-  { population: 16019.93906037, left: 455000.0, right: 460000.0 },
-  { population: 20429.1934658, left: 460000.0, right: 465000.0 },
-  { population: 6914.79565336, left: 465000.0, right: 470000.0 },
-  { population: 30436.98906228, left: 470000.0, right: 475000.0 },
-  { population: 12958.3974273, left: 475000.0, right: 480000.0 },
-  { population: 8867.9299667, left: 480000.0, right: 485000.0 },
-  { population: 12502.01371457, left: 485000.0, right: 490000.0 },
-  { population: 10878.48729466, left: 490000.0, right: 495000.0 },
-  { population: 30770.68390865, left: 495000.0, right: 500000.0 },
+  {
+    "population":19486455.3469120488,
+    "left":0,
+    "right":5000
+  },
+  {
+    "population":3740329.1196132498,
+    "left":5000,
+    "right":10000
+  },
+  {
+    "population":6227085.5994250597,
+    "left":10000,
+    "right":15000
+  },
+  {
+    "population":5845186.335535191,
+    "left":15000,
+    "right":20000
+  },
+  {
+    "population":6262330.4422554802,
+    "left":20000,
+    "right":25000
+  },
+  {
+    "population":6302499.2839887701,
+    "left":25000,
+    "right":30000
+  },
+  {
+    "population":6447165.6796242204,
+    "left":30000,
+    "right":35000
+  },
+  {
+    "population":5745144.2039855598,
+    "left":35000,
+    "right":40000
+  },
+  {
+    "population":5821128.6269796398,
+    "left":40000,
+    "right":45000
+  },
+  {
+    "population":4930634.0105007803,
+    "left":45000,
+    "right":50000
+  },
+  {
+    "population":6344417.18127032,
+    "left":50000,
+    "right":55000
+  },
+  {
+    "population":4202568.8354705404,
+    "left":55000,
+    "right":60000
+  },
+  {
+    "population":5438863.2187947696,
+    "left":60000,
+    "right":65000
+  },
+  {
+    "population":3440716.6096751401,
+    "left":65000,
+    "right":70000
+  },
+  {
+    "population":3893508.2273555202,
+    "left":70000,
+    "right":75000
+  },
+  {
+    "population":3188838.8268861398,
+    "left":75000,
+    "right":80000
+  },
+  {
+    "population":3102179.62142993,
+    "left":80000,
+    "right":85000
+  },
+  {
+    "population":2303619.0115694599,
+    "left":85000,
+    "right":90000
+  },
+  {
+    "population":2326915.4012579499,
+    "left":90000,
+    "right":95000
+  },
+  {
+    "population":1684279.8108182698,
+    "left":95000,
+    "right":100000
+  },
+  {
+    "population":2884091.4740189002,
+    "left":100000,
+    "right":105000
+  },
+  {
+    "population":1408775.5480970298,
+    "left":105000,
+    "right":110000
+  },
+  {
+    "population":1637740.3641914101,
+    "left":110000,
+    "right":115000
+  },
+  {
+    "population":1213870.5106734699,
+    "left":115000,
+    "right":120000
+  },
+  {
+    "population":1714931.97905643,
+    "left":120000,
+    "right":125000
+  },
+  {
+    "population":1080157.4437585198,
+    "left":125000,
+    "right":130000
+  },
+  {
+    "population":1144005.2322011399,
+    "left":130000,
+    "right":135000
+  },
+  {
+    "population":849208.0821198,
+    "left":135000,
+    "right":140000
+  },
+  {
+    "population":922283.2408832901,
+    "left":140000,
+    "right":145000
+  },
+  {
+    "population":618488.2027328701,
+    "left":145000,
+    "right":150000
+  },
+  {
+    "population":1627169.7277232599,
+    "left":150000,
+    "right":155000
+  },
+  {
+    "population":569567.74166226,
+    "left":155000,
+    "right":160000
+  },
+  {
+    "population":736733.92906759,
+    "left":160000,
+    "right":165000
+  },
+  {
+    "population":574099.4446588401,
+    "left":165000,
+    "right":170000
+  },
+  {
+    "population":595833.5825682199,
+    "left":170000,
+    "right":175000
+  },
+  {
+    "population":488919.67823809,
+    "left":175000,
+    "right":180000
+  },
+  {
+    "population":567334.87171379,
+    "left":180000,
+    "right":185000
+  },
+  {
+    "population":408859.03077533,
+    "left":185000,
+    "right":190000
+  },
+  {
+    "population":339010.15642462,
+    "left":190000,
+    "right":195000
+  },
+  {
+    "population":275958.54802712,
+    "left":195000,
+    "right":200000
+  },
+  {
+    "population":831220.9197851901,
+    "left":200000,
+    "right":205000
+  },
+  {
+    "population":376654.89359252,
+    "left":205000,
+    "right":210000
+  },
+  {
+    "population":285967.9316854,
+    "left":210000,
+    "right":215000
+  },
+  {
+    "population":230516.79616095,
+    "left":215000,
+    "right":220000
+  },
+  {
+    "population":278532.79948206,
+    "left":220000,
+    "right":225000
+  },
+  {
+    "population":229058.08641134,
+    "left":225000,
+    "right":230000
+  },
+  {
+    "population":235722.96495862,
+    "left":230000,
+    "right":235000
+  },
+  {
+    "population":190300.54943973,
+    "left":235000,
+    "right":240000
+  },
+  {
+    "population":169068.61048765,
+    "left":240000,
+    "right":245000
+  },
+  {
+    "population":121973.26883567,
+    "left":245000,
+    "right":250000
+  },
+  {
+    "population":360111.3829567099,
+    "left":250000,
+    "right":255000
+  },
+  {
+    "population":175184.1991055601,
+    "left":255000,
+    "right":260000
+  },
+  {
+    "population":136985.2021555401,
+    "left":260000,
+    "right":265000
+  },
+  {
+    "population":97597.05277098,
+    "left":265000,
+    "right":270000
+  },
+  {
+    "population":126150.7420663,
+    "left":270000,
+    "right":275000
+  },
+  {
+    "population":112049.69782031,
+    "left":275000,
+    "right":280000
+  },
+  {
+    "population":109910.51800303,
+    "left":280000,
+    "right":285000
+  },
+  {
+    "population":88239.24824264,
+    "left":285000,
+    "right":290000
+  },
+  {
+    "population":57882.80091379,
+    "left":290000,
+    "right":295000
+  },
+  {
+    "population":55482.17042538,
+    "left":295000,
+    "right":300000
+  },
+  {
+    "population":243714.9310183201,
+    "left":300000,
+    "right":305000
+  },
+  {
+    "population":112472.47106587,
+    "left":305000,
+    "right":310000
+  },
+  {
+    "population":118500.27135957,
+    "left":310000,
+    "right":315000
+  },
+  {
+    "population":43517.9270534,
+    "left":315000,
+    "right":320000
+  },
+  {
+    "population":54042.4388208,
+    "left":320000,
+    "right":325000
+  },
+  {
+    "population":56354.82815864,
+    "left":325000,
+    "right":330000
+  },
+  {
+    "population":43405.64729821,
+    "left":330000,
+    "right":335000
+  },
+  {
+    "population":42850.49720448,
+    "left":335000,
+    "right":340000
+  },
+  {
+    "population":47916.39164836,
+    "left":340000,
+    "right":345000
+  },
+  {
+    "population":33757.94553578,
+    "left":345000,
+    "right":350000
+  },
+  {
+    "population":111650.00847153,
+    "left":350000,
+    "right":355000
+  },
+  {
+    "population":60624.15395987,
+    "left":355000,
+    "right":360000
+  },
+  {
+    "population":68194.35791311,
+    "left":360000,
+    "right":365000
+  },
+  {
+    "population":23924.5864588,
+    "left":365000,
+    "right":370000
+  },
+  {
+    "population":33228.63071284,
+    "left":370000,
+    "right":375000
+  },
+  {
+    "population":36461.33856123,
+    "left":375000,
+    "right":380000
+  },
+  {
+    "population":59050.92527929,
+    "left":380000,
+    "right":385000
+  },
+  {
+    "population":36532.26461358,
+    "left":385000,
+    "right":390000
+  },
+  {
+    "population":48103.66946635,
+    "left":390000,
+    "right":395000
+  },
+  {
+    "population":21901.17502796,
+    "left":395000,
+    "right":400000
+  },
+  {
+    "population":103227.37787184,
+    "left":400000,
+    "right":405000
+  },
+  {
+    "population":23251.6009594,
+    "left":405000,
+    "right":410000
+  },
+  {
+    "population":42301.9459276,
+    "left":410000,
+    "right":415000
+  },
+  {
+    "population":32542.5068224,
+    "left":415000,
+    "right":420000
+  },
+  {
+    "population":33365.208161,
+    "left":420000,
+    "right":425000
+  },
+  {
+    "population":22117.4544737,
+    "left":425000,
+    "right":430000
+  },
+  {
+    "population":46719.33846378,
+    "left":430000,
+    "right":435000
+  },
+  {
+    "population":9673.81258018,
+    "left":435000,
+    "right":440000
+  },
+  {
+    "population":383.07053698,
+    "left":440000,
+    "right":445000
+  },
+  {
+    "population":27181.12267856,
+    "left":445000,
+    "right":450000
+  },
+  {
+    "population":49550.31163785,
+    "left":450000,
+    "right":455000
+  },
+  {
+    "population":26958.73651503,
+    "left":455000,
+    "right":460000
+  },
+  {
+    "population":19363.68614471,
+    "left":460000,
+    "right":465000
+  },
+  {
+    "population":20626.6399583,
+    "left":465000,
+    "right":470000
+  },
+  {
+    "population":19745.7853224,
+    "left":470000,
+    "right":475000
+  },
+  {
+    "population":13236.01822669,
+    "left":475000,
+    "right":480000
+  },
+  {
+    "population":15555.41871564,
+    "left":480000,
+    "right":485000
+  },
+  {
+    "population":21470.28660194,
+    "left":485000,
+    "right":490000
+  },
+  {
+    "population":25081.1865959,
+    "left":490000,
+    "right":495000
+  },
+  {
+    "population":16295.2178249,
+    "left":495000,
+    "right":500000
+  }
 ];
 export const income_bins_male_20k = [
-  { population: 31887938.1300410703, left: 0.0, right: 20000.0 },
-  { population: 26242058.6119381003, left: 20000.0, right: 40000.0 },
-  { population: 21420651.0817284994, left: 40000.0, right: 60000.0 },
-  { population: 14479855.1121400204, left: 60000.0, right: 80000.0 },
-  { population: 8955297.5328037106, left: 80000.0, right: 100000.0 },
-  { population: 6471828.9156362098, left: 100000.0, right: 120000.0 },
-  { population: 4306768.1526768198, left: 120000.0, right: 140000.0 },
-  { population: 3132284.9208145901, left: 140000.0, right: 160000.0 },
-  { population: 2042757.7744519799, left: 160000.0, right: 180000.0 },
-  { population: 1330896.2945411401, left: 180000.0, right: 200000.0 },
-  { population: 1404856.4417902699, left: 200000.0, right: 220000.0 },
-  { population: 748933.38481348, left: 220000.0, right: 240000.0 },
-  { population: 614652.04965515, left: 240000.0, right: 260000.0 },
-  { population: 390377.81966505, left: 260000.0, right: 280000.0 },
-  { population: 306895.3298061, left: 280000.0, right: 300000.0 },
-  { population: 406807.34591755, left: 300000.0, right: 320000.0 },
-  { population: 216335.48280369, left: 320000.0, right: 340000.0 },
-  { population: 237477.72012678, left: 340000.0, right: 360000.0 },
-  { population: 165590.18998097, left: 360000.0, right: 380000.0 },
-  { population: 119966.41045919, left: 380000.0, right: 400000.0 },
-  { population: 189961.28831374, left: 400000.0, right: 420000.0 },
-  { population: 90946.07963308, left: 420000.0, right: 440000.0 },
-  { population: 103350.5161589, left: 440000.0, right: 460000.0 },
-  { population: 70739.37560874, left: 460000.0, right: 480000.0 },
-  { population: 63019.11488458, left: 480000.0, right: 500000.0 },
+  {
+    "population":35299056.4014855474,
+    "left":0,
+    "right":20000
+  },
+  {
+    "population":24757139.6098540276,
+    "left":20000,
+    "right":40000
+  },
+  {
+    "population":21298748.6542212814,
+    "left":40000,
+    "right":60000
+  },
+  {
+    "population":15961926.8827115707,
+    "left":60000,
+    "right":80000
+  },
+  {
+    "population":9416993.845075611,
+    "left":80000,
+    "right":100000
+  },
+  {
+    "population":7144477.8969808109,
+    "left":100000,
+    "right":120000
+  },
+  {
+    "population":4788302.7371358899,
+    "left":120000,
+    "right":140000
+  },
+  {
+    "population":3737508.9130016798,
+    "left":140000,
+    "right":160000
+  },
+  {
+    "population":2395586.6345327399,
+    "left":160000,
+    "right":180000
+  },
+  {
+    "population":1591162.6069408599,
+    "left":180000,
+    "right":200000
+  },
+  {
+    "population":1724360.5412240601,
+    "left":200000,
+    "right":220000
+  },
+  {
+    "population":933614.40029175,
+    "left":220000,
+    "right":240000
+  },
+  {
+    "population":826337.46138559,
+    "left":240000,
+    "right":260000
+  },
+  {
+    "population":472782.69481313,
+    "left":260000,
+    "right":280000
+  },
+  {
+    "population":311514.73758484,
+    "left":280000,
+    "right":300000
+  },
+  {
+    "population":518205.60049716,
+    "left":300000,
+    "right":320000
+  },
+  {
+    "population":196653.41148213,
+    "left":320000,
+    "right":340000
+  },
+  {
+    "population":253948.49961554,
+    "left":340000,
+    "right":360000
+  },
+  {
+    "population":161808.91364598,
+    "left":360000,
+    "right":380000
+  },
+  {
+    "population":165588.03438718,
+    "left":380000,
+    "right":400000
+  },
+  {
+    "population":201323.43158124,
+    "left":400000,
+    "right":420000
+  },
+  {
+    "population":111875.81367866,
+    "left":420000,
+    "right":440000
+  },
+  {
+    "population":104073.24136842,
+    "left":440000,
+    "right":460000
+  },
+  {
+    "population":72972.1296521,
+    "left":460000,
+    "right":480000
+  },
+  {
+    "population":78402.10973838,
+    "left":480000,
+    "right":500000
+  }
 ];
 
 export const income_bins_female_20k = [
-  { population: 51203126.6295851991, left: 0.0, right: 20000.0 },
-  { population: 29942353.2232251503, left: 20000.0, right: 40000.0 },
-  { population: 19725903.5951928906, left: 40000.0, right: 60000.0 },
-  { population: 11992540.0822144505, left: 60000.0, right: 80000.0 },
-  { population: 6759022.5487599997, left: 80000.0, right: 100000.0 },
-  { population: 3952615.49234566, left: 100000.0, right: 120000.0 },
-  { population: 2352872.7445717598, left: 120000.0, right: 140000.0 },
-  { population: 1802510.0929768099, left: 140000.0, right: 160000.0 },
-  { population: 877731.81561334, left: 160000.0, right: 180000.0 },
-  { population: 578973.51919377, left: 180000.0, right: 200000.0 },
-  { population: 481779.74190943, left: 200000.0, right: 220000.0 },
-  { population: 323126.86081183, left: 220000.0, right: 240000.0 },
-  { population: 335260.38890927, left: 240000.0, right: 260000.0 },
-  { population: 152601.83479597, left: 260000.0, right: 280000.0 },
-  { population: 118962.54376202, left: 280000.0, right: 300000.0 },
-  { population: 159472.24207977, left: 300000.0, right: 320000.0 },
-  { population: 71510.05708302, left: 320000.0, right: 340000.0 },
-  { population: 78731.18769072, left: 340000.0, right: 360000.0 },
-  { population: 79477.8426081, left: 360000.0, right: 380000.0 },
-  { population: 27825.85015452, left: 380000.0, right: 400000.0 },
-  { population: 82367.37523017, left: 400000.0, right: 420000.0 },
-  { population: 46896.64109093, left: 420000.0, right: 440000.0 },
-  { population: 32190.79370432, left: 440000.0, right: 460000.0 },
-  { population: 31300.21106862, left: 460000.0, right: 480000.0 },
-  { population: 19734.48191123, left: 480000.0, right: 500000.0 },
+  {
+    "population":54022723.076696001,
+    "left":0,
+    "right":20000
+  },
+  {
+    "population":30522999.5553707182,
+    "left":20000,
+    "right":40000
+  },
+  {
+    "population":20605493.8492916562,
+    "left":40000,
+    "right":60000
+  },
+  {
+    "population":12282190.2840556595,
+    "left":60000,
+    "right":80000
+  },
+  {
+    "population":7407379.3488167599,
+    "left":80000,
+    "right":100000
+  },
+  {
+    "population":4451437.193045659,
+    "left":100000,
+    "right":120000
+  },
+  {
+    "population":3110331.3187539103,
+    "left":120000,
+    "right":140000
+  },
+  {
+    "population":1913736.08795967,
+    "left":140000,
+    "right":160000
+  },
+  {
+    "population":1189005.91452769,
+    "left":160000,
+    "right":180000
+  },
+  {
+    "population":894626.12853465,
+    "left":180000,
+    "right":200000
+  },
+  {
+    "population":659816.1690911801,
+    "left":200000,
+    "right":220000
+  },
+  {
+    "population":458123.3180338,
+    "left":220000,
+    "right":240000
+  },
+  {
+    "population":339721.91395122,
+    "left":240000,
+    "right":260000
+  },
+  {
+    "population":220893.15388733,
+    "left":260000,
+    "right":280000
+  },
+  {
+    "population":160006.25871222,
+    "left":280000,
+    "right":300000
+  },
+  {
+    "population":248179.5432863701,
+    "left":300000,
+    "right":320000
+  },
+  {
+    "population":100279.24803271,
+    "left":320000,
+    "right":340000
+  },
+  {
+    "population":144811.90080038,
+    "left":340000,
+    "right":360000
+  },
+  {
+    "population":62118.28636336,
+    "left":360000,
+    "right":380000
+  },
+  {
+    "population":46891.60220869,
+    "left":380000,
+    "right":400000
+  },
+  {
+    "population":52416.91116452,
+    "left":400000,
+    "right":420000
+  },
+  {
+    "population":34150.98335746,
+    "left":420000,
+    "right":440000
+  },
+  {
+    "population":45529.48926876,
+    "left":440000,
+    "right":460000
+  },
+  {
+    "population":21472.01800183,
+    "left":460000,
+    "right":480000
+  },
+  {
+    "population":34652.48674809,
+    "left":480000,
+    "right":500000
+  }
 ];

@@ -71,8 +71,8 @@ body {
     font-family: 'Black Ops One', cursive;
     text-transform: uppercase;
     text-align: center;
-    opacity: 0.4;
-    width: 155px;
+    opacity: 0.54;
+    width: 160px;
     transform: translate(-225%,-90%) rotate(-30deg) ;
 
 }
@@ -89,8 +89,8 @@ body {
     font-family: 'Black Ops One', cursive;
     text-transform: uppercase;
     text-align: center;
-    opacity: 0.4;
-    width: 155px;
+    opacity: 0.54;
+    width: 160px;
     transform: translate(225%,-90%)  rotate(30deg);
 
 }
