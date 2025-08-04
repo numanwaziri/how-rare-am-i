@@ -58,52 +58,81 @@ export const About = ({ sex }) => {
           representation and ambiguity across the datasets.
         </CustomAccordion>
         <CustomAccordion title="Limitations and Assumptions">
-          <li className="font-bold text-yellow-400">Data Alignment</li>
-          <p className="py-3">
-            Because the <strong>ASEC</strong> and <strong>NHANES</strong> datasets do not share a common identifier (like a primary/foreign key),
-            alignment between them is based on shared demographic characteristics: <strong>sex, age, race,</strong> and <strong>marital status</strong>.
-            This filtering ensures that both datasets focus on comparable demographic groups.
-            Due to the absence of a direct relationship (primary key/foreign
-            key) between the two survey datasets used, filtering in the analysis relies
-            on shared demographic factors{" "}
-          </p>
-          <br />
-          <li className="font-bold text-yellow-400">
-            Linear Approximation (Independence)
-          </li>
-          <div className="py-3">
-            <p>
-              To estimate the effect of specific variables across two separate surveys, we assume that once both
-              datasets are
-              filtered by the same demographic criteria (e.g., age, sex, race, marital status), they represent similar
-              underlying
-              populations. This assumption allows us to link analyses across the datasets despite the absence of a
-              shared
-              identifier.
+          <section>
+            <h2 className="text-lg font-semibold text-yellow-400 my-2">Data Alignment</h2>
+            <p className="text-base leading-relaxed">
+              We use two national surveys (<strong>NHANES</strong> and{" "}
+              <strong>ASEC</strong>) to estimate how rare or unique certain
+              combinations of traits are. Although these surveys don’t include the
+              same individuals, they both share key demographic data like age,
+              gender, race, and marital status. This lets us filter both datasets in
+              the same way and assume the filtered groups represent similar
+              populations.
             </p>
-            <br/>
-            <p>
-              In the first survey (e.g., <strong>NHANES</strong>), we filter the population by the selected demographic
-              and measure the
-              proportion that meets a particular condition, for example, 20% with a specific health status. This
-              becomes the <strong>baseline rate</strong> within that demographic group.
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold text-yellow-400 my-2">
+              Step 1: Establish a Baseline Using ASEC
+            </h2>
+            <p className="text-base leading-relaxed">
+              We begin by filtering <strong>ASEC</strong> by a specific set of
+              demographics such as Asian women aged 30–40 who are not married. Then we
+              look at a variable that only exists in ASEC (ie. Income).
+              Suppose 20% of survey population meets the demographic and Income condition.
+              This 20% becomes our <strong>baseline rate</strong>.
             </p>
-            <br/>
-            <p>
-              In the second survey (e.g., <strong>ASEC</strong>), we apply the <strong>same demographic filter</strong>,
-              and then apply a variable unique to that dataset (e.g., income). We then observe how
-              the
-              proportion changes relative to the baseline. This change is interpreted as the potential impact of that
-              unique factor,
-              assuming demographic alignment holds between the datasets.
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold text-yellow-400 my-2">
+              Step 2: Apply the Same Demographics to NHANES
+            </h2>
+            <p className="text-base leading-relaxed">
+              Next, we filter <strong>NHANES</strong> using the exact same
+              demographics. At this point, we do not care what the actual percentage
+              of NHANES demographic-filtered population is (suppose its 60%). We assume that the NHANES group, filtered
+              by demographics,
+              represents the same kind of population as in ASEC. So we continue to
+              use the <strong>20% baseline</strong> from ASEC here as well.
             </p>
-            <br/>
-            <p className="text-yellow-400">
-              <strong>Note:</strong> This approach assumes that once both surveys are filtered by the same demographic group, they
-              represent comparable populations. While this allows for meaningful cross-dataset comparisons, it may not fully
-              capture deeper structural or behavioral differences between the two.
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold text-yellow-400 my-2">Step 3: Add Variable Unique to NHANES</h2>
+            <p className="text-base leading-relaxed">
+              We now filter NHANES by a unique variable (weigth & heigth) in this survey. If this reduces the demographic filtered
+              NHANES population from 60% to 30%,
+              that’s a 50% drop.
             </p>
-          </div>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold text-yellow-400 my-2">
+              Step 4: Estimate the Final Combined Rate
+            </h2>
+            <p className="text-base leading-relaxed">
+            We apply that 50% reduction to the original ASEC baseline. Since 20%
+              of the demographic group met the NHANES condition, and the ASEC
+              condition cuts that group in half, we estimate{" "}
+              <strong>10%</strong> of the population meets <em>both</em> conditions.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold text-yellow-400 my-2 drop-shadow-lg">What’s the catch?</h2>
+            <p className="text-base leading-relaxed">
+            Health conditions in NHANES might be linked to income levels in ASEC. This method assumes that after
+              matching people by demographics like age and race, the percentages from one survey can be applied to the
+              other. In other words, it treats these traits as if they are independent for simplicity.
+            </p>
+            <p className="text-base leading-relaxed mt-2">
+              This works well for quick, high-level estimates of how rare a combination is, but it doesn’t capture all
+              real-world relationships. So, it’s not intended for detailed analysis or exact conclusions.
+            </p>
+          </section>
+
+
         </CustomAccordion>
         <CustomAccordion title="About the Website">
           <p>
@@ -125,6 +154,18 @@ export const About = ({ sex }) => {
             <span className="font-bold">Django</span> Rest Framework for the
             powerful backend infrastructure.
           </p>
+          <p className="mt-4 text-sm">
+            Code for this project is available on my{" "}
+            <a
+                href="https://github.com/numanwaziri/perfect-partner-probability"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-700 font-bold hover:text-yellow-900"
+            >
+              GitHub
+            </a>
+            .
+          </p>
         </CustomAccordion>
 
         <Link
@@ -137,10 +178,10 @@ export const About = ({ sex }) => {
               className="absolute inset-0 rounded-xl border-0 border-slate-100 transition-all duration-100 ease-linear group-hover:border-[25px]"></span>
           <span
               className={`relative w-full text-center font-semibold text-slate-100 transition-colors duration-200 ease-in-out ${
-              sex === "Male"
-                ? "group-hover:text-male-light"
-                : "group-hover:text-female-light"
-            }`}
+                  sex === "Male"
+                      ? "group-hover:text-male-light"
+                      : "group-hover:text-female-light"
+              }`}
           >
             Back
           </span>
@@ -148,16 +189,16 @@ export const About = ({ sex }) => {
 
       </div>
       <motion.div
-        initial={isSmallScreen ? { scaleY: 1 } : { scaleX: 1 }}
-        animate={
-          isSmallScreen
-            ? { scaleY: 0, transition: { duration: 0.4, ease: "circOut" } }
-            : { scaleX: 0, transition: { duration: 0.4, ease: "circOut" } }
-        }
-        exit={
-          isSmallScreen
-            ? { scaleY: 1, transition: { duration: 0.4, ease: "circIn" } }
-            : { scaleX: 1, transition: { duration: 0.4, ease: "circIn" } }
+          initial={isSmallScreen ? {scaleY: 1} : {scaleX: 1}}
+          animate={
+            isSmallScreen
+                ? {scaleY: 0, transition: {duration: 0.4, ease: "circOut"}}
+                : {scaleX: 0, transition: {duration: 0.4, ease: "circOut"}}
+          }
+          exit={
+            isSmallScreen
+                ? {scaleY: 1, transition: {duration: 0.4, ease: "circIn"}}
+                : { scaleX: 1, transition: { duration: 0.4, ease: "circIn" } }
         }
         style={
           isSmallScreen
