@@ -1,12 +1,12 @@
-# Perfect Partner Probability
+# How Rare Am I?
 
-Welcome to the **[Perfect Partner Probability](https://perfectpartner.netlify.app/)** full-stack project! This web application assesses the chances of individuals meeting your criteria while searching for a partner. It leverages **Annual Social and Economic Supplements (ASEC) by Current Population Survey (CPS)** and **National Health and Nutrition Examination Survey (NHANES)** survey data.
+Welcome to the **[How Rare Am I?](https://howrare.netlify.app/)** full-stack project! This web application assesses the chances of individuals meeting your criteria from the US poputulation. It leverages **Annual Social and Economic Supplements (ASEC) by Current Population Survey (CPS)** and **National Health and Nutrition Examination Survey (NHANES)** survey data.
 
 ## Folders
 
 1. **frontend (React):**
 
-   - Contains the React-based frontend of the Perfect Partner Probability website.
+   - Contains the React-based frontend of the 'How Rare Am I?' website.
 
 2. **backend (Django):**
 
@@ -17,6 +17,6 @@ Welcome to the **[Perfect Partner Probability](https://perfectpartner.netlify.ap
 
 ## Website Link
 
-Explore the **Perfect Partner Probability website** at [https://perfectpartner.netlify.app/](https://perfectpartner.netlify.app/)
+Explore the **How Rare Am I? website** at [https://howrare.netlify.app/](https://howrare.netlify.app/)
 
 Feel free to navigate through the folders to explore the frontend, backend, and the data preprocessing steps. If you have any questions or suggestions, contributions are welcomed!

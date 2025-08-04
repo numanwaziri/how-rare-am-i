@@ -157,7 +157,7 @@ export const About = ({ sex }) => {
           <p className="mt-4 text-sm">
             Code for this project is available on my{" "}
             <a
-                href="https://github.com/numanwaziri/perfect-partner-probability"
+                href="https://github.com/numanwaziri/how-rare-am-i"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-yellow-700 font-bold hover:text-yellow-900"
